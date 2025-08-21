@@ -1,0 +1,200 @@
+<!-- d:\Users\Usuario\Documents\GitHub\DesarrolloLaboratorio09\index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio profesional de [Tu Nombre], desarrollador web. Descubre mis habilidades, experiencia y proyectos destacados.">
+  <title>Portafolio de Eddyxdlol</title>
+  
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Eddy</h1>
+      <p>Desarrollador Web | Frontend & Backend 2000 liches</p>
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>Apoyo moral </li>
+        <li>Buenos consejos</li>
+        <li>Git & GitHub</li>
+        <li>Necesito Chamba</li>
+      </ul>
+    </section>
+    <section id="experiencia">
+      <h2>Experiencia Laboral</h2>
+      <article>
+        <h3>Tecnico en equipos de computo</h3>
+        <p><time datetime="2022-01">Ene 2022</time> - <time datetime="2023-12">Dic 2023</time></p>
+        <ul>
+          <li>Soporte técnico y mantenimiento de hardware y software.</li>
+          <li>Instalación y configuración de redes locales.</li>
+        </ul>
+      </article>
+     
+    </section>
+    <section id="proyectos">
+      <h2>Proyectos Destacados</h2>
+      <article>
+        <h3>MiApp de Tareas</h3>
+        <p>Aplicación web para gestión de tareas personales, desarrollada con React y Firebase.</p>
+        <a href="https://github.com/EddyArag/floramarillaD" target="_blank" rel="noopener">Ver en GitHub</a>
+      </article>
+      
+    </section>
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Eddy . Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
+<style>
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #f9f9f9;
+    color: #222;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+header {
+    background: #222;
+    color: #fff;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0.5rem 0 1rem 0;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #00bcd4;
+}
+
+main {
+    background: #fff;
+    margin-top: -1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 2rem 0;
+}
+
+section {
+    margin-bottom: 2.5rem;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    color: #00bcd4;
+    margin-top: 0;
+}
+
+article {
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover,
+button:focus {
+    background: #0097a7;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-radius: 0 0 8px 8px;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    main, section {
+        padding: 1rem
+    }
+}
+</style>
