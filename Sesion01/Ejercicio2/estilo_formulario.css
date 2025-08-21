@@ -1,0 +1,20 @@
+body {
+    background-color: blue;
+}
+
+h1 {
+    color: blue
+}
+
+p {
+    color: blue
+}
+
+.rect {
+    --w: 100px;
+    --h: 300px;
+
+    width: var(--w);
+    height: var(--h);
+    background-color: white;
+}
