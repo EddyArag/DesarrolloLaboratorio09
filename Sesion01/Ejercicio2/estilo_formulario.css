@@ -1,20 +1,45 @@
 body {
-    background-color: blue;
+    --gradient: linear-gradient(blue, purple);
+    background: var(--gradient);
 }
 
 h1 {
     color: blue
 }
 
-p {
-    color: blue
-}
-
 .rect {
-    --w: 100px;
-    --h: 300px;
+    --w: 350px;
+    --h: 670px;
 
     width: var(--w);
     height: var(--h);
     background-color: white;
+    text-align: left;
+    padding: 10px;
+    border-radius: 40px;
+
+}
+
+.rect p {
+    color: blue;
+    margin-left: 50px;
+}
+
+.rect h1 {
+    color: blue;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.rect input {
+    margin-left: 50px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 7px;
+
 }
