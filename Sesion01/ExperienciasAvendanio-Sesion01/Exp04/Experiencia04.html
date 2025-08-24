@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- a) Análisis de un ejemplo sencillo - <title> element -->
+  <title>Experiencia de Práctica N° 04 - Metadatos</title>
+  
+  <!-- b) Experimenta con la codificación de caracteres -->
+  <!-- La codificación correcta debe ser UTF-8 para caracteres japoneses -->
+  
+  <!-- c) El uso de la descripción en los motores de búsqueda -->
+  <meta name="description" content="Página de ejemplo para la Experiencia de Práctica N° 04 sobre metadatos en HTML, incluyendo title, codificación de caracteres, Open Graph y Twitter Cards">
+  
+  <!-- d) El uso de Open Graph -->
+  <meta property="og:title" content="Experiencia de Práctica N° 04 - Metadatos">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ejemplo.com/imagen.jpg">
+  <meta property="og:url" content="https://ejemplo.com/exp04.html">
+  <meta property="og:description" content="Esta página muestra ejemplos de uso de metadatos en HTML, incluyendo title, codificación, descripciones para SEO, Open Graph y Twitter Cards">
+  
+  <!-- e) El uso de Twitter Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@usuario">
+  <meta name="twitter:title" content="Experiencia de Práctica N° 04 - Metadatos">
+  <meta name="twitter:description" content="Esta página muestra ejemplos de uso de metadatos en HTML, incluyendo title, codificación, descripciones para SEO, Open Graph y Twitter Cards">
+  <meta name="twitter:image" content="https://ejemplo.com/imagen.jpg">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Experiencia de Práctica N° 04 - Metadatos</h1>
+  
+  <section>
+    <h2>a) Análisis de un ejemplo sencillo</h2>
+    <p>Esta página tiene un elemento <code>&lt;title&gt;</code> configurado como "Experiencia de Práctica N° 04 - Metadatos".</p>
+    <p>El contenido del elemento <code>&lt;title&gt;</code> aparece en la pestaña del navegador y también se usa cuando marcas la página como favorita.</p>
+  </section>
+  
+  <section>
+    <h2>b) Experimento con la codificación de caracteres</h2>
+    <p>Esta página usa codificación UTF-8 (recomendada).</p>
+    <p>Ejemplo en japonés: ご飯が熱い。</p>
+    <p>Si cambiáramos la codificación a ISO-8859-1, los caracteres japoneses no se mostrarían correctamente.</p>
+  </section>
+  
+  <section>
+    <h2>c) El uso de la descripción en los motores de búsqueda</h2>
+    <p>Esta página tiene un meta de descripción que será utilizado por los motores de búsqueda:</p>
+    <pre><code>&lt;meta name="description" content="Página de ejemplo para la Experiencia de Práctica N° 04 sobre metadatos en HTML, incluyendo title, codificación de caracteres, Open Graph y Twitter Cards"&gt;</code></pre>
+    <p>Esta descripción aparecerá en los resultados de búsqueda debajo del título de la página.</p>
+  </section>
+  
+  <section>
+    <h2>d) El uso de Open Graph</h2>
+    <p>Las etiquetas Open Graph permiten controlar cómo se muestra tu contenido cuando se comparte en redes sociales como Facebook.</p>
+    <p>Para que funcione correctamente, necesitas las siguientes propiedades:</p>
+    <ul>
+      <li><strong>og:title</strong> - El título de tu página</li>
+      <li><strong>og:type</strong> - El tipo de contenido (website, article, etc.)</li>
+      <li><strong>og:image</strong> - Una URL de la imagen que se mostrará</li>
+      <li><strong>og:url</strong> - La URL canónica de tu página</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h2>e) El uso de Twitter Cards</h2>
+    <p>Las Twitter Cards permiten adjuntar fotos, videos y otros contenidos multimedia a los Tweets que incluyen enlaces a tu contenido.</p>
+    <p>Pasos para implementar Twitter Cards:</p>
+    <ol>
+      <li>Elegir un tipo de tarjeta (summary, summary_large_image, etc.)</li>
+      <li>Agregar las etiquetas meta correctas a la página (como se ha hecho en esta página)</li>
+      <li>Validar la URL con la herramienta de validación de Twitter</li>
+      <li>Compartir la URL en Twitter para ver la tarjeta</li>
+    </ol>
+  </section>
+  
+  <footer>
+    <p>Para ver el código fuente de esta página, puedes hacer clic derecho y seleccionar "Ver código fuente de la página".</p>
+  </footer>
+</body>
+</html>

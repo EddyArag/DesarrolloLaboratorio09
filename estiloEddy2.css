@@ -1,0 +1,153 @@
+/* d:\Users\Usuario\Documents\GitHub\DesarrolloLaboratorio09\estilos.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+header, footer {
+    background: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+main {
+    padding: 2em;
+}
+.color-primario {
+    color: #3498db;
+}
+.color-secundario {
+    color: #e74c3c;
+}
+.fuente-serif {
+    font-family: 'Times New Roman', Times, serif;
+}
+.fuente-sans {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.fuente-mono {
+    font-family: 'Courier New', Courier, monospace;
+}
+.fuente-grande {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.borde-solido {
+    border: 2px solid #2ecc71;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.borde-punteado {
+    border: 2px dotted #e67e22;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.borde-redondeado {
+    border: 2px solid #9b59b6;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.fondo-color {
+    background: #f1c40f;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.fondo-imagen {
+    background: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.fondo-gradiente {
+    background: linear-gradient(90deg, #6dd5ed, #2193b0);
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.lista-personalizada {
+    list-style-type: square;
+    color: #16a085;
+}
+.lista-numerada {
+    list-style-type: upper-roman;
+    color: #2980b9;
+}
+.tabla-estilizada {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+.tabla-estilizada th {
+    border: 1px solid #7f8c8d;
+    padding: px;
+    text-align: center;
+
+}
+.tabla-estilizada td{
+    border: 1px solid #7f8c8d;
+    padding: px;
+    text-align: left;
+}
+.tabla-estilizada thead {
+    background: #34495e;
+    color: #fff;
+}
+.enlace-normal {
+    color: #2980b9;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+.enlace-boton {
+    background: #27ae60;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.enlace-boton:hover {
+    background: #219150;
+}
+.formulario-estilizado {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+}
+.formulario-estilizado label {
+    display: block;
+    margin-top: 10px;
+}
+.formulario-estilizado input[type="text"],
+.formulario-estilizado input[type="email"] {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+.formulario-estilizado input[type="submit"] {
+    background: #2980b9;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.formulario-estilizado input[type="submit"]:hover {
+    background: #1c598a;
+}
