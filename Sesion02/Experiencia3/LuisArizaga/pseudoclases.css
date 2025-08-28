@@ -1,0 +1,47 @@
+input:focus {
+    color: green;
+    border-color: lightgreen;
+}
+
+a:link {
+    color: green;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: red;
+}
+
+[value='Enviar'] {
+    background-color: green;
+}
+
+[value='Enviar']:hover {
+    background-color: blue;
+}
+
+label:first-child {
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+label:last-of-type {
+    color: red;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+label:nth-of-type(3) {
+    color: orange;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input:required {
+    border: 1px dashed red;
+}
