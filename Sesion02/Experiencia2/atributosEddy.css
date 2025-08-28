@@ -1,0 +1,49 @@
+/* Selecciona todos los elementos con el atributo "type" igual a "text" */
+input[type="text"] {
+    border: 2px solid blue;
+}
+
+/* Selecciona todos los enlaces que contienen "href" con el valor que empieza con "https" */
+a[href^="https"] {
+    color: green;
+}
+
+/* Selecciona todos los elementos con el atributo "class" que contiene "active" */
+div[class~="active"] {
+    background-color: yellow;
+}
+
+/* Selecciona todos los elementos con el atributo "data-id" que tenga exactamente el valor 10 */
+div[data-id="10"] {
+    font-weight: bold;
+}
+
+/* Selecciona todos los elementos con el atributo "src" que contiene "logo" */
+img[src*="logo"] {
+    border-radius: 10px;
+}
+
+/* Selecciona los enlaces que tienen el atributo "target" */
+a[target] {
+    text-decoration: underline;
+}
+
+/* Selecciona todos los elementos con el atributo "type" que comienza con "button" */
+button[type^="button"] {
+    background-color: lightblue;
+}
+
+/* Selecciona todos los elementos con el atributo "href" que termina en ".jpg" */
+a[href$=".jpg"] {
+    color: purple;
+}
+
+/* Selecciona todos los elementos con el atributo "name" que contiene "user" */
+input[name*="user"] {
+    border: 1px solid red;
+}
+
+/* Selecciona los elementos con el atributo "disabled" */
+input[disabled] {
+    background-color: lightgray;
+}
