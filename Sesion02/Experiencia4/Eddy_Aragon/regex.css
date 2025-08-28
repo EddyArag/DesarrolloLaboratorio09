@@ -1,0 +1,24 @@
+/* 1. Seleccionar elementos con ID que empiecen con "header" */
+[id^="header"] {
+    background-color: lightgreen; /* Los elementos cuyo ID empiece con 'header' tendrán fondo verde */
+}
+
+/* 2. Seleccionar elementos con ID que contengan "main" */
+[id*="main"] {
+    font-weight: bold; /* Los elementos cuyo ID contenga 'main' tendrán el texto en negrita */
+}
+
+/* 3. Seleccionar elementos con clases que terminen en 'active' */
+[class$="active"] {
+    color: orange; /* Los elementos con clase que termine en 'active' tendrán color naranja */
+}
+
+/* 4. Seleccionar elementos con ID que terminen en números */
+[id$="123"] {
+    border: 2px solid red; /* Los elementos cuyo ID termine en '123' tendrán borde rojo */
+}
+
+/* 5. Seleccionar elementos con ID que coincidan exactamente con 'item-1' */
+[id="item-1"] {
+    background-color: yellow; /* El elemento cuyo ID sea exactamente 'item-1' tendrá fondo amarillo */
+}
