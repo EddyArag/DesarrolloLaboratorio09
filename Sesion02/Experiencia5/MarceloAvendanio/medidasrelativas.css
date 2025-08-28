@@ -1,0 +1,84 @@
+/* EXPERIENCIA 05 (b) - Medidas Relativas
+   Unidades relativas: em, rem, %, vw, vh, vmin, vmax, ch, ex, fr (en grid), clamp(), calc()
+   (Se muestran al menos 3 casos por tipo principal: tamaño, caja, tipografía.) */
+
+:root {
+  --clr-bg:#f5f7fa; --clr-border:#d1d9e0; --clr-a:#004e92; --clr-b:#0d4c7d; --clr-c:#146292;
+  --fs-base:16px; /* para referencia */
+  font-size:16px; /* 1rem = 16px */
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+body { margin:0; background:var(--clr-bg); padding:1.25rem 1rem 3rem; line-height:1.5; }
+
+section.demo-rel { display:grid; gap:1.5rem; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
+.block { background:#fff; border:1px solid var(--clr-border); border-radius:10px; padding:1rem 1.1rem 1.25rem; box-shadow:0 2px 4px #0000000d; }
+.block h2 { margin:.25rem 0 .75rem; font-size:1.1rem; color:var(--clr-a); }
+.block p { margin:.4rem 0; font-size:.9rem; }
+code { background:#eef; padding:2px 4px; border-radius:4px; font-size:.85em; }
+
+/* EM vs REM (tipografía) (3 casos cada) */
+.text-em .em-1 { font-size:1em; }
+.text-em .em-1-5 { font-size:1.5em; }
+.text-em .em-2 { font-size:2em; }
+.text-rem .rem-1 { font-size:1rem; }
+.text-rem .rem-1-5 { font-size:1.5rem; }
+.text-rem .rem-2 { font-size:2rem; }
+/* Contenedor que escala con em */
+.scale-parent { font-size:1.25em; border:1px dashed var(--clr-c); padding:.5em; }
+.scale-parent .child { font-size:1.2em; }
+
+/* Porcentajes (%) (ancho / padding / font-size) */
+.percent-wrapper { width:100%; background:#e0f2fe; padding:2%; border-radius:8px; }
+.percent-wrapper .inner { background:#fff; width:50%; padding:4%; border:1px solid var(--clr-border); }
+.percent-wrapper .inner p { font-size:90%; }
+
+/* Viewport vw/vh (3 casos) */
+.vp-boxes { display:flex; gap:.75rem; }
+.vp-10 { width:10vw; height:10vh; background:var(--clr-a); }
+.vp-20 { width:20vw; height:12vh; background:var(--clr-b); }
+.vp-30 { width:30vw; height:14vh; background:var(--clr-c); }
+
+/* vmin / vmax (3 casos) */
+.vm-stack { display:flex; gap:.6rem; }
+.vmin-box { width:20vmin; height:10vmin; background:#d1fae5; }
+.vmax-box { width:15vmax; height:6vmax; background:#fee2e2; }
+.vmin-alt { width:12vmin; height:12vmin; background:#ede9fe; }
+
+/* ch (ancho en caracteres) + ex (altura x) */
+.measure-text { font-family:ui-monospace,monospace; }
+.ch-30 { width:30ch; border:1px solid var(--clr-border); padding:.5rem; background:#fff; }
+.ch-45 { width:45ch; border:1px solid var(--clr-border); padding:.5rem; background:#fff; }
+.ex-line { font-size:1.2rem; line-height:2ex; background:repeating-linear-gradient(#fff,#fff 1ex,#f1f5f9 1ex,#f1f5f9 2ex); }
+
+/* Grid fr (3 casos) */
+.grid-fr { display:grid; grid-template-columns:2fr 1fr 1fr; gap:.6rem; }
+.grid-fr div { background:#fff; border:1px solid var(--clr-border); padding:.6rem; text-align:center; }
+.grid-fr div:nth-child(1) { background:#e0f2fe; }
+.grid-fr div:nth-child(2) { background:#dbeafe; }
+.grid-fr div:nth-child(3) { background:#d1e9ff; }
+
+/* clamp() para tipografía fluida (3 casos) */
+.fluid-scale span { display:block; }
+.fs-small { font-size:clamp(.875rem, 1vw + .5rem, 1rem); }
+.fs-medium { font-size:clamp(1rem, 1.2vw + .6rem, 1.5rem); }
+.fs-large { font-size:clamp(1.5rem, 2vw + .75rem, 2.5rem); }
+
+/* calc() ejemplos (3 casos) */
+.calc-demo { display:flex; gap:.75rem; }
+.calc-1 { width:calc(50% - .5rem); background:#fff; padding:1rem; border:1px solid var(--clr-border); }
+.calc-2 { width:calc(25% + 40px); background:#fff; padding:1rem; border:1px solid var(--clr-border); }
+.calc-3 { width:calc(10rem + 5vw); background:#fff; padding:1rem; border:1px solid var(--clr-border); }
+
+/* Composición avanzada combinando relative units */
+.card-fluid { padding:1.2rem clamp(1rem, 2vw, 2.25rem); border:1px solid var(--clr-border); border-radius:12px; background:#fff; box-shadow:0 2px 4px #00000012; }
+.card-fluid h3 { margin:.2rem 0 .6rem; font-size:clamp(1.1rem, 1.4vw + .5rem, 1.8rem); }
+.card-fluid p { font-size:clamp(.85rem, .4vw + .7rem, 1.05rem); }
+
+/* Utilidades */
+.flex { display:flex; }
+.center { align-items:center; justify-content:center; }
+.wrap { flex-wrap:wrap; }
+.gap-sm { gap:.5rem; }
+.round { border-radius:8px; }
+
+/* Fin archivo medidas relativas */

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiencia 05 - Medidas CSS</title>
+  <meta name="description" content="Demostración de medidas absolutas y relativas en CSS" />
+  <link rel="stylesheet" href="medidasabsolutas.css" />
+  <link rel="stylesheet" href="medidasrelativas.css" />
+  <style>
+    body { font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+    header.top { text-align:center; margin:0 0 2rem; }
+    header.top h1 { margin:.5rem 0 .25rem; font-size:clamp(1.6rem,3vw,2.4rem); }
+    header.top p { margin:0; color:#475569; }
+    .seccion-titulo { margin:3rem 0 1.25rem; font-size:1.35rem; color:#0d4c7d; }
+    hr.div { border:none; height:1px; background:#cbd5e1; margin:2.5rem 0; }
+    .label { display:inline-block; margin-top:.75rem; font-size:.8rem; letter-spacing:.5px; text-transform:uppercase; color:#475569; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <h1>Experiencia 05</h1>
+    <p>Medidas Absolutas y Relativas</p>
+  </header>
+
+  <h2 class="seccion-titulo" id="abs">Medidas Absolutas</h2>
+  <section class="demo-abs">
+    <div class="box">
+      <h2>PX</h2>
+      <div class="px-100">100px</div>
+      <div class="px-160" style="margin-top:.5rem;">160px</div>
+      <div class="px-220" style="margin-top:.5rem;">220px</div>
+      <p>Comparar crecimiento horizontal.</p>
+      <div class="scale-bar"></div>
+    </div>
+    <div class="box">
+      <h2>PT (Puntos)</h2>
+      <p class="pt-text-small">Texto 10pt</p>
+      <p class="pt-text-base">Texto 12pt</p>
+      <p class="pt-text-large">Texto 18pt</p>
+      <p>Escala tipográfica en puntos vs px.</p>
+      <div class="font-mix">
+        <span class="font-px-14">14px</span>
+        <span class="font-px-20">20px</span>
+        <span class="font-px-28">28px</span>
+      </div>
+    </div>
+    <div class="box">
+      <h2>PC (Picas)</h2>
+      <div class="pc-box-1"></div>
+      <div class="pc-box-2" style="margin-top:.35rem;"></div>
+      <div class="pc-box-3" style="margin-top:.35rem;"></div>
+      <p>1pc = 12pt (≈16px).</p>
+    </div>
+    <div class="box">
+      <h2>IN (Pulgadas)</h2>
+      <div class="in-box-1"></div>
+      <div class="in-box-2" style="margin-top:.4rem;"></div>
+      <div class="in-box-3" style="margin-top:.4rem;"></div>
+      <p>Diferencias físicas relativas a 96px por pulgada.</p>
+    </div>
+    <div class="box">
+      <h2>CM</h2>
+      <div class="cm-box-wrapper">
+        <div class="cm-1"></div>
+        <div class="cm-2"></div>
+        <div class="cm-3"></div>
+      </div>
+      <p>Anchos 2cm / 3cm / 4cm.</p>
+    </div>
+    <div class="box">
+      <h2>MM</h2>
+      <div class="mm-stack">
+        <div class="mm-20"></div>
+        <div class="mm-30"></div>
+        <div class="mm-40"></div>
+      </div>
+      <p>20mm / 30mm / 40mm.</p>
+    </div>
+  </section>
+
+  <hr class="div" />
+
+  <h2 class="seccion-titulo" id="rel">Medidas Relativas</h2>
+  <section class="demo-rel">
+    <div class="block text-em">
+      <h2>EM</h2>
+      <p class="em-1">1em (base contenedor)</p>
+      <p class="em-1-5">1.5em (escala)</p>
+      <p class="em-2">2em (escala)</p>
+      <div class="scale-parent mt-2">
+        Contenedor 1.25em
+        <div class="child">Hijo 1.2em relativo al padre</div>
+      </div>
+    </div>
+    <div class="block text-rem">
+      <h2>REM</h2>
+      <p class="rem-1">1rem (root)</p>
+      <p class="rem-1-5">1.5rem</p>
+      <p class="rem-2">2rem</p>
+    </div>
+    <div class="block">
+      <h2>% Porcentajes</h2>
+      <div class="percent-wrapper">
+        <div class="inner">
+          <p>Width 50%</p>
+          <p>Padding 4%</p>
+          <p>Texto 90%</p>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <h2>Viewport vw/vh</h2>
+      <div class="vp-boxes">
+        <div class="vp-10"></div>
+        <div class="vp-20"></div>
+        <div class="vp-30"></div>
+      </div>
+    </div>
+    <div class="block">
+      <h2>vmin / vmax</h2>
+      <div class="vm-stack">
+        <div class="vmin-box"></div>
+        <div class="vmax-box"></div>
+        <div class="vmin-alt"></div>
+      </div>
+    </div>
+    <div class="block measure-text">
+      <h2>ch / ex</h2>
+      <div class="ch-30">Ancho 30ch: limita la línea para legibilidad.</div>
+      <div class="ch-45" style="margin-top:.4rem;">Ancho 45ch: párrafo algo más largo para comparar la medida basada en caracteres monospace.</div>
+      <p class="ex-line mt-2">Líneas usando 2ex de alto.</p>
+    </div>
+    <div class="block">
+      <h2>Grid fr</h2>
+      <div class="grid-fr">
+        <div>2fr</div>
+        <div>1fr</div>
+        <div>1fr</div>
+      </div>
+    </div>
+    <div class="block fluid-scale">
+      <h2>clamp()</h2>
+      <span class="fs-small">Texto pequeño fluido</span>
+      <span class="fs-medium">Texto mediano fluido</span>
+      <span class="fs-large">Texto grande fluido</span>
+    </div>
+    <div class="block">
+      <h2>calc()</h2>
+      <div class="calc-demo wrap">
+        <div class="calc-1">50% - .5rem</div>
+        <div class="calc-2">25% + 40px</div>
+        <div class="calc-3">10rem + 5vw</div>
+      </div>
+    </div>
+    <div class="block card-fluid">
+      <h2>Combinación</h2>
+      <p>Card con padding y tipografía fluidos usando clamp(), rem, vw y % internas.</p>
+    </div>
+  </section>
+
+  <footer style="text-align:center;margin:3rem 0 1rem;font-size:.7rem;color:#64748b;">
+    <p>&copy; 2025 - Demostración académica experiencia 05</p>
+  </footer>
+</body>
+</html>

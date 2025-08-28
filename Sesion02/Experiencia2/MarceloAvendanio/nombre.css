@@ -1,0 +1,49 @@
+
+html { box-sizing:border-box; font-size:16px; }
+*, *::before, *::after { box-sizing:inherit; }
+body { margin:0; font-family:system-ui, Arial, sans-serif; line-height:1.4; background:#f6f8fa; color:#222; }
+
+header { background:#324860; color:#fff; padding:1rem 1.25rem; }
+header h1 { margin:.2rem 0 .4rem; font-size:1.6rem; }
+header p { margin:0; font-size:.9rem; }
+
+nav { background:#fff; border-bottom:1px solid #d5d9de; }
+nav ul { list-style:none; margin:0; padding:.5rem 1rem; display:flex; gap:.75rem; }
+nav li { }
+nav a { text-decoration:none; color:#234; padding:.4rem .7rem; display:inline-block; border-radius:4px; background:#e9eef3; }
+nav a:hover { background:#d7e2ec; }
+
+main { padding:1rem 1.25rem 2rem; max-width:960px; margin:0 auto; }
+section { margin:2rem 0; }
+section h2 { margin:0 0 .75rem; font-size:1.3rem; color:#23394d; }
+article { background:#fff; border:1px solid #e1e5e9; padding:.9rem 1rem; border-radius:6px; margin:.75rem 0; }
+article h3 { margin:.1rem 0 .4rem; font-size:1.05rem; color:#2d4a61; }
+article p { margin:.4rem 0 0; font-size:.9rem; }
+
+p { max-width:70ch; }
+code { background:#eef2f5; padding:0 .25rem; border-radius:3px; font-size:.85em; }
+
+/* Tabla */
+table { border-collapse:collapse; width:100%; background:#fff; font-size:.85rem; }
+thead { background:#2d4a61; color:#fff; }
+th, td { border:1px solid #d0d6db; padding:.5rem .6rem; text-align:left; }
+tfoot { background:#eef2f5; font-weight:bold; }
+tr:nth-child(even) { background:#f5f8fa; }
+
+/* Formulario */
+form { max-width:420px; background:#fff; padding:1rem 1.2rem; border:1px solid #d8dde2; border-radius:8px; }
+fieldset { border:1px solid #c5ccd2; padding:1rem 1rem 1.3rem; border-radius:6px; }
+legend { padding:0 .5rem; font-weight:600; color:#23394d; }
+label { display:flex; flex-direction:column; gap:.25rem; font-size:.8rem; margin:.6rem 0; }
+input, textarea, button { font-family:inherit; font-size:.9rem; }
+input, textarea { padding:.45rem .55rem; border:1px solid #b9c3cc; border-radius:4px; background:#fff; resize:vertical; }
+input:focus, textarea:focus { outline:2px solid #4d84ff; outline-offset:1px; }
+button { background:#2d4a61; color:#fff; border:none; padding:.55rem .9rem; border-radius:4px; cursor:pointer; font-weight:600; }
+button:hover { background:#37607e; }
+button:active { background:#264252; }
+
+ol { padding-left:1.2rem; }
+ol li { margin:.35rem 0; }
+
+footer { background:#324860; color:#fff; padding:1rem 1.25rem; font-size:.75rem; text-align:center; }
+footer p { margin:0; }

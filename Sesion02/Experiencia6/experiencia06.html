@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiencia 06 - Colores CSS</title>
+  <meta name="description" content="Demostración de colores por nombre, rgb, hexadecimal, hsl y opacidad" />
+  <link rel="stylesheet" href="colorespornombre.css" />
+  <link rel="stylesheet" href="coloresrgb.css" />
+  <link rel="stylesheet" href="coloreshexadecimal.css" />
+  <link rel="stylesheet" href="coloreshls.css" />
+  <link rel="stylesheet" href="coloresopacidad.css" />
+  <style>
+    body { margin:0; padding:1.5rem 1rem 3rem; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:#f1f5f9; }
+    header.top { text-align:center; margin:0 0 2rem; }
+    header.top h1 { margin:.25rem 0 .5rem; font-size:clamp(1.7rem,3vw,2.6rem); }
+    header.top p { margin:0; color:#475569; }
+    h2 { margin:2.75rem 0 1rem; font-size:1.35rem; color:#0d4c7d; }
+    .grupo { background:#fff; border:1px solid #e2e8f0; padding:1rem 1.1rem 1.25rem; border-radius:14px; box-shadow:0 2px 4px #00000010; }
+    .subtitulo { font-size:.8rem; letter-spacing:.5px; text-transform:uppercase; margin:0 0 1rem; color:#64748b; }
+    .fila { display:flex; flex-wrap:wrap; gap:1rem; }
+    footer.page { margin-top:3rem; text-align:center; font-size:.7rem; color:#64748b; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <h1>Experiencia 06</h1>
+    <p>Colores: Nombre · RGB · Hex · HSL · Opacidad</p>
+  </header>
+
+  <section class="grupo" id="nombre">
+    <h2>Colores por Nombre</h2>
+    <p class="subtitulo">Uso directo de palabras clave estandarizadas.</p>
+    <div class="section-nombre">
+      <div class="color-nombre color-red">red</div>
+      <div class="color-nombre color-royalblue">royalblue</div>
+      <div class="color-nombre color-seagreen">seagreen</div>
+      <div class="color-nombre color-gold">gold</div>
+      <div class="color-nombre color-tomato">tomato</div>
+      <div class="color-nombre color-indigo">indigo</div>
+    </div>
+  </section>
+
+  <section class="grupo" id="rgb">
+    <h2>Colores RGB</h2>
+    <p class="subtitulo">Valores enteros (0-255) y porcentajes (0%-100%).</p>
+    <div class="section-rgb">
+      <div class="color-rgb rgb-int-1">rgb(34,139,34)</div>
+      <div class="color-rgb rgb-int-2">rgb(220,20,60)</div>
+      <div class="color-rgb rgb-int-3">rgb(70,130,180)</div>
+      <div class="color-rgb rgb-pct-1">rgb(100%,64%,0%)</div>
+      <div class="color-rgb rgb-pct-2">rgb(25%,25%,55%)</div>
+      <div class="color-rgb rgb-pct-3">rgb(40%,70%,40%)</div>
+    </div>
+  </section>
+
+  <section class="grupo" id="hex">
+    <h2>Colores Hexadecimales</h2>
+    <p class="subtitulo">Formato #RRGGBB (y variantes).</p>
+    <div class="section-hex">
+      <div class="color-hex hex-1">#1e3a8a</div>
+      <div class="color-hex hex-2">#0891b2</div>
+      <div class="color-hex hex-3">#10b981</div>
+      <div class="color-hex hex-4">#f59e0b</div>
+      <div class="color-hex hex-5">#d946ef</div>
+    </div>
+  </section>
+
+  <section class="grupo" id="hsl">
+    <h2>Colores HSL</h2>
+    <p class="subtitulo">hsl(H S% L%) permite ajustar tonalidad y luminosidad.</p>
+    <div class="section-hsl">
+      <div class="color-hsl hsl-1">hsl(210 90% 35%)</div>
+      <div class="color-hsl hsl-2">hsl(145 60% 35%)</div>
+      <div class="color-hsl hsl-3">hsl(25 95% 50%)</div>
+      <div class="color-hsl hsl-4">hsl(280 65% 50%)</div>
+      <div class="color-hsl hsl-5">hsl(340 80% 50%)</div>
+    </div>
+  </section>
+
+  <section class="grupo" id="alpha">
+    <h2>Colores con Opacidad / Canal Alfa</h2>
+    <p class="subtitulo">rgba(), hsla(), hex con alfa y opacity.</p>
+    <div class="section-alpha">
+      <div class="card-alpha rgba-1">rgba 25%</div>
+      <div class="card-alpha rgba-2">rgba 35%</div>
+      <div class="card-alpha rgba-3">rgba 45%</div>
+      <div class="card-alpha hsla-1">hsla 35%</div>
+      <div class="card-alpha hsla-2">hsla 45%</div>
+      <div class="card-alpha hsla-3">hsla 40%</div>
+      <div class="card-alpha hex-a-1">hex 25%</div>
+      <div class="card-alpha hex-a-2">hex 40%</div>
+      <div class="card-alpha hex-a-3">hex 33%</div>
+    </div>
+    <div class="opacity-demo">
+      <div class="opacity-100">1</div>
+      <div class="opacity-60">.6</div>
+      <div class="opacity-30">.3</div>
+    </div>
+  </section>
+
+  <footer class="page">
+    <p>&copy; 2025 - Demostración académica experiencia 06</p>
+  </footer>
+</body>
+</html>

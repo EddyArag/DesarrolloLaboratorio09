@@ -1,0 +1,30 @@
+/* pseudoelementos.css - ejemplos (versión sencilla) */
+
+/* before / after decorativos */
+#atributos h2::before, #atributos h2::after { color:#0a6; text-shadow:none; }
+
+/* Primera letra y primera línea */
+.texto-ejemplo p::first-letter { font-size:220%; font-weight:bold; float:left; line-height:1; padding:.1rem .3rem .05rem 0; color:#085; text-shadow:none; }
+.texto-ejemplo p::first-line { text-transform:uppercase; letter-spacing:.5px; }
+
+/* Selección */
+::selection { background:#0a6; color:#fff; }
+
+/* Marcador de lista personalizado */
+.marcada li::marker { content:"» "; color:#b54; font-weight:bold; }
+
+/* Placeholder */
+.entrada::placeholder { color:#888; font-style:italic; }
+
+/* File button (extra) */
+input[type="file"]::file-selector-button { background:#0a6; color:#fff; border:none; padding:.35rem .7rem; border-radius:4px; }
+input[type="file"]::file-selector-button:hover { background:#095; }
+
+@supports(selector(::cue)) {
+  ::cue { font-family:system-ui; color:#fff; background:#0008; }
+}
+
+blockquote.cita { position:relative; margin:1rem 0; padding:1rem 1.25rem 1rem 2.5rem; background:#f3f6ff; border-left:4px solid #0a6; font-style:italic; font-size:.9rem; box-shadow:none; }
+blockquote.cita::before { content:"“"; position:absolute; left:.6rem; top:.2rem; font-size:3rem; line-height:1; color:#0a6; }
+
+.texto-ejemplo { max-width:640px; }

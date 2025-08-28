@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>css vinculado</title>
+  <meta name="description" content="Página de ejemplo aplicando reglas CSS con archivo vinculado externo">
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Energías Renovables</h1>
+    <p>Demostración de estilos CSS aplicados con hoja de estilo externa</p>
+  </header>
+
+  <nav class="main-nav">
+    <a href="#introduccion">Introducción</a>
+    <a href="#tipos">Tipos</a>
+    <a href="#estadisticas">Estadísticas</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main class="layout">
+    <article id="introduccion" class="principal">
+      <h2>Introducción</h2>
+      <p>Las <strong class="highlight">energías renovables</strong> son fuentes de energía que se obtienen de recursos naturales capaces de regenerarse de manera continua. Ahora los estilos se reutilizan entre múltiples documentos solo manteniendo un archivo CSS.</p>
+      <p>El objetivo es mostrar el máximo nivel de mantenibilidad y reutilización mediante una hoja externa en lugar de estilos inline o internos.</p>
+      <section id="tipos" class="panel">
+        <h3>Tipos Principales</h3>
+        <ul class="list-disc">
+          <li>Solar</li>
+          <li>Eólica</li>
+          <li>Hidráulica</li>
+          <li>Geotérmica</li>
+          <li>Biomasa</li>
+        </ul>
+        <p class="note">Cada tecnología presenta ventajas y retos asociados a su integración.</p>
+      </section>
+      <section id="estadisticas" class="panel">
+        <h3>Estadísticas Globales</h3>
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Fuente</th>
+              <th>Crecimiento % anual</th>
+              <th>Participación %</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Solar</td>
+              <td>22</td>
+              <td>7.5</td>
+            </tr>
+            <tr>
+              <td>Eólica</td>
+              <td>9</td>
+              <td>6.1</td>
+            </tr>
+            <tr>
+              <td>Hidráulica</td>
+              <td>2</td>
+              <td>15.2</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="footnote">Datos ficticios solo para ejemplo.</p>
+      </section>
+      <section id="galeria" class="panel">
+        <h3>Galería</h3>
+        <figure class="gallery">
+          <img src="https://placehold.co/300x180/004e92/FFFFFF?text=Solar" alt="Panel solar" />
+          <img src="https://placehold.co/300x180/0d4c7d/FFFFFF?text=Eolica" alt="Aerogenerador" />
+          <img src="https://placehold.co/300x180/146292/FFFFFF?text=Hidraulica" alt="Central hidroeléctrica" />
+        </figure>
+      </section>
+      <section id="contacto" class="panel">
+        <h3>Contacto</h3>
+        <form class="contact">
+          <label class="field">Nombre
+            <input type="text" name="nombre" />
+          </label>
+          <label class="field">Correo
+            <input type="email" name="email" />
+          </label>
+          <label class="field">Mensaje
+            <textarea name="mensaje" rows="4"></textarea>
+          </label>
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+      </section>
+    </article>
+
+    <aside class="resumen">
+      <h4>Resumen</h4>
+      <p>Esta página usa una hoja externa. Cualquier cambio se refleja en todas las páginas que incluyan main.css.</p>
+      <ol>
+        <li>Centralización total</li>
+        <li>Máxima reutilización</li>
+        <li>Facilita caché del navegador</li>
+      </ol>
+      <blockquote class="tip">Organice el CSS modularmente a medida que crezca el proyecto.</blockquote>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Ejemplo Académico</p>
+    <p>Página demostrativa para práctica de CSS externo.</p>
+  </footer>
+
+  <!-- Reflexión (c): Con una sola edición en main.css se actualizan todas las páginas conectadas. Es el método más eficiente para proyectos reales. -->
+</body>
+</html>

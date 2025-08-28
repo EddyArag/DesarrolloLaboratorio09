@@ -1,0 +1,8 @@
+
+.section-hex { display:flex; gap:1rem; flex-wrap:wrap; }
+.color-hex { width:140px; height:80px; border-radius:8px; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; font-size:.75rem; font-weight:600; box-shadow:0 2px 4px #00000030; }
+.hex-1 { background:#1e3a8a; } 
+.hex-2 { background:#0891b2; } 
+.hex-3 { background:#10b981; } 
+.hex-4 { background:#f59e0b; color:#222; } 
+.hex-5 { background:#d946ef; } 

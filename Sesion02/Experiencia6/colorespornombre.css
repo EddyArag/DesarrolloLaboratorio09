@@ -1,0 +1,11 @@
+/* Colores por nombre (al menos 3) */
+:root { font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+.section-nombre { display:flex; gap:1rem; flex-wrap:wrap; }
+.color-nombre { width:140px; height:80px; border-radius:8px; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; font-size:.8rem; font-weight:600; box-shadow:0 2px 4px #0003; }
+.color-red { background:red; }
+.color-royalblue { background:royalblue; }
+.color-seagreen { background:seagreen; }
+.color-gold { background:gold; color:#222; }
+.color-tomato { background:tomato; }
+.color-indigo { background:indigo; }
+.section-nombre h3 { flex-basis:100%; margin:.25rem 0 .5rem; }

@@ -1,0 +1,46 @@
+/* EXPERIENCIA 04 (c) - Herencia y Cascada */
+
+/* --- Herencia (al menos 7 casos) --- */
+html { font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.5; }
+body { color:#1e293b; background:#f1f5f9; }
+main { font-size:1rem; }
+main article { color:inherit; font-size:inherit; }
+main article p { font:inherit; }
+main article blockquote { font-style:italic; color:#334155; }
+main article ul { font:inherit; color:inherit; }
+main article ul li { line-height:inherit; }
+
+/* Variables CSS para cascada controlada */
+:root { --color-acento:#004e92; --color-acento-alt:#0d4c7d; }
+section.tema { --color-acento:#146292; }
+section.tema-importante { --color-acento:#b42318; }
+
+/* --- Cascada y especificidad (al menos 5 casos) --- */
+.button { background:var(--color-acento); color:#fff; padding:.6rem 1rem; border:none; border-radius:6px; cursor:pointer; }
+/* 1 Regla más específica sobreescribe */
+main .acciones .button { background:var(--color-acento-alt); }
+/* 2 ID sobre clase */
+#destacado .button { background:#d97706; }
+/* 3 !important (usar con moderación) */
+.button.critico { background:#b42318 !important; }
+/* 4 Orden en cascada: regla posterior gana si especificidad igual */
+.note { color:#64748b; }
+.note { color:#475569; }
+/* 5 Combinación de pseudo-clase aumenta especificidad */
+.button:hover, .button:focus { filter:brightness(1.05); }
+
+/* Demostración de herencia vs no herencia */
+main article code { font-family:ui-monospace,monospace; background:#e2e8f0; padding:2px 4px; border-radius:4px; }
+main article a { color:var(--color-acento); text-decoration:none; }
+main article a:hover { text-decoration:underline; }
+
+/* Resets mínimos para elementos no heredables totalmente */
+strong { font-weight:600; }
+em { font-style:italic; }
+
+/* Utilidades */
+.texto-centro { text-align:center; }
+.mt-2 { margin-top:.5rem; }
+.mb-0 { margin-bottom:0; }
+
+/* Nota: Ajustar el HTML para crear contenedores con secciones y botones que ejemplifiquen la cascada. */

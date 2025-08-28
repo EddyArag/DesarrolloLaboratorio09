@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Experiencia 02 - Selectores por Nombre (Tipo)</title>
+  <!-- Sólo se usarán selectores de nombre (elemento) en nombre.css -->
+  <link rel="stylesheet" href="nombre.css" />
+</head>
+<body>
+  <header>
+    <h1>Experiencia de Práctica N° 02</h1>
+    <p>Uso exclusivo de selectores por nombre (tipo de etiqueta HTML).</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#introduccion">Introducción</a></li>
+      <li><a href="#noticias">Noticias</a></li>
+      <li><a href="#datos">Datos</a></li>
+      <li><a href="#formulario">Formulario</a></li>
+      <li><a href="#conclusiones">Conclusiones</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="introduccion">
+      <h2>Introducción</h2>
+      <p>En esta página se aplican estilos únicamente usando el tipo de cada elemento. No se emplean clases ni identificadores en el CSS para demostrar el alcance de los selectores de nombre.</p>
+      <p>Esto ayuda a comprender la cascada básica y cómo los estilos generales afectan a toda la estructura del documento.</p>
+    </section>
+
+    <section id="noticias">
+      <h2>Noticias</h2>
+      <article>
+        <h3>Artículo 1</h3>
+        <p>Contenido breve del primer artículo. Presenta un resumen de la noticia y demuestra el estilo aplicado al elemento <code>article</code>.</p>
+      </article>
+      <article>
+        <h3>Artículo 2</h3>
+        <p>Segundo bloque de contenido. Aquí se sigue usando únicamente selectores de tipo en la hoja de estilos.</p>
+      </article>
+      <article>
+        <h3>Artículo 3</h3>
+        <p>Tercer artículo con texto de ejemplo para observar la coherencia visual entre varios elementos repetidos.</p>
+      </article>
+    </section>
+
+    <section id="datos">
+      <h2>Tabla de Datos</h2>
+      <table>
+        <thead>
+          <tr><th>Producto</th><th>Cantidad</th><th>Precio</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cuaderno</td><td>10</td><td>12.50</td></tr>
+            <tr><td>Lápiz</td><td>25</td><td>1.20</td></tr>
+            <tr><td>Borrador</td><td>8</td><td>0.90</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td>Total ítems</td><td>43</td><td>-</td></tr>
+        </tfoot>
+      </table>
+      <p>La tabla muestra estilos generales asignados a <code>table</code>, <code>th</code>, <code>td</code>, y <code>tr</code> mediante sus nombres.</p>
+    </section>
+
+    <section id="formulario">
+      <h2>Formulario</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Contacto</legend>
+          <label>Nombre
+            <input type="text" name="nombre" required />
+          </label>
+          <label>Correo
+            <input type="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+          </label>
+          <label>Mensaje
+            <textarea name="mensaje" rows="4"></textarea>
+          </label>
+          <button type="submit">Enviar</button>
+        </fieldset>
+      </form>
+      <p>Los estilos de formulario se aplican a <code>form</code>, <code>fieldset</code>, <code>legend</code>, <code>label</code>, <code>input</code>, <code>textarea</code> y <code>button</code>.</p>
+    </section>
+
+    <section id="conclusiones">
+      <h2>Conclusiones</h2>
+      <ol>
+        <li>Los selectores por nombre aplican estilos amplios y globales.</li>
+        <li>Limitan la especificidad y pueden requerir estructura clara para no sobre-estilizar.</li>
+        <li>Son útiles para establecer una base inicial (reset o estilos genéricos).</li>
+      </ol>
+      <p>En siguientes ejercicios se refinará con clases e identificadores.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Práctica 02 - Selectores por nombre.</p>
+  </footer>
+</body>
+</html>

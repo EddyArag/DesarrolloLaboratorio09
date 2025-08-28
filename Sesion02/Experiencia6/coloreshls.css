@@ -1,0 +1,8 @@
+/* Colores con hsl() */
+.section-hsl { display:flex; gap:1rem; flex-wrap:wrap; }
+.color-hsl { width:140px; height:80px; border-radius:8px; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; font-size:.75rem; font-weight:600; box-shadow:0 2px 4px #00000030; }
+.hsl-1 { background:hsl(210 90% 35%); } /* azul fuerte */
+.hsl-2 { background:hsl(145 60% 35%); } /* verde */
+.hsl-3 { background:hsl(25 95% 50%); color:#222; } /* naranja */
+.hsl-4 { background:hsl(280 65% 50%); } /* púrpura */
+.hsl-5 { background:hsl(340 80% 50%); } /* rosa */

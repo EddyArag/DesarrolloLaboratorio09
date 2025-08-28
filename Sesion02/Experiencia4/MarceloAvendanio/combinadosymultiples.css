@@ -1,0 +1,40 @@
+/* EXPERIENCIA 04 (a) - Selectores combinados y múltiples */
+/* --- Selectores COMBINADOS (al menos 7) --- */
+/* 1 Descendiente */
+section.contenido p { line-height:1.55; }
+/* 2 Hijo directo */
+main > article { padding:1rem 1.25rem; background:#fff; border:1px solid #e2e8f0; border-radius:8px; }
+/* 3 Hermano adyacente */
+h2 + p.intro { margin-top:-.25rem; font-style:italic; color:#555; }
+/* 4 Hermano general */
+h3 ~ p.nota { font-size:.85rem; color:#0d4c7d; }
+/* 5 Selector de grupo dentro de un contexto */
+nav ul li a:hover { background:#004e92; color:#fff; }
+/* 6 Combinación de atributo + pseudo-clase */
+a[href^="http"][target="_blank"]:hover { text-decoration:underline wavy #146292; }
+/* 7 Combinación de clase + pseudo-elemento dentro de jerarquía */
+article.post p.descripcion::first-line { font-weight:600; letter-spacing:.5px; }
+/* 8 (extra) Combinación lista > item con nth-child */
+ul.recursos > li:nth-child(odd) { background:#f5f7fa; }
+
+/* --- Selectores MÚLTIPLES (grupo con coma) (al menos 5) --- */
+/* 1 Agrupar encabezados principales */
+h1, h2, h3 { font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; color:#0d2538; }
+/* 2 Botones y enlaces de acción */
+.button-primario, button.enviar, a.btn { cursor:pointer; background:#004e92; color:#fff; border:none; padding:.65rem 1rem; border-radius:6px; font-weight:600; }
+/* 3 Inputs de texto */
+input[type="text"], input[type="email"], input[type="search"], textarea { border:1px solid #cbd5e1; padding:.55rem .7rem; font:inherit; border-radius:4px; }
+/* 4 Celdas de tabla (encabezado y cuerpo) */
+.table-datos th, .table-datos td { border:1px solid #d9e2ec; padding:.55rem .6rem; text-align:left; }
+/* 5 Estados de foco accesibles */
+.button-primario:focus, button.enviar:focus, a.btn:focus, input:focus, textarea:focus { outline:2px solid #146292; outline-offset:2px; }
+/* 6 (extra) Texto secundario */
+small, .meta, .footnote { font-size:.75rem; color:#64748b; }
+
+/* Utilidades */
+.oculto { display:none !important; }
+.centrado { text-align:center; }
+
+/* Notas:
+- Ajustar los nombres de clases en el HTML para ver efectos.
+- Este archivo demuestra la diferencia entre combinar (relaciones) y agrupar (mismos estilos). */

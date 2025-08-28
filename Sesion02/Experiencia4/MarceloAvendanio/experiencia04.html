@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiencia 04 - Selectores y Cascada</title>
+  <meta name="description" content="Demostración de selectores combinados, múltiples, regex, herencia y cascada" />
+  <!-- Orden: base heredada / combinados / regex para atributos -->
+  <link rel="stylesheet" href="hereciaycascada.css" />
+  <link rel="stylesheet" href="combinadosymultiples.css" />
+  <link rel="stylesheet" href="regex.css" />
+  <style>
+    /* Pequeño estilo de layout para visualización */
+    body { max-width:1200px; margin:0 auto; padding:1.25rem 1rem 3rem; }
+    header.site { text-align:center; margin-bottom:2rem; }
+    header.site h1 { margin:.25rem 0 .5rem; }
+    header.site p { margin:.25rem 0 0; color:#475569; }
+    .grid-demo { display:grid; gap:1.75rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start; }
+    section.demo { background:#fff; border:1px solid #e2e8f0; padding:1rem 1.15rem 1.25rem; border-radius:10px; box-shadow:0 2px 4px #00000010; }
+    section.demo h2 { margin:0 0 .75rem; font-size:1.2rem; }
+    .marco { border:1px dashed #cbd5e1; padding:.75rem; border-radius:6px; background:#f8fafc; }
+    footer.page { margin-top:3rem; text-align:center; font-size:.75rem; color:#64748b; }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <h1>Experiencia 04</h1>
+    <p>Combinados · Múltiples · Atributo ("regex") · Herencia · Cascada</p>
+  </header>
+
+  <nav class="barra">
+    <ul class="menu recursos" style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;">
+      <li><a class="btn" href="#combinados">Combinados</a></li>
+      <li><a class="btn" href="#multiples">Múltiples</a></li>
+      <li><a class="btn" href="#regex">Atributo</a></li>
+      <li><a class="btn" href="#herencia">Herencia</a></li>
+      <li><a class="btn" href="#cascada">Cascada</a></li>
+    </ul>
+  </nav>
+
+  <main class="contenido" id="inicio">
+    <div class="grid-demo">
+      <!-- COMBINADOS -->
+      <section id="combinados" class="demo">
+        <h2>Selectores Combinados</h2>
+        <article class="post">
+          <h3>Artículo Principal</h3>
+          <p class="descripcion intro">Esta primera línea aplica ::first-line y la clase <code>descripcion</code> dentro de <code>article.post</code>.</p>
+          <p>Un párrafo adicional para observar herencia y line-height aplicado por <code>section.contenido p</code>.</p>
+          <h3>Panel Relacionado</h3>
+          <p class="nota">Nota después de un h3 activando <code>h3 ~ p.nota</code>.</p>
+          <ul class="recursos">
+            <li>Recurso 1</li>
+            <li>Recurso 2</li>
+            <li>Recurso 3</li>
+            <li>Recurso 4</li>
+          </ul>
+          <p>Enlaces combinados: <a href="https://example.com" target="_blank">Externo</a> · <a href="/interno">Interno</a></p>
+        </article>
+      </section>
+
+      <!-- MÚLTIPLES -->
+      <section id="multiples" class="demo">
+        <h2>Selectores Múltiples (agrupados)</h2>
+        <div class="marco">
+          <h1>Título H1</h1>
+          <h2>Subtítulo H2</h2>
+          <h3>Sección H3</h3>
+          <p><small class="meta">Texto pequeño agrupado</small></p>
+          <button class="button-primario">Acción primaria</button>
+          <button class="enviar">Enviar</button>
+          <a class="btn" href="#">Link Botón</a>
+          <form class="mt-2">
+            <input type="text" placeholder="Nombre" />
+            <input type="email" placeholder="Correo" />
+            <input type="search" placeholder="Buscar" />
+            <textarea placeholder="Mensaje"></textarea>
+          </form>
+        </div>
+      </section>
+
+      <!-- ATRIBUTO / REGEX -->
+      <section id="regex" class="demo">
+        <h2>Selectores de Atributo</h2>
+        <p>Enlaces: <a href="https://midominio.com/doc/guia" target="_blank">Guía Doc</a> · <a href="/archivos/manual.pdf">Manual PDF</a> · <a href="/docs/resumen.html">Resumen docs</a></p>
+        <p><span class="etiqueta">Etiqueta</span> <span class="etiqueta">Nuevo</span></p>
+        <p lang="es-MX">Cita breve: <q>El sol impulsa la transición energética</q>.</p>
+        <div data-role="alert">Este es un mensaje de alerta con <strong>data-role=alert</strong>.</div>
+        <form class="mt-2">
+          <input type="text" required placeholder="Campo requerido" />
+          <input type="email" pattern=".+@.+\..+" placeholder="Email con pattern" />
+          <textarea required placeholder="Mensaje requerido"></textarea>
+        </form>
+      </section>
+
+      <!-- HERENCIA -->
+      <section id="herencia" class="demo tema">
+        <h2>Herencia y Variables Locales</h2>
+        <article>
+          <p>Este <code>&lt;section&gt;</code> redefine <code>--color-acento</code>. Un <a href="#">enlace</a> hereda el nuevo color. <strong>Texto fuerte</strong> y <em>texto enfatizado</em>.</p>
+          <blockquote>Cita dentro del artículo demostrando herencia de fuentes y estilos.</blockquote>
+          <ul>
+            <li>Elemento de lista 1</li>
+            <li>Elemento de lista 2</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- CASCADA -->
+      <section id="cascada" class="demo tema-importante">
+        <h2>Cascada y Especificidad</h2>
+        <div class="acciones">
+          <button class="button">Normal</button>
+          <button class="button critico">Crítico (!important)</button>
+        </div>
+        <div id="destacado" class="mt-2">
+          <p class="note">Nota (regla repetida, la segunda en CSS gana).</p>
+          <div class="acciones mt-2">
+            <button class="button">En Destacado</button>
+          </div>
+        </div>
+        <p class="mt-2">Pase el cursor sobre los botones para ver <code>:hover</code>. El orden y la especificidad cambian colores.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="page">
+    <p>&copy; 2025 - Demostración académica experiencia 04</p>
+  </footer>
+</body>
+</html>

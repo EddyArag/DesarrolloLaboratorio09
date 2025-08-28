@@ -1,0 +1,9 @@
+/* Colores con rgb() usando valores enteros y porcentajes */
+.section-rgb { display:flex; gap:1rem; flex-wrap:wrap; }
+.color-rgb { width:140px; height:80px; border-radius:10px; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; font-size:.75rem; font-weight:600; letter-spacing:.5px; box-shadow:0 2px 4px #00000033; }
+.rgb-int-1 { background:rgb(34,139,34); }          /* forestgreen */
+.rgb-int-2 { background:rgb(220,20,60); }          /* crimson */
+.rgb-int-3 { background:rgb(70,130,180); }         /* steelblue */
+.rgb-pct-1 { background:rgb(100%, 64%, 0%); color:#222; } /* naranja claro */
+.rgb-pct-2 { background:rgb(25%,25%,55%); }
+.rgb-pct-3 { background:rgb(40%,70%,40%); }

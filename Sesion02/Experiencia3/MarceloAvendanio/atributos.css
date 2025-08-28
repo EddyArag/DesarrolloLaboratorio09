@@ -1,0 +1,55 @@
+/* atributos.css - demostración de selectores de atributos (versión sencilla) */
+/* 1. Presencia de atributo */
+nav a[title] { text-decoration: underline wavy #888; }
+
+/* 2. Atributo con valor exacto */
+nav a[title="inicio"] { color: #0a6; }
+
+/* 3. Valor que comienza con (^) */
+input[placeholder^="tu@"] { border: 2px solid #0af; }
+
+/* 4. Valor que termina con ($) */
+a[href$=".pdf"] { color: crimson; }
+
+/* 5. Valor que contiene (*=) */
+li[data-tipo*="promo"] { background: #fef9e7; }
+
+/* 6. Valor que es una palabra (~=) */
+li[data-tipo~="oferta"] { border: 1px solid #c90; }
+
+/* 7. Valor que comienza por palabra (|=) */
+li[data-region|="lat-am"] { font-weight: bold; }
+
+/* 8. Select atributo data-role específico */
+[data-role="nav"][data-level="primario"] { background:#eef; }
+
+/* 9. Campos requeridos */
+input[required], select[required] { outline: 1px dashed #c55; }
+
+/* 10. Campos deshabilitados */
+input[disabled] { background: #eee; color:#777; }
+
+/* 11. Campos de solo lectura */
+input[readonly] { background: #f5faff; }
+
+/* 12. Patrón (pattern) */
+input[pattern] { border-color:#f0a; }
+
+/* 13. Rango (min / max) */
+input[min][max] { background:#fcfcf0; }
+
+/* 14. Selector combinado por tipo y atributo */
+form.registro input[type="number"] { width: 6rem; }
+
+/* Estilos base simplificados */
+body { font-family: system-ui, Arial, sans-serif; margin:1.25rem; background:#fff; color:#222; line-height:1.4; }
+nav a { background:transparent; border:1px solid #ccd; color:#234; }
+nav a:hover { background:#eef; }
+.productos { list-style: square; display:grid; gap:.5rem; padding:0; margin: .75rem 0; }
+.productos li { background:#fafafa; border:1px solid #e2e2e2; }
+form.registro { display:grid; gap:.6rem; max-width:360px; background:#fff; border:1px solid #ddd; box-shadow:none; padding:1rem 1.25rem; border-radius:8px; }
+form.registro label { display:flex; flex-direction:column; font-size:.8rem; gap:.25rem; }
+form.registro input, form.registro select { padding:.35rem .45rem; border:1px solid #bbb; background:#fff; border-radius:4px; font-size:.85rem; }
+button[type="submit"] { background:#0a6; color:#fff; border:none; padding:.5rem .9rem; cursor:pointer; border-radius:4px; font-size:.9rem; }
+button[type="submit"]:hover { background:#097; }
+footer { margin-top:2rem; font-size:.75rem; color:#666; }

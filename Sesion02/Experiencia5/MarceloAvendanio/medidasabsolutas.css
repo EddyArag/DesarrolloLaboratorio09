@@ -1,0 +1,67 @@
+/* EXPERIENCIA 05 (a) - Medidas Absolutas
+   Unidades absolutas: px, pt (puntos), pc (picas), in (pulgadas), cm, mm
+   Nota: En pantallas la unidad base CSS: 1in = 96px = 2.54cm = 25.4mm = 72pt = 6pc */
+
+:root {
+  /* Colores de apoyo */
+  --clr-a:#004e92; --clr-b:#0d4c7d; --clr-c:#146292; --clr-bg:#f5f7fa; --clr-border:#cbd5e1;
+  background:var(--clr-bg);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+body { margin:0; padding:1rem; }
+section.demo-abs { display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+.box { border:1px solid var(--clr-border); background:#fff; padding:.75rem; border-radius:8px; box-shadow:0 2px 4px #00000010; }
+.box h2 { margin:.25rem 0 .75rem; font-size:18px; color:var(--clr-a); }
+.box p { margin:.4rem 0; font-size:13px; line-height:1.35; }
+code { background:#eef; padding:2px 4px; border-radius:4px; font-size:.85em; }
+
+/* PX (3 casos) */
+.px-100 { width:100px; height:60px; background:var(--clr-a); color:#fff; display:flex; align-items:center; justify-content:center; font:700 14px/1 system-ui; }
+.px-160 { width:160px; height:60px; background:var(--clr-b); color:#fff; display:flex; align-items:center; justify-content:center; font:700 14px/1 system-ui; }
+.px-220 { width:220px; height:60px; background:var(--clr-c); color:#fff; display:flex; align-items:center; justify-content:center; font:700 14px/1 system-ui; }
+
+/* PT (puntos) (3 casos) */
+.pt-text-small { font-size:10pt; }
+.pt-text-base { font-size:12pt; }
+.pt-text-large { font-size:18pt; }
+
+/* PC (picas) (3 casos) 1pc = 12pt = 16px aprox */
+.pc-box-1 { width:10pc; /* ≈160px */ height:3pc; background:#e0f2fe; border:1px dashed var(--clr-a); }
+.pc-box-2 { width:12pc; height:3pc; background:#dbeafe; border:1px dashed var(--clr-b); }
+.pc-box-3 { width:14pc; height:3pc; background:#d1e9ff; border:1px dashed var(--clr-c); }
+
+/* IN (pulgadas) (3 casos) */
+.in-box-1 { width:1in; height:.6in; background:#004e92; opacity:.85; }
+.in-box-2 { width:1.5in; height:.6in; background:#0d4c7d; opacity:.85; }
+.in-box-3 { width:2in; height:.6in; background:#146292; opacity:.85; }
+
+/* CM (centímetros) (3 casos) */
+.cm-box-wrapper { display:flex; gap:.5rem; align-items:flex-end; }
+.cm-1 { width:2cm; height:1.2cm; background:#fde047; }
+.cm-2 { width:3cm; height:1.2cm; background:#fbbf24; }
+.cm-3 { width:4cm; height:1.2cm; background:#f59e0b; }
+
+/* MM (milímetros) (3 casos) */
+.mm-stack { display:flex; gap:.4rem; }
+.mm-20 { width:20mm; height:12mm; background:#d1fae5; }
+.mm-30 { width:30mm; height:12mm; background:#a7f3d0; }
+.mm-40 { width:40mm; height:12mm; background:#6ee7b7; }
+
+/* Comparación tipografía mixta */
+.font-mix { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:.5rem; }
+.font-mix span { background:#fff; padding:.4rem .6rem; border:1px solid var(--clr-border); border-radius:6px; box-shadow:0 1px 2px #00000014; }
+.font-pt-10 { font-size:10pt; }
+.font-pt-12 { font-size:12pt; }
+.font-pt-18 { font-size:18pt; }
+.font-px-14 { font-size:14px; }
+.font-px-20 { font-size:20px; }
+.font-px-28 { font-size:28px; }
+
+/* Impresión de escala de referencia usando regla generada (solo visual) */
+.scale-bar { position:relative; height:22px; background:repeating-linear-gradient(90deg,#fff,#fff 7.5px,#e2e8f0 7.5px,#e2e8f0 15px); border:1px solid #cbd5e1; margin-top:.75rem; }
+.scale-bar::before { content:"Escala px (cada bloque = 15px)"; position:absolute; top:100%; left:0; font-size:11px; padding:.25rem 0; color:#475569; }
+
+/* Instrucciones */
+.info { background:#fff; border:1px solid var(--clr-border); padding:.75rem 1rem; border-radius:8px; box-shadow:0 1px 3px #00000010; font-size:13px; line-height:1.4; margin:1.25rem 0; }
+
+/* Fin archivo medidas absolutas */

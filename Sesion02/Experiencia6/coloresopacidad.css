@@ -1,0 +1,19 @@
+/* Colores con opacidad: rgba(), hsla(), opacity, hex alfa */
+:root { font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+.section-alpha { display:flex; gap:1rem; flex-wrap:wrap; }
+.card-alpha { width:160px; height:100px; border-radius:12px; padding:.5rem; position:relative; display:flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:600; color:#0f172a; backdrop-filter:blur(2px); box-shadow:0 2px 4px #0002; }
+.bg-base { background:url("https://placehold.co/160x100/0d4c7d/FFFFFF?text=BG") center/cover; filter:grayscale(.2); }
+.rgba-1 { background:rgba(0,78,146,.25); }
+.rgba-2 { background:rgba(220,38,38,.35); }
+.rgba-3 { background:rgba(16,185,129,.45); }
+.hsla-1 { background:hsla(210 90% 40% / .35); }
+.hsla-2 { background:hsla(25 95% 55% / .45); }
+.hsla-3 { background:hsla(280 65% 55% / .4); color:#fff; }
+.hex-a-1 { background:#004e9240; } /* #RRGGBBAA */
+.hex-a-2 { background:#10b98166; }
+.hex-a-3 { background:#d946ef55; }
+.opacity-demo { display:flex; gap:.75rem; margin-top:.75rem; }
+.opacity-demo div { width:60px; height:60px; background:#0d4c7d; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:.65rem; font-weight:600; }
+.opacity-100 { opacity:1; }
+.opacity-60 { opacity:.6; }
+.opacity-30 { opacity:.3; }

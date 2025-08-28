@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Experiencia 03 - Selectores CSS</title>
+  <link rel="stylesheet" href="atributos.css" />
+  <link rel="stylesheet" href="pseudoclases.css" />
+  <link rel="stylesheet" href="pseudoelementos.css" />
+</head>
+<body>
+  <header>
+    <h1>Experiencia de Práctica N° 03</h1>
+    <p>Utilización de selectores de atributos, pseudo-clases y pseudo-elementos.</p>
+  </header>
+
+  <section id="atributos">
+    <h2>Selectores de Atributos</h2>
+    <nav>
+      <a href="#" title="inicio" data-role="nav" data-level="primario">Inicio</a>
+      <a href="#" title="nosotros" data-role="nav" data-level="secundario">Nosotros</a>
+      <a href="#" data-role="nav" data-level="primario" target="_blank" rel="noopener">Contacto</a>
+    </nav>
+
+    <ul class="productos">
+      <li data-tipo="promo oferta">Producto A</li>
+      <li data-tipo="nuevo">Producto B</li>
+      <li data-tipo="oferta" data-region="lat-am">Producto C</li>
+      <li data-tipo="promo" data-region="eu">Producto D</li>
+    </ul>
+
+    <form class="registro" action="#" method="post">
+      <label>Email:
+        <input type="email" name="email" placeholder="tu@email.com" required />
+      </label>
+      <label>Teléfono:
+        <input type="tel" name="telefono" pattern="[0-9]{9}" />
+      </label>
+      <label>Edad:
+        <input type="number" name="edad" min="18" max="99" />
+      </label>
+      <label>País:
+        <select name="pais" required>
+          <option value="">Seleccione...</option>
+          <option value="pe">Perú</option>
+          <option value="cl">Chile</option>
+        </select>
+      </label>
+      <label>
+        <input type="checkbox" name="terminos" required /> Acepto términos
+      </label>
+      <label>
+        <input type="checkbox" name="boletin" checked /> Quiero boletín
+      </label>
+      <label>Solo lectura:
+        <input type="text" value="No editable" readonly />
+      </label>
+      <label>Deshabilitado:
+        <input type="text" value="Inactivo" disabled />
+      </label>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section id="pseudoclases">
+    <h2>Pseudo-Clases</h2>
+    <p class="estado">Interactúa con los elementos para ver cambios (:hover, :focus, :active, :visited, :checked, :disabled, :required, :nth-child, :first-child, :last-child, :not)</p>
+    <ul class="lista-demo">
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+      <li>Elemento 4</li>
+      <li>Elemento 5</li>
+    </ul>
+  </section>
+
+  <section id="pseudoelementos">
+    <h2>Pseudo-Elementos</h2>
+    <article class="texto-ejemplo">
+      <h3>Artículo de Demostración</h3>
+      <p>Los pseudo-elementos permiten dar estilo a partes específicas del contenido sin necesidad de envoltorios adicionales en el HTML. Observa la primera letra, la primera línea, las marcas de lista, el contenido generado y la selección.</p>
+      <blockquote class="cita">La semántica y el buen uso de CSS mejoran la accesibilidad.</blockquote>
+      <input class="entrada" type="text" placeholder="Escribe algo" />
+      <ul class="marcada">
+        <li>Ítem A</li>
+        <li>Ítem B</li>
+        <li>Ítem C</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="diferencias">
+    <h2>Diferencias</h2>
+    <dl>
+      <dt>Atributo</dt>
+      <dd>Propiedad presente en el HTML (ej. type="email", data-role="nav"). Seleccionas elementos según su existencia o valor.</dd>
+      <dt>Pseudo-Clase</dt>
+      <dd>Estado o condición dinámica del elemento (ej. :hover, :checked, :required) o relación estructural (:first-child).</dd>
+      <dt>Pseudo-Elemento</dt>
+      <dd>Parte abstracta del elemento (ej. ::before, ::after, ::first-letter) tratada como sub-elemento para aplicar estilo.</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <small>Práctica 03 &mdash; CSS Selectores</small>
+  </footer>
+</body>
+</html>
