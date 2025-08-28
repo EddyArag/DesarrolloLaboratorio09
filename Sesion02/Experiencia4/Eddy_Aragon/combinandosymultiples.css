@@ -1,3 +1,39 @@
+/* 1. Selector descendiente: */
+div p {
+    color: red; /* Todos los <p> dentro de un <div> serán rojos */
+}
+
+/* 2. Selector hijo directo: */
+ul > li {
+    color: blue; /* Solo los <li> hijos directos de un <ul> serán azules */
+}
+
+/* 3. Selector de hermano adyacente: */
+h2 + p {
+    font-size: 20px; /* Solo el primer <p> después de un <h2> será de tamaño 20px */
+}
+
+/* 4. Selector de hermanos generales: */
+h2 ~ p {
+    color: green; /* Todos los <p> después de un <h2> serán verdes */
+}
+
+/* 5. Selector de combinación de clases: */
+.container .highlight {
+    background-color: yellow; /* Los elementos con clase 'highlight' dentro de un contenedor 'container' serán amarillos */
+}
+
+/* 6. Selector de combinación de atributos: */
+a[href^="https"] {
+    text-decoration: underline; /* Todos los enlaces que comienzan con 'https' estarán subrayados */
+}
+
+/* 7. Selector de combinación de clases y pseudo clases */
+button:hover {
+    background-color: lightblue; /* Los botones cambian de color al pasar el ratón */
+}
+
+
 /* 1. Selección de varios elementos con la misma regla */
 h1, h2, h3 {
     font-family: Arial, sans-serif; /* Los encabezados h1, h2 y h3 tendrán la misma fuente */
