@@ -1,0 +1,49 @@
+/* Selecciona un enlace cuando se pasa el ratón sobre él */
+a:hover {
+    color: red;
+}
+
+/* Selecciona el primer hijo de un contenedor */
+ul li:first-child {
+    font-weight: bold;
+}
+
+/* Selecciona el último hijo de un contenedor */
+ul li:last-child {
+    font-style: italic;
+}
+
+/* Selecciona los enlaces visitados */
+a:visited {
+    color: purple;
+}
+
+/* Selecciona los elementos que están en foco */
+input:focus {
+    background-color: lightyellow;
+}
+
+/* Selecciona los elementos que no están seleccionados */
+input:checked {
+    background-color: lightgreen;
+}
+
+/* Selecciona el segundo hijo de un contenedor */
+ul li:nth-child(2) {
+    color: blue;
+}
+
+/* Selecciona los elementos que están en un estado de inactividad */
+a:active {
+    color: orange;
+}
+
+/* Selecciona los elementos que no están vacíos */
+p:not(:empty) {
+    color: darkgray;
+}
+
+/* Selecciona los elementos que son un enlace */
+a:link {
+    color: blue;
+}
