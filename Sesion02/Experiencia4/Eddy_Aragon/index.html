@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Selectores Combinados y Múltiples, Regex, Herencia y Cascada</title>
+    <!-- Vincula los archivos CSS -->
+    <link rel="stylesheet" href="combinadosymultiples.css">
+    <link rel="stylesheet" href="regex.css">
+    <link rel="stylesheet" href="hereciaycascada.css">
+</head>
+<body>
+    <h1>Prueba de Selectores CSS</h1>
+
+    <div class="section">
+        <h2>1. Selectores Combinados y Múltiples</h2>
+        <p>Este párrafo está dentro de un contenedor y debería ser de color rojo.</p>
+        <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+        <a href="https://www.google.com">Enlace seguro</a>
+        <a href="http://www.example.com">Enlace no seguro</a>
+        <button>Botón</button>
+    </div>
+
+    <div class="section">
+        <h2>2. Selectores Regex</h2>
+        <p id="header-item">Párrafo con ID que empieza con 'header'.</p>
+        <p class="active">Párrafo con clase que termina en 'active'.</p>
+    </div>
+
+    <div class="section">
+        <h2>3. Herencia y Cascada</h2>
+        <p>Este párrafo debe ser verde debido a la cascada de estilos.</p>
+        <div class="special">
+            <p>Este párrafo está dentro de un div con clase 'special'.</p>
+        </div>
+    </div>
+</body>
+</html>
 
