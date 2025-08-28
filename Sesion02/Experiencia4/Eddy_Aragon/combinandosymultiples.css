@@ -1,0 +1,25 @@
+/* 1. Selección de varios elementos con la misma regla */
+h1, h2, h3 {
+    font-family: Arial, sans-serif; /* Los encabezados h1, h2 y h3 tendrán la misma fuente */
+}
+
+/* 2. Selección de varios elementos con diferentes reglas */
+p, .highlight {
+    color: red; /* Los párrafos y los elementos con clase 'highlight' serán rojos */
+}
+
+/* 3. Selección de múltiples clases */
+.container, .content {
+    margin: 20px; /* Los elementos con clase 'container' o 'content' tendrán margen de 20px */
+}
+
+/* 4. Selección de varios elementos con diferentes propiedades */
+h1, h2 {
+    font-size: 24px;
+    color: darkblue; /* Los encabezados h1 y h2 tendrán el mismo tamaño y color */
+}
+
+/* 5. Selección de múltiples pseudo clases */
+a:focus, input:focus {
+    outline: none; /* Los enlaces e inputs que estén en foco no tendrán contorno */
+}
