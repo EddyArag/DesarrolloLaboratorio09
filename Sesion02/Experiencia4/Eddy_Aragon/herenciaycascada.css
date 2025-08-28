@@ -1,0 +1,85 @@
+/* 1. Herencia de la propiedad 'color' */
+body {
+    color: black; /* El color de texto de todo el cuerpo es negro */
+}
+
+p {
+    font-size: 16px; /* Todos los <p> heredarán el color negro del body */
+}
+
+/* 2. Herencia de la propiedad 'font-family' */
+h1, h2, h3 {
+    font-family: 'Verdana', sans-serif; /* Todos los encabezados heredarán la fuente de body */
+}
+
+/* 3. Herencia de la propiedad 'line-height' */
+p {
+    line-height: 1.6; /* Los párrafos heredarán el line-height del body */
+}
+
+/* 4. Herencia de color en links */
+a {
+    color: blue; /* Todos los enlaces heredarán el color azul */
+}
+
+/* 5. Herencia de propiedades de borde */
+div {
+    border: 1px solid gray; /* Todos los divs tendrán borde */
+}
+
+div p {
+    font-style: italic; /* Los párrafos dentro de div tendrán estilo itálico */
+}
+
+/* 6. Herencia de la propiedad 'background-color' */
+ul {
+    background-color: lightblue; /* Los <ul> tendrán un fondo azul claro */
+}
+
+/* 7. Herencia de la propiedad 'text-align' */
+header {
+    text-align: center; /* El header tendrá texto centrado */
+}
+
+/* CASCADAAAAAAAAAAAAAAAAAAAAAAAAAA*/
+/* 1. Cascada de propiedades en el mismo selector */
+p {
+    color: red; /* El color de todos los párrafos será rojo */
+    color: green; /* El último valor es el que prevalece, así que será verde */
+}
+
+/* 2. Cascada con reglas de clases y selectores más específicos */
+.container {
+    font-size: 16px; /* Por defecto, la fuente dentro de .container será 16px */
+}
+
+.container p {
+    font-size: 20px; /* Pero dentro de .container los párrafos tendrán un tamaño de fuente de 20px */
+}
+
+/* 3. Cascada en los bordes */
+div {
+    border: 1px solid black; /* Divs tendrán borde negro */
+}
+
+div.special {
+    border: 3px solid blue; /* Pero los divs con clase 'special' tendrán un borde azul más grueso */
+}
+
+/* 4. Uso de cascada para el color */
+p {
+    color: green; /* Los párrafos serán verdes */
+}
+
+#special-paragraph {
+    color: red; /* Pero el párrafo con id 'special-paragraph' será rojo */
+}
+
+/* 5. Cascada de propiedades de margin */
+section {
+    margin: 20px; /* El margin de la sección será de 20px */
+}
+
+section.article {
+    margin: 30px; /* Pero si tiene la clase 'article', el margin será de 30px */
+}
