@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-top: 40px;
+}
+
+.flex-container {
+    display: flex; /* Habilita Flexbox */
+    background-color: #e0e0e0;
+    border: 2px solid #333;
+    padding: 10px;
+    margin-bottom: 30px;
+    min-height: 150px; /* Altura mínima para visualizar el efecto de alineación */
+    justify-content: flex-start; /* Alineación por defecto en el eje principal */
+    align-items: stretch; /* Alineación por defecto en el eje transversal */
+    gap: 10px; /* Espacio entre los ítems */
+}
+
+.flex-item {
+    background-color: #6a93cb;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 5px;
+    flex-basis: 100px; /* Ancho base de los ítems */
+}
+
+/* --- Ejemplos de Flexbox --- */
+
+/* Ejemplo 1: Contenedor básico */
+.flex-container:nth-of-type(1) {
+    flex-direction: row; /* Dirección de los ítems: fila (por defecto) */
+    justify-content: space-around; /* Distribuye los ítems con espacio alrededor */
+    align-items: center; /* Centra los ítems verticalmente */
+}
+
+.item-1 { background-color: #ff6347; }
+.item-2 { background-color: #4682b4; }
+.item-3 { background-color: #3cb371; }
+.item-4 { background-color: #ffa500; }
+
+/* Ejemplo 2: Contenedor con flex-wrap */
+.wrap-example {
+    flex-wrap: wrap; /* Permite que los ítems salten de línea */
+    justify-content: flex-start; /* Alinea los ítems al inicio */
+    align-items: flex-start; /* Alinea las líneas al inicio */
+    max-width: 600px; /* Limita el ancho para forzar el salto de línea */
+    margin: 0 auto 30px auto; /* Centra el contenedor */
+}
+
+.wrap-example .flex-item {
+    flex-basis: 120px; /* Ancho base para los ítems de este ejemplo */
+    margin-bottom: 10px; /* Espacio entre filas */
+}
+
+.item-a { background-color: #8a2be2; }
+.item-b { background-color: #a52a2a; }
+.item-c { background-color: #5f9ea0; }
+.item-d { background-color: #d2691e; }
+.item-e { background-color: #ff7f50; }
+.item-f { background-color: #6495ed; }
+.item-g { background-color: #dc143c; }
+.item-h { background-color: #008b8b; }
+
+/* Ejemplo 3: Contenedor con alineación avanzada */
+.alignment-example {
+    flex-direction: column; /* Dirección de los ítems: columna */
+    justify-content: space-between; /* Distribuye los ítems con espacio entre ellos */
+    align-items: flex-end; /* Alinea los ítems al final del eje transversal */
+    height: 300px; /* Altura fija para visualizar la alineación en columna */
+}
+
+.alignment-example .flex-item {
+    flex-basis: auto; /* Permite que el contenido determine el tamaño */
+    width: 80px; /* Ancho fijo para los ítems */
+}
+
+.item-x { background-color: #20b2aa; }
+.item-y { background-color: #da70d6; }
+.item-z { background-color: #7b68ee; }
+
+/* --- Modificaciones para experimentar --- */
+/* Puedes descomentar y modificar estas propiedades para ver los cambios */
+
+/* .flex-container {
+    flex-direction: column; /* Cambia a columna */
+    /* justify-content: center; /* Centra los ítems en el eje principal */
+    /* align-items: flex-start; /* Alinea los ítems al inicio del eje transversal */
+    /* flex-wrap: wrap; /* Permite que los ítems salten de línea */
+/* } */
+
+/* .flex-item {
+    flex-grow: 1; /* Permite que los ítems crezcan para ocupar el espacio disponible */
+    /* flex-shrink: 1; /* Permite que los ítems se encojan */
+    /* flex-basis: 200px; /* Cambia el tamaño base */
+/* } */
+
+/* .item-1 {
+    order: 2; /* Cambia el orden de un ítem específico */
+/* } */
