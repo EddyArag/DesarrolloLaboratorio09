@@ -40,7 +40,7 @@ h1, h2 {
     flex-direction: row; /* Dirección de los ítems: fila (por defecto) */
     justify-content: space-around; /* Distribuye los ítems con espacio alrededor */
     align-items: center; /* Centra los ítems verticalmente */
-}
+}   
 
 .item-1 { background-color: #ff6347; }
 .item-2 { background-color: #4682b4; }
