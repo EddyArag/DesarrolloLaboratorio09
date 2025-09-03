@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Animaciones y Transiciones CSS</title>
+    <meta name="description" content="Portfolio interactivo con animaciones CSS avanzadas">
+    <link rel="stylesheet" href="animations-styles.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Cargando Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Header con animaciones -->
+    <header class="animated-header">
+        <nav class="nav-container">
+            <div class="logo-animated">
+                <h1>Portfolio<span class="highlight">Pro</span></h1>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu animated-nav" id="navMenu">
+                <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                <li class="nav-item"><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li class="nav-item"><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero con animaciones avanzadas -->
+    <section id="inicio" class="hero-animated">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title typing-effect">Desarrollador Full Stack</h1>
+            <p class="hero-subtitle">Creando experiencias digitales únicas</p>
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn-animated">Ver Proyectos</a>
+                <a href="#contacto" class="btn-animated btn-secondary">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="about-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text slide-in-left">
+                    <h3>Desarrollador Apasionado</h3>
+                    <p>Con más de 5 años de experiencia en desarrollo web, me especializo en crear aplicaciones modernas y responsivas utilizando las últimas tecnologías.</p>
+                    
+                    <div class="skills-list">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">CSS3</span>
+                    </div>
+                </div>
+                
+                <div class="about-image slide-in-right">
+                    <div class="image-hover-effect">
+                        <img src="https://via.placeholder.com/400x300/667eea/ffffff?text=Desarrollador" alt="Perfil">
+                        <div class="image-overlay">
+                            <div class="overlay-text">¡Hola! Soy tu desarrollador</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos con Cards Animadas -->
+    <section id="proyectos" class="projects-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Mis Proyectos</h2>
+            <div class="cards-container">
+                <div class="animated-card">
+                    <div class="card-icon">🌐</div>
+                    <h3>E-Commerce Platform</h3>
+                    <p>Plataforma completa de comercio electrónico con React y Node.js</p>
+                    <a href="#" class="btn-animated micro-interaction">Ver Proyecto</a>
+                </div>
+                
+                <div class="animated-card">
+                    <div class="card-icon">📱</div>
+                    <h3>App Móvil</h3>
+                    <p>Aplicación móvil híbrida con React Native y Firebase</p>
+                    <a href="#" class="btn-animated micro-interaction">Ver Proyecto</a>
+                </div>
+                
+                <div class="animated-card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Portfolio Creativo</h3>
+                    <p>Sitio web portfolio con animaciones CSS avanzadas</p>
+                    <a href="#" class="btn-animated micro-interaction">Ver Proyecto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Habilidades -->
+    <section id="habilidades" class="skills-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Habilidades Técnicas</h2>
+            
+            <div class="skill-item fade-in">
+                <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="90"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item fade-in">
+                <div class="skill-name">
+                    <span>React</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="85"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item fade-in">
+                <div class="skill-name">
+                    <span>CSS/SASS</span>
+                    <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="95"></div>
+                </div>
+            </div>
+            
+            <div class="skill-item fade-in">
+                <div class="skill-name">
+                    <span>Node.js</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="80"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Contacto</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder=" " required>
+                    <label class="form-label">Nombre</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Email</label>
+                </div>
+                
+                <div class="form-group">
+                    <textarea class="form-input" rows="5" placeholder=" " required></textarea>
+                    <label class="form-label">Mensaje</label>
+                </div>
+                
+                <button type="submit" class="btn-animated micro-interaction">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Portfolio Pro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

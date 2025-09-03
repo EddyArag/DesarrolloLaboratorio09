@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - TechStore Responsive</title>
+    <meta name="description" content="Tienda de tecnología moderna con diseño responsive">
+    <link rel="stylesheet" href="responsive-styles.css">
+</head>
+<body>
+    <!-- Header Responsivo -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Tech<span class="accent">Store</span></h1>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Menu móvil">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                <li><a href="productos.html" class="nav-link">Productos</a></li>
+                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="search-btn" aria-label="Buscar">🔍</button>
+                <button class="cart-btn" aria-label="Carrito">🛒</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section Responsive -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Tecnología de Última Generación</h2>
+                <p class="hero-subtitle">Descubre los mejores dispositivos y gadgets tecnológicos</p>
+                <div class="hero-buttons">
+                    <a href="#productos" class="btn btn-primary">Ver Productos</a>
+                    <a href="#ofertas" class="btn btn-outline">Ofertas Especiales</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/600x400/2563eb/ffffff?text=Tecnología" alt="Dispositivos tecnológicos">
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Productos Responsive -->
+    <section id="productos" class="productos-section">
+        <div class="container">
+            <h2 class="section-title">Productos Destacados</h2>
+            
+            <div class="productos-grid">
+                <div class="producto-card" data-categoria="smartphone">
+                    <div class="producto-image">
+                        <img src="https://via.placeholder.com/300x250/1f2937/ffffff?text=Smartphone" alt="Smartphone Premium">
+                        <div class="producto-badge">Nuevo</div>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Smartphone Premium X1</h3>
+                        <p class="producto-description">Último modelo con cámara de 108MP y 5G</p>
+                        <div class="producto-price">
+                            <span class="price-current">$899</span>
+                            <span class="price-original">$999</span>
+                        </div>
+                        <div class="producto-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(247 reseñas)</span>
+                        </div>
+                        <button class="btn btn-add-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="producto-card" data-categoria="laptop">
+                    <div class="producto-image">
+                        <img src="https://via.placeholder.com/300x250/059669/ffffff?text=Laptop" alt="Laptop Gaming">
+                        <div class="producto-badge sale">-20%</div>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Laptop Gaming Pro</h3>
+                        <p class="producto-description">RTX 4080, Intel i9, 32GB RAM</p>
+                        <div class="producto-price">
+                            <span class="price-current">$1,599</span>
+                            <span class="price-original">$1,999</span>
+                        </div>
+                        <div class="producto-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(156 reseñas)</span>
+                        </div>
+                        <button class="btn btn-add-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="producto-card" data-categoria="tablet">
+                    <div class="producto-image">
+                        <img src="https://via.placeholder.com/300x250/7c3aed/ffffff?text=Tablet" alt="Tablet Pro">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Tablet Pro 12"</h3>
+                        <p class="producto-description">Pantalla OLED, Apple Pencil incluido</p>
+                        <div class="producto-price">
+                            <span class="price-current">$699</span>
+                        </div>
+                        <div class="producto-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(89 reseñas)</span>
+                        </div>
+                        <button class="btn btn-add-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="producto-card" data-categoria="smartwatch">
+                    <div class="producto-image">
+                        <img src="https://via.placeholder.com/300x250/dc2626/ffffff?text=SmartWatch" alt="SmartWatch">
+                        <div class="producto-badge">Popular</div>
+                    </div>
+                    <div class="producto-info">
+                        <h3>SmartWatch Sport</h3>
+                        <p class="producto-description">Monitor de salud, GPS, resistente al agua</p>
+                        <div class="producto-price">
+                            <span class="price-current">$299</span>
+                        </div>
+                        <div class="producto-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(312 reseñas)</span>
+                        </div>
+                        <button class="btn btn-add-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="producto-card" data-categoria="headphones">
+                    <div class="producto-image">
+                        <img src="https://via.placeholder.com/300x250/f59e0b/ffffff?text=Headphones" alt="Audífonos Premium">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Audífonos Premium ANC</h3>
+                        <p class="producto-description">Cancelación de ruido activa, 30h batería</p>
+                        <div class="producto-price">
+                            <span class="price-current">$199</span>
+                        </div>
+                        <div class="producto-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(445 reseñas)</span>
+                        </div>
+                        <button class="btn btn-add-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="producto-card" data-categoria="accessories">
+                    <div class="producto-image">
+                        <img src="https://via.placeholder.com/300x250/10b981/ffffff?text=Accesorios" alt="Kit de Accesorios">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Kit Accesorios Pro</h3>
+                        <p class="producto-description">Cargador, cable, soporte y funda incluidos</p>
+                        <div class="producto-price">
+                            <span class="price-current">$79</span>
+                            <span class="price-original">$99</span>
+                        </div>
+                        <div class="producto-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(178 reseñas)</span>
+                        </div>
+                        <button class="btn btn-add-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Mantente Actualizado</h2>
+                <p>Recibe las últimas ofertas y novedades tecnológicas</p>
+                <form class="newsletter-form">
+                    <div class="form-flex">
+                        <input type="email" placeholder="Tu email aquí..." required>
+                        <button type="submit" class="btn btn-primary">Suscribirse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Responsive -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>TechStore</h3>
+                    <p>Tu tienda de tecnología de confianza desde 2020</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#">Smartphones</a></li>
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">Tablets</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">Garantías</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Carreras</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechStore. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
