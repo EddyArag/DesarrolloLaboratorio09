@@ -34,7 +34,7 @@ main {
     margin-top: 2rem;
 }
 
-.grid-item {
+.grid-item {    
     background: linear-gradient(135deg, #0052cc 60%, #007fff 100%);
     border-radius: 8px;
     padding: 1.5rem;
@@ -103,3 +103,88 @@ a:hover {
   .item-2 { grid-area: sidebar; } 
 .item-3 { grid-area: main; } 
 .item-4 { grid-area: footer; }
+
+/* Calculadora Grid */
+.calculator-container {
+    display: grid;
+    grid-template-areas:
+        "display display display display"
+        "seven eight nine divide"
+        "four five six multiply"
+        "one two three subtract"
+        "zero zero dot add"
+        "clear clear clear clear";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 60px repeat(5, 50px);
+
+    max-width: 320px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 1.5rem;
+}
+
+.calculator-display {
+    grid-area: display;
+    background: #f4f6f8;
+    border-radius: 8px;
+    font-size: 2em;
+    text-align: right;
+    color: #222;
+    border: 2px solid #0052cc;
+}
+
+.calculator-btn {
+    background: linear-gradient(135deg, #16304b 60%, #3f484a 100%);
+    font-size: 1em;
+    border : none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.calculator-btn:hover {
+    background: linear-gradient(135deg, #0052cc 60%, #007fff 100%);
+    transform: scale(1.05);
+}
+
+.calculator-btn.zero {
+    grid-area: zero;
+}
+
+.calculator-btn.dot {
+    grid-area: dot;
+}
+
+.calculator-btn.add {
+    grid-area: add;
+}
+
+.calculator-btn.subtract {
+    grid-area: subtract;
+}
+
+.calculator-btn.multiply {
+    grid-area: multiply;
+}
+
+.calculator-btn.divide {
+    grid-area: divide;
+}
+
+.calculator-btn.clear {
+    grid-area: clear;
+}
+
+.calculator-btn.one { grid-area: one; }
+.calculator-btn.two { grid-area: two; }
+.calculator-btn.three { grid-area: three; }
+.calculator-btn.four { grid-area: four; }
+.calculator-btn.five { grid-area: five; }
+.calculator-btn.six { grid-area: six; }
+.calculator-btn.seven { grid-area: seven; }
+.calculator-btn.eight { grid-area: eight; }
+.calculator-btn.nine { grid-area: nine; }
