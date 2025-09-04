@@ -1,0 +1,16 @@
+/* coloreshsl.css */
+
+/* Caso 1: Tono (Hue), Saturación, Luminosidad */
+.color-hsl-1 {
+    background-color: hsl(0, 100%, 50%); /* Rojo puro */
+}
+
+/* Caso 2: Otro ejemplo HSL */
+.color-hsl-2 {
+    background-color: hsl(120, 100%, 25%); /* Verde oscuro */
+}
+
+/* Caso 3: Otro ejemplo HSL */
+.color-hsl-3 {
+    background-color: hsl(240, 50%, 75%); /* Azul pastel */
+}

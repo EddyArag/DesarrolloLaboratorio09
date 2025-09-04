@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de Medidas CSS</title>
+    <!-- Enlace a la hoja de estilos para medidas absolutas -->
+    <link rel="stylesheet" href="./medidasabsolutas.css">
+    <!-- Enlace a la hoja de estilos para medidas relativas -->
+    <link rel="stylesheet" href="./medidasrelativas.css">
+</head>
+<body>
+    <h1>Ejemplo de Medidas CSS</h1>
+
+    <section class="absolute-measures">
+        <h2>Medidas Absolutas</h2>
+        <p>
+            Las medidas absolutas se basan en unidades fijas como centímetros (cm), milímetros (mm), pulgadas (in), puntos (pt), picas (pc) y píxeles (px).
+            A continuación se muestran ejemplos y comparaciones:
+        </p>
+        <div class="comparison-table">
+            <table border="1" cellpadding="6">
+                <thead>
+                    <tr>
+                        <th>Unidad</th>
+                        <th>Ejemplo</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>cm</td>
+                        <td><div class="box-cm"></div></td>
+                        <td>Caja de 3cm x 2cm</td>
+                    </tr>
+                    <tr>
+                        <td>mm</td>
+                        <td><div class="box-mm"></div></td>
+                        <td>Caja de 30mm x 15mm</td>
+                    </tr>
+                    <tr>
+                        <td>in</td>
+                        <td><div class="box-in"></div></td>
+                        <td>Caja de 1in x 0.5in</td>
+                    </tr>
+                    <tr>
+                        <td>pt</td>
+                        <td><div class="box-pt"></div></td>
+                        <td>Caja de 72pt x 36pt</td>
+                    </tr>
+                    <tr>
+                        <td>pc</td>
+                        <td><div class="box-pc"></div></td>
+                        <td>Caja de 6pc x 3pc</td>
+                    </tr>
+                    <tr>
+                        <td>px</td>
+                        <td><div class="box-px"></div></td>
+                        <td>Caja de 100px x 50px</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="absolute-examples">
+            <h3>Comparación visual de cajas absolutas</h3>
+            <div class="box-cm">cm</div>
+            <div class="box-mm">mm</div>
+            <div class="box-in">in</div>
+            <div class="box-pt">pt</div>
+            <div class="box-pc">pc</div>
+            <div class="box-px">px</div>
+        </div>
+        <p>
+            <em>Observa cómo varía el tamaño de cada caja según la unidad utilizada.</em>
+        </p>
+    </section>
+
+    <hr>
+
+    <section class="relative-measures">
+        <h2>Medidas Relativas</h2>
+        <p>
+            Las medidas relativas dependen del contexto, como el tamaño de fuente del elemento padre, el tamaño de la ventana o el ancho del contenedor.
+            Ejemplos de unidades relativas: em, rem, %, vw, vh.
+        </p>
+        <div class="comparison-table">
+            <table border="1" cellpadding="6">
+                <thead>
+                    <tr>
+                        <th>Unidad</th>
+                        <th>Ejemplo</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>em</td>
+                        <td>
+                            <div class="parent-em">
+                                <p class="text-em">Texto 2em</p>
+                                <p class="text-em-small">Texto 1em</p>
+                                <p class="text-em-large">Texto 3em</p>
+                            </div>
+                        </td>
+                        <td>Basado en el tamaño de fuente del elemento padre</td>
+                    </tr>
+                    <tr>
+                        <td>rem</td>
+                        <td>
+                            <div class="parent-rem">
+                                <p class="text-rem">Texto 2rem</p>
+                                <p class="text-rem-small">Texto 1rem</p>
+                                <p class="text-rem-large">Texto 3rem</p>
+                            </div>
+                        </td>
+                        <td>Basado en el tamaño de fuente raíz (html)</td>
+                    </tr>
+                    <tr>
+                        <td>%</td>
+                        <td>
+                            <div class="box-percent-parent">
+                                <div class="box-percent-50">50%</div>
+                                <div class="box-percent-75">75%</div>
+                                <div class="box-percent-100">100%</div>
+                            </div>
+                        </td>
+                        <td>Porcentaje respecto al elemento contenedor</td>
+                    </tr>
+                    <tr>
+                        <td>vw</td>
+                        <td><div class="box-vw">20vw</div></td>
+                        <td>Porcentaje del ancho de la ventana</td>
+                    </tr>
+                    <tr>
+                        <td>vh</td>
+                        <td><div class="box-vh">20vh</div></td>
+                        <td>Porcentaje del alto de la ventana</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="relative-examples">
+            <h3>Comparación visual de cajas relativas</h3>
+            <div class="parent-em">
+                <p class="text-em">Texto 2em</p>
+                <p class="text-em-small">Texto 1em</p>
+                <p class="text-em-large">Texto 3em</p>
+            </div>
+            <div class="parent-rem">
+                <p class="text-rem">Texto 2rem</p>
+                <p class="text-rem-small">Texto 1rem</p>
+                <p class="text-rem-large">Texto 3rem</p>
+            </div>
+            <div class="box-percent-parent">
+                <div class="box-percent-50">Caja 50%</div>
+                <div class="box-percent-75">Caja 75%</div>
+                <div class="box-percent-100">Caja 100%</div>
+            </div>
+            <div class="box-vw">Caja 20vw</div>
+            <div class="box-vh">Caja 20vh</div>
+        </div>
+        <p>
+            <em>Modifica el tamaño de la ventana para observar cómo cambian las cajas relativas.</em>
+        </p>
+    </section>
+
+    <hr>
+    <section>
+        <h2>Conclusiones y Observaciones</h2>
+        <ul>
+            <li>Las medidas absolutas mantienen su tamaño fijo sin importar el contexto.</li>
+            <li>Las medidas relativas se adaptan al entorno y son útiles para diseños responsivos.</li>
+            <li>Es importante comparar visualmente para elegir la unidad adecuada según el caso.</li>
+        </ul>
+    </section>
+    <footer>
+        <p>
+            <strong>Prueba 5 completada.</strong> Guarda ambos archivos y verifica los resultados en el navegador.
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* medidasabsolutas.css */
+
+.absolute-measures {
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.absolute-measures h2 {
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+/* Caso 1: Centímetros (cm) */
+.box-cm {
+    width: 3cm;
+    height: 2cm;
+    background: #e3f2fd;
+    border: 2px solid #2196f3;
+    margin: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 2cm; /* Centrar texto verticalmente */
+    font-weight: bold;
+}
+
+/* Caso 2: Milímetros (mm) */
+.box-mm {
+    width: 30mm;
+    height: 15mm;
+    background: #fce4ec;
+    border: 2px solid #d81b60;
+    margin: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 15mm;
+    font-weight: bold;
+}
+
+/* Caso 3: Píxeles (px) */
+.box-px {
+    width: 100px;
+    height: 50px;
+    background: #f9fbe7;
+    border: 2px solid #cddc39;
+    margin: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+/* Cajas en pulgadas */
+.box-in {
+    width: 1in;
+    height: 0.5in;
+    background: #e8f5e9;
+    border: 2px solid #43a047;
+    margin: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 0.5in;
+    font-weight: bold;
+}
+
+/* Cajas en puntos */
+.box-pt {
+    width: 72pt;
+    height: 36pt;
+    background: #fff3e0;
+    border: 2px solid #fb8c00;
+    margin: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 36pt;
+    font-weight: bold;
+}
+
+/* Cajas en picas */
+.box-pc {
+    width: 6pc;
+    height: 3pc;
+    background: #ede7f6;
+    border: 2px solid #7e57c2;
+    margin: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 3pc;
+    font-weight: bold;
+}

@@ -1,0 +1,17 @@
+/* coloreshexadecimal.css */
+
+/* Caso 1: Formato #RRGGBB */
+.color-hex-1 {
+    background-color: #FF5733; /* Naranja rojizo */
+}
+
+/* Caso 2: Otro ejemplo #RRGGBB */
+.color-hex-2 {
+    background-color: #33FF57; /* Verde brillante */
+}
+
+/* Caso 3: Formato #RGB (abreviado para #RRGGBB si los pares son iguales) */
+/* #5733FF es equivalente a #557733FF */
+.color-hex-3 {
+    background-color: #5733FF; /* Azul violeta */
+}

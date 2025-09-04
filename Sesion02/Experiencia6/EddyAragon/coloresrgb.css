@@ -1,0 +1,16 @@
+/* coloresrgb.css */
+
+/* Caso 1: Valores enteros (0-255) */
+.color-rgb-1 {
+    background-color: rgb(0, 128, 0); /* Verde medio */
+}
+
+/* Caso 2: Otro ejemplo con valores enteros */
+.color-rgb-2 {
+    background-color: rgb(255, 0, 0); /* Rojo puro */
+}
+
+/* Caso 3: Valores porcentuales (0%-100%) */
+.color-rgb-3 {
+    background-color: rgb(50%, 50%, 100%); /* Azul claro */
+}

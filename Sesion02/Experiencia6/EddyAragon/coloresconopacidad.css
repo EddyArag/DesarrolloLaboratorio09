@@ -1,0 +1,16 @@
+/* coloresconopacidad.css */
+
+/* Caso 1: RGBA (Red, Green, Blue, Alpha) - Alpha de 0 a 1 */
+.color-opacity-rgba {
+    background-color: rgba(0, 0, 255, 0.5); /* Azul con 50% de opacidad */
+}
+
+/* Caso 2: HSLA (Hue, Saturation, Lightness, Alpha) - Alpha de 0 a 1 */
+.color-opacity-hsla {
+    background-color: hsla(60, 100%, 50%, 0.7); /* Amarillo con 70% de opacidad */
+}
+
+/* Caso 3: Hexadecimal con canal alfa (#RRGGBBAA) */
+.color-opacity-hex-alpha {
+    background-color: #FF00004D; /* Rojo con aproximadamente 30% de opacidad (4D en hex es 77 en decimal, 77/255 ≈ 0.3) */
+}
