@@ -1,0 +1,82 @@
+<!-- c:\Users\Usuario\Documents\GitHub\DesarrolloLaboratorio09\index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiencia de Práctica 01: Formas de Declarar Código JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Explorando el Sistema Solar</h1>
+        <nav>
+            <ul>
+                <li><a href="#planetas">Planetas</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="planetas">
+            <h2>Planetas del Sistema Solar</h2>
+            <ul>
+                <li>Mercurio</li>
+                <li>Venus</li>
+                <li>Tierra</li>
+                <li>Marte</li>
+                <li>Júpiter</li>
+                <li>Saturno</li>
+                <li>Urano</li>
+                <li>Neptuno</li>
+            </ul>
+            <!-- Declaración de código en línea -->
+            <button onclick="alert('¡Bienvenido al Sistema Solar!')">Saludar</button>
+        </section>
+        <section id="galeria">
+            <h2>Galería de Imágenes</h2>
+            
+            <button id="cambiarImagen">Cambiar Imagen</button>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form id="formularioContacto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="respuesta"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Explorando el Sistema Solar</p>
+    </footer>
+
+    <!-- Declaración de código en etiquetas script -->
+    <script>
+        // Cambiar imagen en la galería
+        document.getElementById('cambiarImagen').onclick = function() {
+            const img = document.querySelector('#galeria img');
+            if (img.src.includes('Planets.jpg')) {
+                img.src = 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Solar_sys8.jpg';
+            } else {
+                img.src = 'https://upload.wikimedia.org/wikipedia/commons/9/97/The_Eight_Planets.jpg';
+            }
+        };
+
+        // Manejo del formulario de contacto
+        document.getElementById('formularioContacto').onsubmit = function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const mensaje = document.getElementById('mensaje').value;
+            document.getElementById('respuesta').textContent = `¡Gracias, ${nombre}! Tu mensaje ha sido recibido: "${mensaje}"`;
+            this.reset();
+        };
+    </script>
+    <!-- Declaración de código en archivo vinculado -->
+    <script src="main.js"></script>
+</body>
+</html>

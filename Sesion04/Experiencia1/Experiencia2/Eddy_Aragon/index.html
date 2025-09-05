@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Experiencia de Práctica N° 02 - Eddy Aragón</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Experiencia de Práctica N° 02: Uso de Recursos del Lenguaje</h1>
+    <section>
+        <h2>a) Uso de Variables y Constantes</h2>
+        <p>
+            Se crea un bloque de código donde se declara una variable y una constante con ámbito de bloque. Se demuestra su alcance utilizando <code>console.log()</code>.
+        </p>
+        <pre><code>
+{
+    let variableDeBloque = "Soy una variable de bloque";
+    const constanteDeBloque = "Soy una constante de bloque";
+    console.log(variableDeBloque); // Accesible aquí
+    console.log(constanteDeBloque); // Accesible aquí
+}
+// console.log(variableDeBloque); // Error: no accesible fuera del bloque
+// console.log(constanteDeBloque); // Error: no accesible fuera del bloque
+        </code></pre>
+        <p>
+            Las variables y constantes declaradas con <code>let</code> y <code>const</code> solo existen dentro del bloque donde se declaran.
+        </p>
+    </section>
+    <section>
+        <h2>b) Elevación de Variables (Hoisting)</h2>
+        <pre><code>
+console.log(x === undefined); // true
+var x = 3;
+// devolverá un valor de undefined
+var myvar = 'my value';
+(function() {
+    console.log(myvar); // undefined
+    var myvar = 'valor local';
+})();
+        </code></pre>
+        <p>
+            <strong>Descripción:</strong> Las declaraciones con <code>var</code> se elevan (hoisting) al inicio del contexto, pero no su inicialización. Por eso, <code>x</code> y <code>myvar</code> existen pero son <code>undefined</code> antes de su asignación.
+        </p>
+    </section>
+    <section>
+        <h2>c) Uso de console.log y Scope</h2>
+        <pre><code>
+let sinAsignar;
+console.log(sinAsignar); // undefined
+
+function externa() {
+    let a = 1;
+    function interna() {
+        let b = 2;
+        console.log(a); // 1
+        console.log(b); // 2
+    }
+    interna();
+    // console.log(b); // Error: b no está definida aquí
+}
+externa();
+        </code></pre>
+        <p>
+            <strong>Descripción:</strong> <code>console.log()</code> permite verificar el valor y el alcance de las variables en diferentes contextos.
+        </p>
+    </section>
+    <section>
+        <h2>d) Tipos de Datos y Cambio de Tipos</h2>
+        <pre><code>
+var answer = 42;
+answer = 'Gracias por todo el pescado...';
+        </code></pre>
+        <p>
+            <strong>Descripción:</strong> En JavaScript, las variables pueden cambiar de tipo dinámicamente. Aquí, <code>answer</code> pasa de ser un número a una cadena.
+        </p>
+        <pre><code>
+parseInt("F", 16);      // 15
+parseInt("17", 8);      // 15
+parseInt("15", 10);     // 15
+parseInt(15.99, 10);    // 15
+parseInt("FXX123", 16); // 15
+parseInt("1111", 2);    // 15
+parseInt("15*3", 10);   // 15
+parseInt("12", 13);     // 15
+parseInt("Hello", 8);   // NaN
+parseInt("0x7", 10);    // 0
+parseInt("546", 2);     // NaN
+        </code></pre>
+        <p>
+            <strong>Descripción:</strong> <code>parseInt()</code> convierte cadenas a números según la base indicada. Si la cadena no es válida para la base, devuelve <code>NaN</code>.
+        </p>
+        <pre><code>
+var howMany = 10;
+alert("howMany.toString() is " + howMany.toString()); // displays "10"
+alert("45 .toString() is " + 45 .toString()); // displays "45"
+var x = 7;
+alert(x.toString(2)); // Displays "111"
+        </code></pre>
+        <p>
+            <strong>Descripción:</strong> <code>toString()</code> convierte un número a cadena. Puede recibir una base para mostrar el número en binario, octal, etc.
+        </p>
+    </section>
+    <section>
+        <h2>Texto de prueba</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi. Sed euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.
+        </p>
+        <p>
+            Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum. Aliquam eget odio sed ligula iaculis consequat at eget orci.
+        </p>
+        <p>
+            Proin nec dui cursus, posuere dui eget, dictum enim. Mauris nec mauris tellus. Etiam nec lectus urna. Sed sodales ultrices dapibus. Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan nisi. Nunc vel pulvinar diam, ac ultricies sem.
+        </p>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>

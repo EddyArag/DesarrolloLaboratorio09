@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Experiencia de Práctica N° 03: Uso de Funciones en JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Experiencia de Práctica N° 03: Uso de Funciones en JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="#primera-clase">Funciones de Primera Clase</a></li>
+                <li><a href="#closure">Closure</a></li>
+                <li><a href="#ambito">Ámbito de Función</a></li>
+                <li><a href="#excepciones">Manejo de Excepciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="primera-clase">
+            <h2>a) Ciudadano de Primera Clase</h2>
+            <article>
+                <h3>1. Ejemplo Básico</h3>
+                <pre><code id="code-foo"></code></pre>
+                <button onclick="runFoo()">Ejecutar Código</button>
+                <div id="output-foo" class="output"></div>
+                <h4>2. Descripción</h4>
+                <p>
+                    Se define una función flecha y se asigna a una variable <code>foo</code>. Luego, se invoca usando el nombre de la variable. Esto demuestra que las funciones en JavaScript pueden ser tratadas como cualquier otro valor (ciudadanos de primera clase).
+                </p>
+            </article>
+            <article>
+                <h3>5. Pasar Funciones como Argumentos</h3>
+                <pre><code id="code-greeting"></code></pre>
+                <button onclick="runGreeting()">Ejecutar Código</button>
+                <div id="output-greeting" class="output"></div>
+                <h4>6. Descripción</h4>
+                <p>
+                    Se define una función <code>sayHello</code> y se pasa como argumento a otra función <code>greeting</code>. Esto permite que <code>greeting</code> invoque la función recibida y concatene su resultado con otro argumento. Demuestra que las funciones pueden ser pasadas como argumentos.
+                </p>
+            </article>
+            <article>
+                <h3>9. Función que Retorna Otra Función</h3>
+                <pre><code id="code-sayhello"></code></pre>
+                <button onclick="runSayHello()">Ejecutar Código</button>
+                <div id="output-sayhello" class="output"></div>
+                <h4>10. Descripción</h4>
+                <p>
+                    La función <code>sayHello</code> retorna otra función (función flecha) que imprime "Hello!". Esto muestra que las funciones pueden ser retornadas por otras funciones.
+                </p>
+            </article>
+            <article>
+                <h3>13. Condiciones de una Función de Primera Clase</h3>
+                <ul>
+                    <li>Pueden ser asignadas a variables.</li>
+                    <li>Pueden ser pasadas como argumentos.</li>
+                    <li>Pueden ser retornadas por otras funciones.</li>
+                </ul>
+            </article>
+        </section>
+        <section id="closure">
+            <h2>b) Closure</h2>
+            <article>
+                <h3>1. Ejemplo de Closure</h3>
+                <pre><code id="code-closure"></code></pre>
+                <button onclick="runClosure()">Ejecutar Código</button>
+                <div id="output-closure" class="output"></div>
+                <h4>2. Descripción</h4>
+                <p>
+                    La función <code>makeFunc</code> define una variable local y retorna una función interna que accede a esa variable. Cuando se invoca la función retornada, aún puede acceder a la variable original, demostrando el concepto de closure.
+                </p>
+                <h3>5. Condiciones para una Función con Closure</h3>
+                <ul>
+                    <li>Debe haber una función interna que acceda a variables de la función externa.</li>
+                    <li>La función interna debe ser retornada o utilizada fuera de su contexto original.</li>
+                </ul>
+            </article>
+        </section>
+        <section id="ambito">
+            <h2>c) Ámbito de Función</h2>
+            <article>
+                <h3>1. Ejemplo de Ámbito Local</h3>
+                <pre><code id="code-scope1"></code></pre>
+                <button onclick="runScope1()">Ejecutar Código</button>
+                <div id="output-scope1" class="output"></div>
+                <h4>2. Descripción</h4>
+                <p>
+                    Se declara una variable dentro de una función. Al intentar acceder a ella fuera de la función, se produce un error porque la variable solo existe en el ámbito de la función.
+                </p>
+            </article>
+            <article>
+                <h3>4. Ejemplo de Ámbito Global</h3>
+                <pre><code id="code-scope2"></code></pre>
+                <button onclick="runScope2()">Ejecutar Código</button>
+                <div id="output-scope2" class="output"></div>
+                <h4>5. Descripción</h4>
+                <p>
+                    Se declara una variable fuera de la función, por lo que es accesible tanto dentro como fuera de la función.
+                </p>
+            </article>
+            <article>
+                <h3>7. Ejemplo con try-catch-finally</h3>
+                <pre><code id="code-trycatch"></code></pre>
+                <button onclick="runTryCatch()">Ejecutar Código</button>
+                <div id="output-trycatch" class="output"></div>
+                <h4>8. Descripción</h4>
+                <p>
+                    Se muestra el flujo de ejecución de una función con bloques <code>try</code>, <code>catch</code> y <code>finally</code>. El valor retornado en <code>finally</code> sobrescribe el valor retornado en <code>catch</code>.
+                </p>
+            </article>
+        </section>
+        <section id="excepciones">
+            <h2>d) Manejo de Excepciones</h2>
+            <article>
+                <h3>1. Ejemplo de Excepción Personalizada</h3>
+                <pre><code id="code-exception"></code></pre>
+                <button onclick="runException()">Ejecutar Código</button>
+                <div id="output-exception" class="output"></div>
+                <h4>2. Descripción</h4>
+                <p>
+                    Se define una excepción personalizada y se utiliza en una función que retorna el nombre de un mes. Si el número de mes es inválido, se lanza la excepción y se captura en el bloque <code>catch</code>.
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Desarrollo de Laboratorio - Sesión 04 - Experiencia 3</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
