@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <script src="script.js"></script>
+<head>
+    <style>
+        body {
+            width: 350px;
+        }
+        h1 {
+            text-align: center;
+            background-color: gray;
+        }
+        .pantalla { 
+            grid-area: pantalla; 
+            background-color: lightblue;
+            text-align: right;
+        }
+        .numeros { grid-area: numeros; }
+        .operadores{ grid-area: operadores; }
+        .grid-container {
+            display: grid;
+            grid-template: 
+                'pantalla pantalla pantalla pantalla pantalla'
+                'numeros numeros numeros operadores operadores'
+                'numeros numeros numeros operadores operadores'
+                'numeros numeros numeros operadores operadores';
+            grid-gap: 10px;
+            background-color: gray;
+            padding: 5px;
+        }
+        .grid-container > div {
+            padding: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+        .numeros {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 0;
+            border: none;
+        }
+        .numeros > div {
+            font-size: 30px;
+            text-align: center;
+        }
+        #div { grid-area: div;}
+        #mult { grid-area: mult;}
+        #sum { grid-area: sum;}
+        #rest { grid-area: rest;}
+        #igual { grid-area: igual;}
+        .operadores {
+            display: grid;
+            grid-template:
+                'div mult'
+                'sum rest'
+                'igual igual';
+            padding: 0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div class="grid-container">
+        <div class="pantalla" id="pantalla">0</div>
+        <div class="numeros">
+            <button onclick="agregarNumero(9)">9</button>
+            <button onclick="agregarNumero(8)">8</button>
+            <button onclick="agregarNumero(7)">7</button>
+            <button onclick="agregarNumero(6)">6</button>
+            <button onclick="agregarNumero(5)">5</button>
+            <button onclick="agregarNumero(4)">4</button>
+            <button onclick="agregarNumero(3)">3</button>
+            <button onclick="agregarNumero(2)">2</button>
+            <button onclick="agregarNumero(1)">1</button>
+        </div>
+        <div class="operadores">
+            <button id="div" onclick="operar('%')">%</button>
+            <button id="mult" onclick="operar('x')">x</button>
+            <button id="sum" onclick="operar('+')">+</button>  
+            <button id="rest" onclick="operar('-')">-</button>
+            <button id="igual" onclick="calcular()">=</button>
+        </div>
+    </div>
+
+    <script>
+        let pantalla = document.getElementById('pantalla');
+        let operacion = '';
+        let num1 = '';
+        let num2 = '';
+
+        function agregarNumero(numero) {
+            if (operacion === '') {
+                num1 += numero;
+                pantalla.textContent = num1;
+            } else {
+                num2 += numero;
+                pantalla.textContent = num2;
+            }
+        }
+
+        function operar(op) {
+            operacion = op;
+        }
+
+        function calcular() {
+            let resultado;
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+
+            if (operacion === '%') {
+                resultado = num1 % num2;
+            } else if (operacion === 'x') {
+                resultado = num1 * num2;
+            } else if (operacion === '+') {
+                resultado = num1 + num2;
+            } else if (operacion === '-') {
+                resultado = num1 - num2;
+            }
+            pantalla.textContent = resultado;
+            num1 = resultado.toString();
+            num2 = '';
+            operacion = '';
+        }
+    </script>
+</body>
+</html>

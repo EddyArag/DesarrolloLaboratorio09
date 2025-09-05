@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            width: 350px;
+        }
+        h1 {
+            text-align: center;
+            background-color: gray;
+        }
+        .pantalla { 
+            grid-area: pantalla; 
+            background-color: lightblue;
+        }
+        .numeros { grid-area: numeros; }
+        .operadores{ grid-area: operadores; }
+        .grid-container {
+            display: grid;
+            grid-template: 
+                'pantalla pantalla pantalla pantalla pantalla'
+                'numeros numeros numeros operadores operadores'
+                'numeros numeros numeros operadores operadores'
+                'numeros numeros numeros operadores operadores';
+            grid-gap: 10px;
+            background-color: gray;
+            padding: 5px;
+        }
+        .grid-container > div {
+            padding: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+        .numeros {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 0;
+            border: none;
+        }
+        .numeros > div {
+            font-size: 30px;
+            text-align: center;
+        }
+        #div { grid-area: div;}
+        #mult { grid-area: mult;}
+        #sum { grid-area: sum;}
+        #rest { grid-area: rest;}
+        #igual { grid-area: igual;}
+        .operadores {
+            display: grid;
+            grid-template:
+                'div mult'
+                'sum rest'
+                'igual igual';
+            padding: 0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div class="grid-container">
+        <div class="pantalla"></div>
+        <div class="numeros">
+            <button>9</button>
+            <button>8</button>
+            <button>7</button>
+            <button>6</button>
+            <button>5</button>
+            <button>4</button>
+            <button>3</button>
+            <button>2</button>
+            <button>1</button>
+        </div>
+        <div class="operadores">
+            <button id="div">%</button>
+            <button id="mult">x</button>
+            <button id="sum">+</button>  
+            <button id="rest">-</button>
+            <button id="igual">=</button>
+        </div>
+    </div>
+</body>
+</html>
