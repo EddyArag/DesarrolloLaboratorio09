@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            // Iniciadores de objetos
+            const carro1 = {marca:"Toyota", modelo:"Fortuner", color:"blanco"};
+            const persona1 = {nombre:"Luis", apellido:"Arizaga", carrera:"Ingeniería de Sistemas"};
+
+            console.log(carro1.marca, " ", persona1.apellido);
+
+            // Métodos constructores
+            const carro2 = new Object({
+                marca:"Kia", 
+                modelo:"Picanto", 
+                color:"blanco"
+            });
+            const persona2 = new Object({
+                nombre:"Alexander",
+                apellido:"Velásquez",
+                carrera:"Ingeniería de Sistemas"
+            });
+
+            console.log(carro2.modelo, " ", persona2.nombre);
+
+            // Método object.create()
+            const carro3 = {
+                marca:"Fort",
+                modelo:"Shelby",
+                color:"Negro"
+            };
+            const persona3 ={
+                nombre:"Rodrigo",
+                apellido:"Alemaaaan?",
+                carrera:"Ingeniería de Sistemas"
+            };
+            const dueño = Object.create(persona2);
+
+            console.log(dueño.carrera);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
