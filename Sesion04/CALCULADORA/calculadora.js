@@ -125,28 +125,3 @@ botones.forEach(btn => {
         });
     }
 });
-
-// Permite el uso del teclado para operar la calculadora
-window.addEventListener('keydown', function(e) {
-    if (e.key >= '0' && e.key <= '9') ingresarNumero(e.key);
-    if (e.key === '.') ingresarNumero('.');
-    if (['+', '-', '*', '/'].includes(e.key)) ingresarOperacion(e.key);
-    if (e.key === 'Enter' || e.key === '=') {
-        try {
-            calcular();
-        } catch (err) {
-            actualizarDisplay('Error: ' + err.message);
-            actual = '';
-            operando = '';
-            operacion = '';
-        }
-    }
-    if (e.key === 'Backspace') borrarUltimo();
-    if (e.key === 'Escape') limpiarTodo();
-});
-
-// Comentarios para exposición:
-// Persona 1: Explica HTML y estructura de clases
-// Persona 2: Explica CSS, grid y responsive
-// Persona 3: Explica funciones JS básicas (input, operadores, igual, excepciones)
-// Persona 4: Explica funciones científicas (en archivo aparte) y manejo de eventos
