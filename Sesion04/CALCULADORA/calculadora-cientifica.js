@@ -1,7 +1,3 @@
-// calculadora-cientifica.js
-// Funciones científicas y manejo de excepciones para la calculadora
-
-
 // Historial de operaciones científicas
 const historialCientifico = [];
 const listaHistorial = document.getElementById('historial');

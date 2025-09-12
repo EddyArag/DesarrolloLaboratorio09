@@ -1,7 +1,3 @@
-// calculadora.js
-// Lógica de la calculadora básica (sin funciones científicas)
-
-
 // Selecciona el display de la calculadora
 const display = document.getElementById('display');
 let actual = '';
