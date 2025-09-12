@@ -54,9 +54,10 @@ const botonesCientificos = document.querySelectorAll('.boton-cientifico');
 botonesCientificos.forEach(btn => {
     btn.addEventListener('click', () => {
         const funcion = btn.dataset.funcion;
-        const valor = document.getElementById('display').value;
+        const display = document.getElementById('display');
+        const valor = display.value;
         operacionCientifica(funcion, valor, val => {
-            document.getElementById('display').value = val;
+            display.value = val;
         });
     });
 });
