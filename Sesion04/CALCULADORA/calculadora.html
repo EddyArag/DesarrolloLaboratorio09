@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica Básica</title>
+    <link rel="stylesheet" href="./calculadora.css">
+</head>
+<body>
+    <header class="calc-header">
+        <h1 class="calc-title">Calculadora Científica Básica</h1>
+        <p class="calc-desc">Proyecto para exposición grupal: HTML, CSS, JavaScript</p>
+    </header>
+    <main class="calc-main">
+        <section class="calc-container">
+            <div class="calc-display-section">
+                <input type="text" id="calc-display" class="calc-display" readonly>
+            </div>
+            <div class="calc-buttons-section">
+                <div class="calc-grid">
+                    <!-- Fila de funciones científicas -->
+                    <button class="btn btn-func" data-func="sqrt">√</button>
+                    <button class="btn btn-func" data-func="pow">x²</button>
+                    <button class="btn btn-func" data-func="inv">1/x</button>
+                    <button class="btn btn-func" data-func="pi">π</button>
+                    <!-- Fila de control -->
+                    <button class="btn btn-ctrl" data-func="clear">C</button>
+                    <button class="btn btn-ctrl" data-func="del">⌫</button>
+                    <button class="btn btn-op" data-op="/">÷</button>
+                    <button class="btn btn-op" data-op="*">×</button>
+                    <!-- Números y operaciones -->
+                    <button class="btn btn-num" data-num="7">7</button>
+                    <button class="btn btn-num" data-num="8">8</button>
+                    <button class="btn btn-num" data-num="9">9</button>
+                    <button class="btn btn-op" data-op="-">−</button>
+                    <button class="btn btn-num" data-num="4">4</button>
+                    <button class="btn btn-num" data-num="5">5</button>
+                    <button class="btn btn-num" data-num="6">6</button>
+                    <button class="btn btn-op" data-op="+">+</button>
+                    <button class="btn btn-num" data-num="1">1</button>
+                    <button class="btn btn-num" data-num="2">2</button>
+                    <button class="btn btn-num" data-num="3">3</button>
+                    <button class="btn btn-eq" data-func="equals">=</button>
+                    <button class="btn btn-num btn-zero" data-num="0">0</button>
+                    <button class="btn btn-num" data-num=".">.</button>
+                </div>
+            </div>
+            <!-- Sección de historial de operaciones -->
+            <div class="calc-history-section">
+                <h3>Historial de operaciones</h3>
+                <ul id="calc-history" class="calc-history-list"></ul>
+            </div>
+        </section>
+        <aside class="calc-info">
+            <h2>¿Cómo funciona?</h2>
+            <ul>
+                <li>Operaciones básicas: suma, resta, multiplicación, división.</li>
+                <li>Funciones científicas: raíz cuadrada, potencia al cuadrado, inverso, pi.</li>
+                <li>Botón C: limpia todo. ⌫: borra el último dígito.</li>
+                <li>Responsive: se adapta a móviles y escritorio.</li>
+            </ul>
+            <p class="info-expo">Cada archivo está comentado para facilitar la exposición grupal.</p>
+        </aside>
+    </main>
+    <footer class="calc-footer">
+        <p>Desarrollado para exposición de laboratorio. Grupo de 4 personas.</p>
+    </footer>
+    <script src="./calculadora.js"></script>
+    <script src="./calculadora-cientifica.js"></script>
+</body>
+</html>
