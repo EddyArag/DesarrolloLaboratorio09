@@ -1,6 +1,6 @@
 // calculadora.js
 // Lógica de la calculadora básica (sin funciones científicas)
-// Comentarios detallados para exposición grupal
+
 
 // Selecciona el display de la calculadora
 const display = document.getElementById('display');

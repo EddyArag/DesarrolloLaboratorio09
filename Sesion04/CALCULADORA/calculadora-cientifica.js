@@ -1,6 +1,6 @@
 // calculadora-cientifica.js
 // Funciones científicas y manejo de excepciones para la calculadora
-// Archivo para exposición de la persona 4
+
 
 // Historial de operaciones científicas
 const historialCientifico = [];
