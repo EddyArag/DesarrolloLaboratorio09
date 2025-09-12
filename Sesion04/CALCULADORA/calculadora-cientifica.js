@@ -11,7 +11,7 @@ function operacionCientifica(funcion, valor, actualizarDisplay) {
     let resultado;
     let operacionStr = '';
     try {
-        let val = parseFloat(valor);
+        let val = parseFloat(valor);    
         if (isNaN(val) && funcion !== 'pi') throw new Error('Entrada inválida');
         switch (funcion) {
             case 'raiz':
@@ -65,9 +65,4 @@ botonesCientificos.forEach(btn => {
     });
 });
 
-// Comentarios para exposición:
-// Persona 4 debe explicar:
-// - Cómo se manejan las excepciones con try/catch
-// - Cómo se informa el error al usuario
-// - Cómo se integra este archivo con el principal
-// - Cómo se guarda y muestra el historial de operaciones científicas
+
