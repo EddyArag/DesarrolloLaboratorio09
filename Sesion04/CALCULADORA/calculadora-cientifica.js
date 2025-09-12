@@ -8,7 +8,7 @@ function operacionCientifica(funcion, valor, actualizarDisplay) {
     let operacionStr = '';
     try {
         let val = parseFloat(valor);    
-        if (isNaN(val) && funcion !== 'pi') throw new Error('Entrada inválida');
+        if (isNaN(val)) throw new Error('Entrada inválida');
         switch (funcion) {
             case 'raiz':
                 if (val < 0) throw new Error('Raíz de negativo');
