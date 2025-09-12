@@ -3,64 +3,64 @@
 // Archivo para exposición de la persona 4
 
 // Historial de operaciones científicas
-const scientificHistory = [];
-const historyList = document.getElementById('calc-history');
+const historialCientifico = [];
+const listaHistorial = document.getElementById('historial');
 
 // scientificOperation ejecuta la función científica seleccionada y maneja excepciones
-function scientificOperation(func, value, updateDisplay) {
-    let result;
-    let operationStr = '';
+function operacionCientifica(funcion, valor, actualizarDisplay) {
+    let resultado;
+    let operacionStr = '';
     try {
-        let val = parseFloat(value);
-        if (isNaN(val) && func !== 'pi') throw new Error('Entrada inválida');
-        switch (func) {
-            case 'sqrt':
+        let val = parseFloat(valor);
+        if (isNaN(val) && funcion !== 'pi') throw new Error('Entrada inválida');
+        switch (funcion) {
+            case 'raiz':
                 if (val < 0) throw new Error('Raíz de negativo');
-                result = Math.sqrt(val);
-                operationStr = `√(${val}) = ${result}`;
+                resultado = Math.sqrt(val);
+                operacionStr = `√(${val}) = ${resultado}`;
                 break;
-            case 'pow':
-                result = Math.pow(val, 2);
-                operationStr = `(${val})² = ${result}`;
+            case 'cuadrado':
+                resultado = Math.pow(val, 2);
+                operacionStr = `(${val})² = ${resultado}`;
                 break;
-            case 'inv':
+            case 'inverso':
                 if (val === 0) throw new Error('División por cero');
-                result = 1 / val;
-                operationStr = `1/(${val}) = ${result}`;
+                resultado = 1 / val;
+                operacionStr = `1/(${val}) = ${resultado}`;
                 break;
             case 'pi':
-                result = Math.PI;
-                operationStr = `π = ${result}`;
+                resultado = Math.PI;
+                operacionStr = `π = ${resultado}`;
                 break;
             default:
                 throw new Error('Función desconocida');
         }
-        updateDisplay(result.toString());
-        addToScientificHistory(operationStr);
-        return result.toString();
+        actualizarDisplay(resultado.toString());
+        agregarAlHistorialCientifico(operacionStr);
+        return resultado.toString();
     } catch (e) {
-        updateDisplay('Error: ' + e.message);
-        addToScientificHistory(`${func}(${value}) = Error: ${e.message}`);
+        actualizarDisplay('Error: ' + e.message);
+        agregarAlHistorialCientifico(`${funcion}(${valor}) = Error: ${e.message}`);
         return 'Error';
     }
 }
 
 // Agrega la operación al historial y la muestra en pantalla
-function addToScientificHistory(operation) {
-    scientificHistory.unshift(operation);
-    if (historyList) {
-        historyList.innerHTML = scientificHistory.slice(0, 10).map(op => `<li>${op}</li>`).join('');
+function agregarAlHistorialCientifico(operacion) {
+    historialCientifico.unshift(operacion);
+    if (listaHistorial) {
+        listaHistorial.innerHTML = historialCientifico.slice(0, 10).map(op => `<li>${op}</li>`).join('');
     }
 }
 
 // Asigna eventos a los botones científicos
-const sciButtons = document.querySelectorAll('.btn-func');
-sciButtons.forEach(btn => {
+const botonesCientificos = document.querySelectorAll('.boton-cientifico');
+botonesCientificos.forEach(btn => {
     btn.addEventListener('click', () => {
-        const func = btn.dataset.func;
-        const value = document.getElementById('calc-display').value;
-        scientificOperation(func, value, val => {
-            document.getElementById('calc-display').value = val;
+        const funcion = btn.dataset.funcion;
+        const valor = document.getElementById('display').value;
+        operacionCientifica(funcion, valor, val => {
+            document.getElementById('display').value = val;
         });
     });
 });

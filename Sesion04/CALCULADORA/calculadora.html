@@ -4,54 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Científica Básica</title>
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="./calculadora.css">
 </head>
 <body>
-    <header class="calc-header">
-        <h1 class="calc-title">Calculadora Científica Básica</h1>
-        <p class="calc-desc">Proyecto para exposición grupal: HTML, CSS, JavaScript</p>
+    <!-- Encabezado de la calculadora -->
+    <header class="encabezado-calculadora">
+        <h1 class="titulo-calculadora">Calculadora Científica Básica</h1>
+        <p class="descripcion-calculadora">Proyecto para exposición grupal: HTML, CSS, JavaScript</p>
     </header>
-    <main class="calc-main">
-        <section class="calc-container">
-            <div class="calc-display-section">
-                <input type="text" id="calc-display" class="calc-display" readonly>
+    <main class="principal-calculadora">
+        <section class="contenedor-calculadora">
+            <!-- Display de la calculadora -->
+            <div class="seccion-display">
+                <input type="text" id="display" class="display" readonly>
             </div>
-            <div class="calc-buttons-section">
-                <div class="calc-grid">
+            <!-- Botones de la calculadora -->
+            <div class="seccion-botones">
+                <div class="grid-botones">
                     <!-- Fila de funciones científicas -->
-                    <button class="btn btn-func" data-func="sqrt">√</button>
-                    <button class="btn btn-func" data-func="pow">x²</button>
-                    <button class="btn btn-func" data-func="inv">1/x</button>
-                    <button class="btn btn-func" data-func="pi">π</button>
+                    <button class="boton boton-cientifico" data-funcion="raiz">√</button>
+                    <button class="boton boton-cientifico" data-funcion="cuadrado">x²</button>
+                    <button class="boton boton-cientifico" data-funcion="inverso">1/x</button>
+                    <button class="boton boton-cientifico" data-funcion="pi">π</button>
                     <!-- Fila de control -->
-                    <button class="btn btn-ctrl" data-func="clear">C</button>
-                    <button class="btn btn-ctrl" data-func="del">⌫</button>
-                    <button class="btn btn-op" data-op="/">÷</button>
-                    <button class="btn btn-op" data-op="*">×</button>
+                    <button class="boton boton-control" data-funcion="limpiar">C</button>
+                    <button class="boton boton-control" data-funcion="borrar">⌫</button>
+                    <button class="boton boton-operacion" data-operacion="/">÷</button>
+                    <button class="boton boton-operacion" data-operacion="*">×</button>
                     <!-- Números y operaciones -->
-                    <button class="btn btn-num" data-num="7">7</button>
-                    <button class="btn btn-num" data-num="8">8</button>
-                    <button class="btn btn-num" data-num="9">9</button>
-                    <button class="btn btn-op" data-op="-">−</button>
-                    <button class="btn btn-num" data-num="4">4</button>
-                    <button class="btn btn-num" data-num="5">5</button>
-                    <button class="btn btn-num" data-num="6">6</button>
-                    <button class="btn btn-op" data-op="+">+</button>
-                    <button class="btn btn-num" data-num="1">1</button>
-                    <button class="btn btn-num" data-num="2">2</button>
-                    <button class="btn btn-num" data-num="3">3</button>
-                    <button class="btn btn-eq" data-func="equals">=</button>
-                    <button class="btn btn-num btn-zero" data-num="0">0</button>
-                    <button class="btn btn-num" data-num=".">.</button>
+                    <button class="boton boton-numero" data-numero="7">7</button>
+                    <button class="boton boton-numero" data-numero="8">8</button>
+                    <button class="boton boton-numero" data-numero="9">9</button>
+                    <button class="boton boton-operacion" data-operacion="-">−</button>
+                    <button class="boton boton-numero" data-numero="4">4</button>
+                    <button class="boton boton-numero" data-numero="5">5</button>
+                    <button class="boton boton-numero" data-numero="6">6</button>
+                    <button class="boton boton-operacion" data-operacion="+">+</button>
+                    <button class="boton boton-numero" data-numero="1">1</button>
+                    <button class="boton boton-numero" data-numero="2">2</button>
+                    <button class="boton boton-numero" data-numero="3">3</button>
+                    <button class="boton boton-igual" data-funcion="igual">=</button>
+                    <button class="boton boton-numero boton-cero" data-numero="0">0</button>
+                    <button class="boton boton-numero" data-numero=".">.</button>
                 </div>
             </div>
             <!-- Sección de historial de operaciones -->
-            <div class="calc-history-section">
+            <div class="seccion-historial">
                 <h3>Historial de operaciones</h3>
-                <ul id="calc-history" class="calc-history-list"></ul>
+                <ul id="historial" class="lista-historial"></ul>
             </div>
         </section>
-        <aside class="calc-info">
+        <!-- Información de ayuda -->
+        <aside class="info-calculadora">
             <h2>¿Cómo funciona?</h2>
             <ul>
                 <li>Operaciones básicas: suma, resta, multiplicación, división.</li>
@@ -62,9 +67,10 @@
             <p class="info-expo">Cada archivo está comentado para facilitar la exposición grupal.</p>
         </aside>
     </main>
-    <footer class="calc-footer">
+    <footer class="pie-calculadora">
         <p>Desarrollado para exposición de laboratorio. Grupo de 4 personas.</p>
     </footer>
+    <!-- Scripts de la calculadora -->
     <script src="./calculadora.js"></script>
     <script src="./calculadora-cientifica.js"></script>
 </body>
