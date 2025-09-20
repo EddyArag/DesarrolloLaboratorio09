@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Adaptable - Modelo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Mi Marca</div>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Categorías</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="main-title">Nuestros Productos Destacados</h1>
+
+        <section class="product-grid">
+            <div class="product-card">
+                <img src="imagenes/pro1.png" alt="Producto 1">
+                <h3>LAPTOP, LENOVO, IP SLIM 3</h3>
+                <p> RYZEN 5 7520U 8GB DDR5 512GB 15.6P FHD + MALETIN</p>
+                <button>Ver Detalles</button>
+            </div>
+            <div class="product-card">
+                <img src="imagenes/pro2.png" alt="Producto 2">
+                <h3>LAPTOP,LENOVO ESP ,IdeaPad Slim 3</h3>
+                <p> ,RYZEN 5 7520U ,8GB DDR5 ,512GB NVMe ,15.6P FHD ,VEGA GRAPHICS ,INCLUYE MALETIN</p>
+                <button>Ver Detalles</button>
+            </div>
+            <div class="product-card">
+                <img src="imagenes/pro3.png" alt="Producto 3">
+                <h3>PLAPTOP LENOVO IdeaPad Slim 3</h3>
+                <p> CORE i5 12450H 8GB DDR5 512GB NVMe 15.6 FHD ESPAÑOL</p>
+                <button>Ver Detalles</button>
+            </div>
+            <div class="product-card">
+                <img src="imagenes/pro4.png" alt="Producto 4">
+                <h3>LAPTOP ,LENOVO ,V15 G4 </h3>
+                <p>,RYZEN 5 7520U ,16GB DDR5 ,512GB NVMe ,15.6 P ESPAÃ‘OL ,VEGA GRAPHICS ,</p>
+                <button>Ver Detalles</button>
+            </div>
+            <div class="product-card">
+                <img src="imagenes/pro5.png" alt="Producto 5">
+                <h3>LAPTOP LENOVO IdeaPad Slim 3 15AMN8</h3>
+                <p> RYZEN 5 7520U 16GB 512GB 15.6 FHD ESPAÑOL RADEON GRAPHICS 3CELDAS</p>
+                <button>Ver Detalles</button>
+            </div>
+            <div class="product-card">
+                <img src="imagenes/pro6.png" alt="Producto 6">
+                <h3>LAPTOP ,ASUS ESP,VIVOBOOK E1504FA-NJ545 </h3>
+                <p>,RYZEN 5 7520U ,16GB DDR5 ,512GB NVMe ,15.6 P ESPAÃ‘OL ,VEGA GRAPHICS</p>
+                <button>Ver Detalles</button>
+            </div>
+            <div class="product-card">
+                <img src="imagenes/pro7.png" alt="Producto 7">
+                <h3>LAPTOP LENOVO IdeaPad Slim 3</h3>
+                <p> CORE i5 13420H 8GB 512GB NVMe 15.3P FHD ESPAÑOL</p>
+                <button>Ver Detalles</button>
+            </div>
+            <div class="product-card">
+                <img src="imagenes/pro8.png" alt="Producto 8">
+                <h3>LAPTOP LENOVO IP SLIM3</h3>
+                <p> CORE i5 12450H 16GB 512GB NVMe 15.6 FHD ESPAÑOL INTEL IRIS Xe 83ER001DLM</p>
+                <button>Ver Detalles</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Mi Marca. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

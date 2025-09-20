@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 40px); /* Para centrar el contenedor en la pantalla */
+    background-color: #f0f0f0;
+}
+
+.grid-container {
+    display: grid;
+    /* Definición de columnas: 4 columnas de igual ancho */
+    grid-template-columns: repeat(4, 1fr);
+    /* Definición de filas: 3 filas de altura automática */
+    grid-template-rows: auto auto auto; /* O simplemente repeat(3, auto); */
+    gap: 10px; /* Espacio entre las celdas de la cuadrícula */
+    width: 90%; /* Ancho del contenedor de la cuadrícula */
+    max-width: 900px; /* Ancho máximo para que no sea demasiado grande */
+    border: 2px solid #333; /* Borde para el contenedor principal */
+    padding: 10px;
+    background-color: #fff;
+}
+
+.grid-item {
+    background-color: #e0e0e0;
+    border: 1px solid #666; /* Borde para cada elemento */
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px; /* Altura mínima para visualizar las celdas */
+}
+
+/* Posicionamiento de los elementos según la imagen */
+
+/* Elemento 1: Ocupa la primera fila completa (4 columnas) */
+.item-1 {
+    grid-column: 1 / span 4; /* Inicia en la columna 1 y abarca 4 columnas */
+    /* grid-row: 1; (implícito si es el primer elemento en la primera fila) */
+    background-color: #a8dadc;
+}
+
+/* Elemento 2: Ocupa las dos primeras columnas de la segunda fila */
+.item-2 {
+    grid-column: 1 / span 2; /* Inicia en la columna 1 y abarca 2 columnas */
+    /* grid-row: 2; (implícito si es el siguiente elemento) */
+    background-color: #457b9d;
+}
+
+/* Elemento 3: Ocupa la tercera y cuarta columna de la segunda fila */
+.item-3 {
+    grid-column: 3 / span 2; /* Inicia en la columna 3 y abarca 2 columnas */
+    /* grid-row: 2; */
+    background-color: #1d3557;
+}
+
+/* Elemento 4: Ocupa la primera columna de la tercera fila */
+.item-4 {
+    grid-column: 1; /* Inicia y abarca solo la columna 1 */
+    /* grid-row: 3; */
+    background-color: #f4a261;
+}
+
+/* Elemento 5: Ocupa la segunda columna de la tercera fila */
+.item-5 {
+    grid-column: 2; /* Inicia y abarca solo la columna 2 */
+    /* grid-row: 3; */
+    background-color: #e76f51;
+}
+
+/* Elemento 6: Ocupa la tercera y cuarta columna de la tercera fila */
+.item-6 {
+    grid-column: 3 / span 2; /* Inicia en la columna 3 y abarca 2 columnas */
+    /* grid-row: 3; */
+    background-color: #2a9d8f;
+}
+
+/* Los elementos 7 al 12 se colocarán automáticamente en las siguientes filas
+   si no se les especifica una posición explícita.
+   Para este ejercicio, la imagen solo muestra hasta el elemento 6 con una estructura específica.
+   Si la imagen implicaba más elementos en una estructura definida, necesitaríamos ajustar.
+   Por ahora, los elementos 7-12 se auto-colocarán en nuevas filas.
+   Si la imagen solo mostraba 6 elementos, podríamos eliminar los divs 7-12 del HTML.
+   Asumo que la imagen solo muestra la estructura de los primeros 6 elementos.
+*/
+.item-7, .item-8, .item-9, .item-10, .item-11, .item-12 {
+    background-color: #cccccc; /* Un color diferente para distinguirlos */
+}

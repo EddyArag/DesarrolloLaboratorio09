@@ -1,0 +1,330 @@
+/* Variables CSS para facilitar la personalización */
+:root {
+    --primary-color: #007bff; /* Azul */
+    --secondary-color: #343a40; /* Gris oscuro */
+    --accent-color: #28a745; /* Verde para botones */
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 30px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto en pantallas grandes */
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Contenido Principal */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+/* CSS Grid para la lista de productos */
+.product-listing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3-4 columnas en escritorio */
+    gap: 30px;
+}
+
+/* Flexbox dentro de cada tarjeta de producto */
+.product-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    overflow: hidden; /* Para que el border-radius se aplique bien */
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente los elementos hijos */
+    text-align: center; /* Centra el texto */
+    padding-bottom: 20px; /* Espacio para el botón */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image-container {
+    width: 100%;
+    height: 200px; /* Altura fija para el contenedor de la imagen */
+    display: flex; /* Flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+    background-color: #f0f0f0; /* Fondo para el contenedor de la imagen */
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.product-image-container img {
+    max-width: 90%; /* La imagen no excederá el 90% del ancho del contenedor */
+    max-height: 90%; /* La imagen no excederá el 90% de la altura del contenedor */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+.product-info {
+    padding: 0 15px;
+    display: flex; /* Flexbox para el contenido de info */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    flex-grow: 1; /* Permite que ocupe el espacio restante */
+    justify-content: space-between; /* Empuja el botón hacia abajo */
+}
+
+.product-info h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.product-info p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
+}
+
+.product-info .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.product-info button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 90%; /* Ancho del botón */
+    max-width: 200px;
+}
+
+.product-info button:hover {
+    background-color: #218838; /* Tono más oscuro de verde */
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Breakpoint para pantallas de hasta 900px */
+@media (max-width: 900px) {
+    nav {
+        padding: 0 15px;
+    }
+
+    .menu li {
+        margin-left: 20px;
+    }
+
+    .menu a {
+        font-size: 1rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .product-listing {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2-3 columnas */
+        gap: 20px;
+    }
+
+    .product-image-container {
+        height: 180px;
+    }
+}
+
+/* Breakpoint para pantallas de hasta 480px (Mobile First) */
+@media (max-width: 480px) {
+    header {
+        padding: 0.8rem 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        display: none; /* Ocultar menú por defecto en móvil */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--secondary-color);
+        position: absolute;
+        top: 65px; /* Ajustar según la altura del header */
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px var(--shadow-color);
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu.active {
+        display: flex; /* Mostrar menú cuando está activo */
+    }
+
+    .menu li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu li:last-child {
+        border-bottom: none;
+    }
+
+    .menu a {
+        display: block;
+        padding: 12px 0;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar el botón de menú en móvil */
+        position: absolute;
+        right: 15px;
+        top: 20px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .page-title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .product-listing {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+        gap: 15px;
+    }
+
+    .product-image-container {
+        height: 150px;
+    }
+
+    .product-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .product-info p {
+        font-size: 0.85rem;
+    }
+
+    .product-info .price {
+        font-size: 1.1rem;
+    }
+
+    .product-info button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}

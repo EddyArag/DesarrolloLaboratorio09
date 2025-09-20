@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6 - Grid Responsivo Avanzado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Mi Revista</div>
+            <ul class="menu">
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Artículos</a></li>
+                <li><a href="#">Galería</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="main-heading">Explora Nuestros Contenidos</h1>
+        <div class="grid-container">
+            <div class="grid-item item-1">
+                <img src="imagenes/fon6.jpg" alt="Imagen de fondo 1">
+                <div class="content">
+                    <h2>Titular Principal del Día</h2>
+                    <p>Un resumen impactante de la noticia más relevante.</p>
+                    <a href="#" class="read-more">Leer más</a>
+                </div>
+            </div>
+            <div class="grid-item item-2">
+                <img src="imagenes/fon2.png" alt="Imagen de fondo 2">
+                <div class="content">
+                    <h3>Artículo Destacado</h3>
+                    <p>Análisis profundo sobre un tema de interés.</p>
+                </div>
+            </div>
+            <div class="grid-item item-3">
+                <img src="imagenes/fon3.png" alt="Imagen de fondo 3">
+                <div class="content">
+                    <h3>Opinión del Experto</h3>
+                    <p>Puntos de vista clave de nuestros colaboradores.</p>
+                </div>
+            </div>
+            <div class="grid-item item-4">
+                <img src="imagenes/fon4.png" alt="Imagen de fondo 4">
+                <div class="content">
+                    <h3>Breves Noticias</h3>
+                    <p>Actualizaciones rápidas y concisas.</p>
+                </div>
+            </div>
+            <div class="grid-item item-5">
+                <img src="imagenes/fon5.png" alt="Imagen de fondo 5">
+                <div class="content">
+                    <h3>Entrevista Exclusiva</h3>
+                    <p>Conoce a las personalidades que marcan la diferencia.</p>
+                </div>
+            </div>
+            <div class="grid-item item-6">
+                <img src="imagenes/fon6.jpg" alt="Imagen de fondo 6">
+                <div class="content">
+                    <h3>Guía Práctica</h3>
+                    <p>Consejos útiles para tu día a día.</p>
+                </div>
+            </div>
+            <div class="grid-item item-7">
+                <img src="imagenes/fon7.png" alt="Imagen de fondo 7">
+                <div class="content">
+                    <h3>Reportaje Especial</h3>
+                    <p>Investigación a fondo sobre un fenómeno social.</p>
+                </div>
+            </div>
+            <div class="grid-item item-8">
+                <img src="imagenes/fon8.png" alt="Imagen de fondo 8">
+                <div class="content">
+                    <h3>Tecnología y Futuro</h3>
+                    <p>Las últimas innovaciones y tendencias.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Mi Revista. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+/* Variables CSS */
+:root {
+    --primary-color: #e63946; /* Rojo vibrante */
+    --secondary-color: #1d3557; /* Azul oscuro */
+    --text-color: #333;
+    --light-bg: #f1faee;
+    --card-bg: #ffffff;
+    --border-color: #a8dadc;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 35px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto en pantallas grandes */
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Contenido Principal */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.main-heading {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 50px;
+    font-size: 2.8rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* CSS Grid para el contenedor principal */
+.grid-container {
+    display: grid;
+    /* Definición de columnas para escritorio: 4 columnas */
+    grid-template-columns: repeat(4, 1fr);
+    /* Definición de filas para escritorio: auto para que se ajusten al contenido */
+    grid-template-rows: auto; /* Se ajustará automáticamente */
+    gap: 25px; /* Espacio entre los elementos */
+}
+
+.grid-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    overflow: hidden;
+    position: relative; /* Para posicionar el contenido sobre la imagen */
+    display: flex; /* Flexbox para el contenido */
+    flex-direction: column;
+    justify-content: flex-end; /* Empuja el contenido hacia abajo */
+    min-height: 250px; /* Altura mínima para las tarjetas */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre todo el espacio, recortando si es necesario */
+    z-index: 1; /* Detrás del contenido */
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.grid-item .content {
+    position: relative;
+    z-index: 2; /* Encima de la imagen */
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); /* Degradado oscuro en la parte inferior */
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+}
+
+.grid-item .content h2,
+.grid-item .content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.grid-item .content h3 {
+    font-size: 1.3rem;
+}
+
+.grid-item .content p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.grid-item .content .read-more {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.grid-item .content .read-more:hover {
+    background-color: #c0392b;
+}
+
+/* Definición de áreas y posicionamiento de elementos para escritorio (4 columnas) */
+/* Basado en la imagen, se puede inferir la siguiente estructura:
+   Fila 1: Item 1 (grande)
+   Fila 2: Item 2, Item 3, Item 4, Item 5
+   Fila 3: Item 6 (grande), Item 7, Item 8
+*/
+.item-1 {
+    grid-column: 1 / span 4; /* Ocupa las 4 columnas */
+    grid-row: 1;
+    min-height: 400px; /* Más alto para el elemento principal */
+}
+
+.item-1 .content h2 {
+    font-size: 2.5rem;
+}
+
+.item-2 {
+    grid-column: 1 / span 2; /* Ocupa 2 columnas */
+    grid-row: 2;
+}
+
+.item-3 {
+    grid-column: 3; /* Ocupa 1 columna */
+    grid-row: 2;
+}
+
+.item-4 {
+    grid-column: 4; /* Ocupa 1 columna */
+    grid-row: 2;
+}
+
+.item-5 {
+    grid-column: 1; /* Ocupa 1 columna */
+    grid-row: 3;
+}
+
+.item-6 {
+    grid-column: 2 / span 2; /* Ocupa 2 columnas */
+    grid-row: 3;
+}
+
+.item-7 {
+    grid-column: 4; /* Ocupa 1 columna */
+    grid-row: 3;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Breakpoint para pantallas de hasta 900px (Tablet/Desktop pequeño) */
+@media (max-width: 900px) {
+    nav {
+        padding: 0 15px;
+    }
+
+    .menu li {
+        margin-left: 25px;
+    }
+
+    .menu a {
+        font-size: 1rem;
+    }
+
+    .main-heading {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    .grid-container {
+        /* Cambia a 2 columnas */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Reorganización de elementos para 2 columnas */
+    .item-1 {
+        grid-column: 1 / span 2; /* Sigue ocupando todo el ancho */
+        grid-row: 1;
+        min-height: 350px;
+    }
+
+    .item-1 .content h2 {
+        font-size: 2rem;
+    }
+
+    .item-2 {
+        grid-column: 1; /* Ocupa la primera columna */
+        grid-row: 2;
+    }
+
+    .item-3 {
+        grid-column: 2; /* Ocupa la segunda columna */
+        grid-row: 2;
+    }
+
+    .item-4 {
+        grid-column: 1; /* Ocupa la primera columna */
+        grid-row: 3;
+    }
+
+    .item-5 {
+        grid-column: 2; /* Ocupa la segunda columna */
+        grid-row: 3;
+    }
+
+    .item-6 {
+        grid-column: 1 / span 2; /* Ocupa ambas columnas */
+        grid-row: 4;
+    }
+
+    .item-7 {
+        grid-column: 1; /* Ocupa la primera columna */
+        grid-row: 5;
+    }
+
+    .item-8 {
+        grid-column: 2; /* Ocupa la segunda columna */
+        grid-row: 5;
+    }
+
+    .grid-item .content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Breakpoint para pantallas de hasta 480px (Móvil) */
+@media (max-width: 480px) {
+    header {
+        padding: 0.8rem 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+    }
+
+    .menu {
+        display: none; /* Ocultar menú por defecto en móvil */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--secondary-color);
+        position: absolute;
+        top: 65px; /* Ajustar según la altura del header */
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px var(--shadow-color);
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu.active {
+        display: flex; /* Mostrar menú cuando está activo */
+    }
+
+    .menu li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu li:last-child {
+        border-bottom: none;
+    }
+
+    .menu a {
+        display: block;
+        padding: 12px 0;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar el botón de menú en móvil */
+        position: absolute;
+        right: 15px;
+        top: 20px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .main-heading {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .grid-container {
+        /* Una sola columna para móvil */
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Todos los elementos ocupan 1 columna en móvil */
+    .grid-item {
+        grid-column: 1 / span 1 !important; /* Sobrescribe cualquier span anterior */
+        grid-row: auto !important; /* Se auto-organizan en filas */
+        min-height: 200px;
+    }
+
+    .item-1 .content h2 {
+        font-size: 1.5rem;
+    }
+
+    .grid-item .content h3 {
+        font-size: 1.1rem;
+    }
+
+    .grid-item .content p {
+        font-size: 0.8rem;
+    }
+
+    .grid-item .content .read-more {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}

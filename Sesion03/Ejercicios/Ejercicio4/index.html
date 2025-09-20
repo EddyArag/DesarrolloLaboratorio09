@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Grid con Flexbox Interno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tienda Online</div>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Novedades</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Nuestra Colección</h1>
+
+        <section class="product-listing">
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="imagenes/pro1.png" alt="Producto 1">
+                </div>
+                <div class="product-info">
+                    <h3>Producto Fantástico 1</h3>
+                    <p>Un artículo imprescindible para tu día a día. ¡No te lo pierdas!</p>
+                    <span class="price">$29.99</span>
+                    <button>Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="imagenes/pro2.png" alt="Producto 2">
+                </div>
+                <div class="product-info">
+                    <h3>Producto Increíble 2</h3>
+                    <p>Diseño moderno y funcionalidad excepcional. ¡Compra ahora!</p>
+                    <span class="price">$45.50</span>
+                    <button>Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="imagenes/pro3.png" alt="Producto 3">
+                </div>
+                <div class="product-info">
+                    <h3>Producto Único 3</h3>
+                    <p>La combinación perfecta de estilo y durabilidad. ¡Stock limitado!</p>
+                    <span class="price">$19.00</span>
+                    <button>Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="imagenes/pro4.png" alt="Producto 4">
+                </div>
+                <div class="product-info">
+                    <h3>Producto Exclusivo 4</h3>
+                    <p>Eleva tu experiencia con este producto premium. ¡Envío gratis!</p>
+                    <span class="price">$75.25</span>
+                    <button>Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="imagenes/pro5.png" alt="Producto 5">
+                </div>
+                <div class="product-info">
+                    <h3>Producto Novedoso 5</h3>
+                    <p>Descubre la innovación en cada detalle. ¡Ideal para regalar!</p>
+                    <span class="price">$33.75</span>
+                    <button>Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="imagenes/pro6.png" alt="Producto 6">
+                </div>
+                <div class="product-info">
+                    <h3>Producto Clásico 6</h3>
+                    <p>Un diseño atemporal que nunca pasa de moda. ¡Garantizado!</p>
+                    <span class="price">$59.99</span>
+                    <button>Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="imagenes/pro7.png" alt="Producto 7">
+                </div>
+                <div class="product-info">
+                    <h3>Producto Moderno 7</h3>
+                    <p>La última tendencia en tecnología y estilo. ¡No te quedes sin él!</p>
+                    <span class="price">$88.00</span>
+                    <button>Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="imagenes/pro8.png" alt="Producto 8">
+                </div>
+                <div class="product-info">
+                    <h3>Producto Premium 8</h3>
+                    <p>Experimenta la excelencia con este producto de alta gama.</p>
+                    <span class="price">$120.00</span>
+                    <button>Añadir al Carrito</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Tienda Online. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
