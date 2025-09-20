@@ -1,0 +1,47 @@
+body { font-family: Arial, sans-serif; }
+.flex-row {
+    display: flex;
+    gap: 10px;
+    background: #e3f2fd;
+    padding: 10px;
+}
+.flex-row div {
+    background: #90caf9;
+    padding: 20px;
+    border-radius: 5px;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fce4ec;
+    padding: 10px;
+}
+.flex-column div {
+    background: #f06292;
+    padding: 20px;
+    border-radius: 5px;
+}
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    background: #fff9c4;
+    padding: 10px;
+}
+.flex-space-between div {
+    background: #ffd54f;
+    padding: 20px;
+    border-radius: 5px;
+}
+.flex-align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background: #e0e0e0;
+}
+.flex-align-center div {
+    background: #a5d6a7;
+    padding: 20px;
+    border-radius: 5px;
+}
