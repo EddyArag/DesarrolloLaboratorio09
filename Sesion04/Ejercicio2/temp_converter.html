@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <link rel="stylesheet" href="temp_converter.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Temperatura</h1>
+        <form id="tempForm">
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="temperature">Temperatura:</label>
+                    <input type="number" id="temperature" placeholder="Ingresa la temperatura" required>
+                </div>
+                <div class="input-group">
+                    <label for="scale">Escala:</label>
+                    <select id="scale" required>
+                        <option value="celsius">Celsius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit">Convertir</button>
+        </form>
+
+        <div class="result">
+            <p id="convertedTemp">Temperatura convertida: </p>
+        </div>
+    </div>
+    <script src="temp_converter.js"></script>
+</body>
+</html>
