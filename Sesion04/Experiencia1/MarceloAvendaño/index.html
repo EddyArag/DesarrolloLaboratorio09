@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Dinámico</title>
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <button id="btnSaludo">Haz clic aquí</button>
+    <p id="mensaje"></p>
+
+    <script>
+        // Seleccionar elementos HTML
+        const btnSaludo = document.getElementById('btnSaludo');
+        const mensaje = document.getElementById('mensaje');
+
+        // Agregar funcionalidad al botón
+        btnSaludo.addEventListener('click', () => {
+            mensaje.textContent = '¡Hola! Este es un mensaje dinámico.';
+        });
+    </script>
+</body>
+</html>
