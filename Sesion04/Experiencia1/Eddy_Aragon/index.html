@@ -57,15 +57,7 @@
 
     <!-- Declaración de código en etiquetas script -->
     <script>
-        // Cambiar imagen en la galería
-        document.getElementById('cambiarImagen').onclick = function() {
-            const img = document.querySelector('#galeria img');
-            if (img.src.includes('Planets.jpg')) {
-                img.src = 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Solar_sys8.jpg';
-            } else {
-                img.src = 'https://upload.wikimedia.org/wikipedia/commons/9/97/The_Eight_Planets.jpg';
-            }
-        };
+
 
         // Manejo del formulario de contacto
         document.getElementById('formularioContacto').onsubmit = function(e) {

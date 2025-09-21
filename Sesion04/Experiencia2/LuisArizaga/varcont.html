@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            //Variables y constantes
+            let a = 5, b = 8;
+            const pi = 3.1415;
+
+            function sumar(a, b) {
+                let sum = a + b;
+                return sum;
+            }
+            console.log(a + ", " + b);
+            //console.log(sum);
+
+            //Elevación de variables
+            console.log(x === undefined); // true
+            var x = 3;
+            // devolverá un valor de undefined
+            var myvar = 'my value';
+            (function() {
+            //console.log(myVar); // undefined
+            var myvar = 'valor local';
+            })();
+
+            //Consolelog y Scope
+            let var1, var2;
+            console.log(var1 + var2);
+
+            function multiplicar(a, b) {
+                function suma(x, y) {
+                    return x + y;
+                }
+                return suma(a, b) * 2;
+            }
+
+            console.log(multiplicar(3, 4));
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
