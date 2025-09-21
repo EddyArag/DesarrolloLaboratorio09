@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica 06 - Objetos Globales</title>
+</head>
+<body>
+  <h2>Práctica 06: Objetos Globales</h2>
+  <pre id="resultado"></pre>
+
+  <script>
+    const salida = document.getElementById("resultado");
+    // Window
+    function testWindow() {
+      salida.innerHTML += "--- Objeto Window ---\n";
+      // Propiedades comunes
+      salida.innerHTML += "Ancho: " + window.innerWidth + "\n";
+      salida.innerHTML += "Alto: " + window.innerHeight + "\n";
+      salida.innerHTML += "URL: " + window.location.href + "\n";
+      // Métodos comunes
+      window.alert("Ejemplo con window.alert()");
+      let confirmacion = window.confirm("¿Continuar?");
+      salida.innerHTML += "Confirmación: " + confirmacion + "\n\n";
+    }
+    // Array
+    function testArray() {
+      salida.innerHTML += "--- Objeto Array ---\n";
+      let arr = [5, 2, 9, 1];
+      // Propiedades
+      salida.innerHTML += "Longitud: " + arr.length + "\n";
+      // Métodos
+      salida.innerHTML += "Ordenado: " + arr.sort() + "\n";
+      salida.innerHTML += "Invertido: " + arr.reverse() + "\n";
+      salida.innerHTML += "Unido: " + arr.join(" - ") + "\n\n";
+    }
+    // Number
+    function testNumber() {
+      salida.innerHTML += "--- Objeto Number ---\n";
+      let num = 123.456;
+      // Propiedades estáticas
+      salida.innerHTML += "MAX_VALUE: " + Number.MAX_VALUE + "\n";
+      salida.innerHTML += "MIN_VALUE: " + Number.MIN_VALUE + "\n";
+      // Métodos de Number
+      salida.innerHTML += "toFixed(2): " + num.toFixed(2) + "\n";
+      salida.innerHTML += "toExponential(3): " + num.toExponential(3) + "\n";
+      salida.innerHTML += "isInteger(123): " + Number.isInteger(123) + "\n\n";
+    }
+
+    // =============================
+    // EJECUCIÓN
+    // =============================
+    testWindow();
+    testArray();
+    testNumber();
+  </script>
+</body>
+</html>
