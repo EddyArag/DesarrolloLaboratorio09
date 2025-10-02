@@ -1,0 +1,187 @@
+// 1. Variables (para colores y fuentes principales)
+// =============================================================================
+$primary-color: #4a235a; // Púrpura profundo
+$secondary-color: #8e44ad; // Púrpura más claro
+$accent-color: #f39c12; // Naranja vibrante
+$text-color: #333;
+$light-text-color: #f8f8f8;
+$bg-light: #f4f4f9;
+$bg-dark: #2c3e50;
+
+$font-stack-body: 'Georgia', serif;
+$font-stack-heading: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+
+$base-padding: 1rem; // 16px
+
+// 2. Mixins (para botones y responsividad)
+// =============================================================================
+
+// Mixin para estilos de botón
+@mixin button-base($bg-color, $text-color: $light-text-color) {
+    display: inline-block;
+    padding: $base-padding $base-padding * 1.5;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    background-color: $bg-color;
+    color: $text-color;
+
+    &:hover {
+        background-color: darken($bg-color, 10%);
+        transform: translateY(-2px);
+    }
+}
+
+// Mixin para media queries (simplificado)
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == md {
+        @media (min-width: 768px) { @content; }
+    } @else if $breakpoint == lg {
+        @media (min-width: 992px) { @content; }
+    }
+}
+
+// 3. Funciones (para cálculos simples)
+// =============================================================================
+
+// Función para calcular el tamaño de fuente relativo
+@function get-font-size($multiplier) {
+    @return 1rem * $multiplier;
+}
+
+// 4. Estilos con Anidamiento y aplicación de Sass
+// =============================================================================
+
+// Estilos para el header y la navegación
+.main-header {
+    background-color: $primary-color;
+    padding: $base-padding 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .logo {
+            font-family: $font-stack-heading;
+            font-size: get-font-size(1.75); // Usando función
+            color: $light-text-color;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+
+            .nav-item {
+                margin-left: $base-padding * 1.5;
+
+                .nav-link {
+                    color: $light-text-color;
+                    text-decoration: none;
+                    font-weight: bold;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: $accent-color;
+                    }
+                }
+            }
+        }
+
+        @include respond-to(md) { // Responsividad con mixin
+            flex-wrap: nowrap;
+        }
+    }
+}
+
+// Estilos para los botones
+.btn {
+    @include button-base($primary-color); // Aplicando mixin base
+    font-size: get-font-size(1); // Usando función
+
+    &.btn-primary {
+        background-color: $primary-color;
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+    &.btn-secondary {
+        background-color: $secondary-color;
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+        }
+    }
+}
+
+// Estilos para las secciones con fondo
+.content-section {
+    &.bg-dark {
+        background-color: $bg-dark;
+        color: $light-text-color;
+        h2, h3 {
+            color: $accent-color; // Anidamiento y variable
+        }
+    }
+}
+
+// Estilos para las tarjetas (grid)
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $base-padding * 2; // Usando variable
+    margin-top: $base-padding * 2;
+
+    @include respond-to(md) { // Responsividad con mixin
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+        background-color: #fff;
+        padding: $base-padding * 1.5;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            color: $secondary-color; // Anidamiento y variable
+        }
+    }
+}
+
+// Estilos para el footer
+.main-footer {
+    background-color: $primary-color;
+    color: $light-text-color;
+    text-align: center;
+    padding: $base-padding * 1.5 0;
+    font-size: get-font-size(0.875); // Usando función
+}
+
+// Estilos para el modal (anidamiento)
+.modal {
+    .modal-content {
+        h3 {
+            color: $primary-color; // Anidamiento y variable
+        }
+        .close-button {
+            &:hover {
+                color: $primary-color; // Anidamiento y variable
+            }
+        }
+    }
+}

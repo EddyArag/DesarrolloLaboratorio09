@@ -1,0 +1,364 @@
+// 1. Variables (expandido de Experiencia 3 para consistencia global)
+// =============================================================================
+$primary-color: #6f42c1; // Púrpura vibrante para el tema "elixir"
+$secondary-color: #8a2be2; // Violeta para acentos
+$accent-color: #ffc107; // Amarillo brillante para CTAs y highlights
+$text-color: #343a40; // Gris oscuro para texto principal
+$light-text-color: #f8f9fa; // Blanco casi puro para fondos oscuros
+$bg-light: #f8f9fa; // Fondo claro para secciones
+$bg-primary: $primary-color; // Fondo para CTA
+
+$font-stack-body: 'Roboto', sans-serif; // Fuente sans-serif moderna
+$font-stack-heading: 'Montserrat', sans-serif; // Fuente bold para títulos
+
+$base-padding: 1rem; // Unidad base para espaciados
+$border-radius: 0.5rem; // Radio de bordes redondeados
+$box-shadow-light: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); // Sombra ligera
+$box-shadow-medium: 0 1rem 3rem rgba(0, 0, 0, 0.175); // Sombra media para hero y cards
+
+// 2. Mixins (reutilizados y expandidos para cards, transiciones y responsividad)
+// =============================================================================
+
+// Mixin para transiciones suaves (de Experiencia 3)
+@mixin transition($property: all, $duration: 0.3s, $timing-function: ease) {
+    transition: $property $duration $timing-function;
+}
+
+// Mixin para sombras en cards (nuevo)
+@mixin card-shadow($level: light) {
+    @if $level == light {
+        box-shadow: $box-shadow-light;
+    } @else if $level == medium {
+        box-shadow: $box-shadow-medium;
+    }
+}
+
+// Mixin para media queries responsivas (de Experiencia 3, simplificado)
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == md {
+        @media (min-width: 768px) { @content; }
+    } @else if $breakpoint == lg {
+        @media (min-width: 992px) { @content; }
+    } @else if $breakpoint == xl {
+        @media (min-width: 1200px) { @content; }
+    }
+}
+
+// Mixin para botones personalizados (nuevo, para CTAs)
+@mixin btn-style($bg-color, $text-color: $light-text-color, $hover-darken: 10%) {
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    padding: $base-padding * 0.75 $base-padding * 1.5;
+    border-radius: $border-radius;
+    font-weight: bold;
+    @include transition(background-color, 0.2s);
+    &:hover {
+        background-color: darken($bg-color, $hover-darken);
+        transform: translateY(-2px);
+        box-shadow: $box-shadow-light;
+    }
+}
+
+// 3. Funciones (nueva para cálculos dinámicos)
+// =============================================================================
+
+// Función para espaciados relativos (nuevo)
+@function spacing($multiplier) {
+    @return $base-padding * $multiplier;
+}
+
+// Función para ajustar colores para hover (simple, usando Sass built-in)
+@function adjust-color($color, $amount: 10%) {
+    @return darken($color, $amount);
+}
+
+// 4. Estilos Generales y Anidamiento (usando Sass para organización)
+// =============================================================================
+
+// Body y tipografía base
+body {
+    font-family: $font-stack-body;
+    color: $text-color;
+    line-height: 1.6;
+    background-color: #fff;
+    padding-top: 76px; // Espacio para navbar fixed-top (altura aproximada de Bootstrap)
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $font-stack-heading;
+        color: $primary-color;
+        margin-bottom: spacing(1);
+    }
+
+    .display-4 {
+        font-size: 3.5rem; // Sobrescribe Bootstrap para hero
+        @include respond-to(lg) {
+            font-size: 4.5rem;
+        }
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: $text-color;
+    }
+}
+
+// Navbar (mejorado de Experiencia 3, con fixed-top y animaciones)
+.custom-navbar {
+    background-color: $primary-color;
+    padding: spacing(0.5) 0;
+    @include transition(background-color, 0.3s);
+    z-index: 1030; // Para fixed-top sobre contenido
+
+    &.scrolled {
+        background-color: adjust-color($primary-color, 15%); // Usando función
+        padding: spacing(0.25) 0;
+        box-shadow: $box-shadow-medium;
+    }
+
+    .navbar-brand {
+        color: $light-text-color !important; // !important para sobrescribir Bootstrap
+        font-weight: bold;
+        font-size: 1.8rem;
+        font-family: $font-stack-heading;
+        @include transition(color, 0.3s);
+
+        &:hover {
+            color: $accent-color !important;
+        }
+    }
+
+    .navbar-toggler {
+        border-color: rgba($light-text-color, 0.5);
+        @include transition(border-color, 0.3s);
+
+        &:focus {
+            box-shadow: 0 0 0 0.25rem rgba($accent-color, 0.5);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+    }
+
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                color: rgba($light-text-color, 0.8) !important;
+                font-weight: 500;
+                padding: spacing(0.5) spacing(1);
+                position: relative;
+                @include transition(color, 0.3s);
+
+                &:hover, &.active {
+                    color: $accent-color !important;
+                }
+
+                // Anidamiento para animación de subrayado (de Experiencia 3)
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $accent-color;
+                    @include transition(width, 0.3s, ease-out);
+                    transform: translateX(-50%);
+                }
+
+                &:hover::after, &.active::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Hero Section (nuevo, con fondo y animaciones)
+.hero-section {
+    background: linear-gradient(rgba($primary-color, 0.8), rgba($secondary-color, 0.6)), url('https://via.placeholder.com/1920x1080?text=Elixir+Hero') no-repeat center center/cover;
+    color: $light-text-color;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .hero-img {
+        @include card-shadow(medium); // Usando mixin
+        animation: fadeInUp 1s ease-out; // Animación de entrada
+    }
+
+    .btn {
+        @include btn-style($accent-color, $primary-color, 5%); // Usando mixin para botón primario
+
+        &.btn-outline-light {
+            border-color: $light-text-color;
+            color: $light-text-color;
+            @include transition(all, 0.3s);
+
+            &:hover {
+                background-color: $light-text-color;
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+// Animación para hero (usando Sass para keyframes)
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Características Destacadas (cards con Sass)
+#caracteristicas {
+    background-color: $bg-light;
+
+    .feature-card {
+        border: none;
+        @include card-shadow(light); // Usando mixin
+        @include transition(transform, 0.3s);
+        overflow: hidden;
+
+        &:hover {
+            transform: translateY(-10px);
+            @include card-shadow(medium);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            color: $primary-color;
+            font-size: 1.25rem;
+        }
+
+        .btn {
+            @include btn-style($primary-color); // Usando mixin
+        }
+    }
+}
+
+// Testimonios (nuevo, con estrellas y animaciones)
+#testimonios {
+    .testimonial-card {
+        border: none;
+        @include card-shadow(light);
+        @include transition(transform, 0.3s);
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        .stars {
+            color: $accent-color;
+            font-size: 1.2rem;
+            margin-top: spacing(0.5);
+        }
+
+        .card-title {
+            color: $secondary-color;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            border: 3px solid $primary-color;
+        }
+    }
+}
+
+// CTA Final (nuevo)
+.py-5.bg-primary {
+    background-color: $bg-primary !important;
+
+    .btn {
+        @include btn-style($light-text-color, $primary-color, 5%);
+    }
+}
+
+// Footer (mejorado)
+footer {
+    background-color: #212529 !important; // Sobrescribe Bootstrap
+
+    h5 {
+        color: $accent-color;
+        margin-bottom: spacing(1);
+    }
+
+    .footer-form {
+        .form-control {
+            border-radius: $border-radius;
+            border: 1px solid rgba($light-text-color, 0.3);
+            @include transition(border-color, 0.3s);
+
+            &:focus {
+                border-color: $accent-color;
+                box-shadow: 0 0 0 0.25rem rgba($accent-color, 0.25);
+            }
+        }
+
+        .btn {
+            @include btn-style($primary-color);
+        }
+    }
+}
+
+// Modal de Suscripción (personalizado)
+#suscripcionModal {
+    .modal-content {
+        border-radius: $border-radius * 1.5;
+        @include card-shadow(medium);
+        border: none;
+
+        .modal-header {
+            background-color: $primary-color;
+            color: $light-text-color;
+            border-radius: $border-radius * 1.5 $border-radius * 1.5 0 0;
+
+            .modal-title {
+                color: $light-text-color;
+            }
+        }
+
+        .modal-body {
+            .form-control {
+                border-radius: $border-radius;
+                @include transition(border-color, 0.3s);
+
+                &:focus {
+                    border-color: $primary-color;
+                    box-shadow: 0 0 0 0.25rem rgba($primary-color, 0.25);
+                }
+            }
+
+            .btn {
+                @include btn-style($primary-color);
+            }
+        }
+    }
+}
+
+// Sobrescrituras de Bootstrap para consistencia (mínimas para optimización)
+.card {
+    border-radius: $border-radius;
+}
+
+.btn-primary {
+    @include btn-style($primary-color);
+}
+
+.container {
+    @include respond-to(xl) {
+        max-width: 1200px; // Ajuste responsivo
+    }
+}

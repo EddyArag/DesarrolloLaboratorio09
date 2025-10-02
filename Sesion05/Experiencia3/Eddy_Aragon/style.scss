@@ -1,0 +1,187 @@
+// Variables de color y fuente (puedes reutilizar las de la práctica anterior o definir nuevas)
+$primary-color: #6f42c1; // Un púrpura más vibrante para el tema "elixir"
+$secondary-color: #8a2be2; // Violeta
+$accent-color: #ffc107; // Amarillo brillante para acentos
+$text-color: #343a40; // Gris oscuro
+$light-text-color: #f8f9fa; // Blanco casi puro
+
+$font-stack-body: 'Roboto', sans-serif;
+$font-stack-heading: 'Montserrat', sans-serif;
+
+$base-padding: 1rem;
+
+// Mixin para transiciones suaves
+@mixin transition($property: all, $duration: 0.3s, $timing-function: ease) {
+    transition: $property $duration $timing-function;
+}
+
+// Mixin para media queries (reutilizado)
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == sm {
+        @media (min-width: 576px) { @content; }
+    } @else if $breakpoint == md {
+        @media (min-width: 768px) { @content; }
+    } @else if $breakpoint == lg {
+        @media (min-width: 992px) { @content; }
+    } @else if $breakpoint == xl {
+        @media (min-width: 1200px) { @content; }
+    }
+}
+
+// Estilos generales del body y tipografía
+body {
+    font-family: $font-stack-body;
+    color: $text-color;
+    line-height: 1.6;
+    background-color: #f0f2f5; // Un fondo suave
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-stack-heading;
+    color: $primary-color;
+    margin-bottom: $base-padding;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+// Personalización de la Navbar de Bootstrap
+.custom-navbar {
+    background-color: $primary-color; // Color de fondo principal
+    padding: $base-padding 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    @include transition(background-color); // Transición para el scroll
+
+    // Estilo cuando se hace scroll (ejemplo de JS añadiendo clase 'scrolled')
+    &.scrolled {
+        background-color: darken($primary-color, 10%);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-brand {
+        color: $light-text-color;
+        font-weight: bold;
+        font-size: 1.8rem;
+        font-family: $font-stack-heading;
+        @include transition(color);
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+    .navbar-toggler {
+        border-color: rgba($light-text-color, 0.5); // Borde del botón hamburguesa
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.25rem rgba($accent-color, 0.5);
+        }
+    }
+
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                color: rgba($light-text-color, 0.8); // Color de los enlaces
+                font-weight: 500;
+                padding: $base-padding * 0.5 $base-padding;
+                position: relative;
+                @include transition(color);
+
+                &:hover, &.active {
+                    color: $accent-color; // Color al pasar el ratón o activo
+                }
+
+                // Animación de subrayado con Sass
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%; // Empieza en el centro
+                    bottom: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $accent-color;
+                    @include transition(all, 0.3s, ease-out); // Transición para el ancho y posición
+                    transform: translateX(-50%); // Centra el subrayado
+                }
+
+                &:hover::after, &.active::after {
+                    width: 100%; // Se expande al 100%
+                }
+            }
+        }
+
+        // Estilos para el Dropdown
+        .dropdown-menu {
+            background-color: $secondary-color; // Fondo del menú desplegable
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 0; // Eliminar padding por defecto para controlar con li
+
+            .dropdown-item {
+                color: $light-text-color;
+                padding: $base-padding * 0.75 $base-padding;
+                @include transition(background-color, 0.2s);
+
+                &:hover {
+                    background-color: darken($secondary-color, 10%);
+                    color: $accent-color;
+                }
+                &:active {
+                    background-color: darken($secondary-color, 15%);
+                }
+            }
+
+            .dropdown-divider {
+                border-top-color: rgba($light-text-color, 0.2);
+            }
+
+            // Animación de entrada del dropdown (usando clases de Bootstrap y Sass)
+            // Bootstrap usa 'show' para mostrar el dropdown.
+            // Podemos añadir una animación personalizada.
+            &.show {
+                animation: fadeInScale 0.3s ease-out forwards;
+            }
+        }
+    }
+}
+
+// Animación de entrada para el dropdown
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+// Estilos para las imágenes del blog
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.rounded {
+    border-radius: 0.5rem !important;
+}
+
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+// Footer
+footer {
+    background-color: $primary-color !important; // Usar !important para sobrescribir Bootstrap si es necesario
+    color: $light-text-color !important;
+    padding: $base-padding * 1.5 0;
+}

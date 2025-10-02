@@ -1,0 +1,66 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-family: 'Arial', sans-serif;
+$base-font-size: 16px;
+$heading-font-size: 24px;
+$border-radius: 8px;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@function rem($pixels) {
+  @return #{$pixels / $base-font-size}rem;
+}
+
+@function lighten-color($color, $amount) {
+  @return mix(white, $color, $amount);
+}
+
+body {
+  font-family: $font-family;
+  font-size: rem(16px);
+
+  h1 {
+    font-size: $heading-font-size;
+    color: $primary-color;
+  }
+
+  .button {
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten-color($primary-color, 20%);
+    }
+  }
+  
+  .card {
+    background-color: $secondary-color;
+    padding: 20px;
+    @include border-radius($border-radius);
+    @include box-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+
+    .card-header {
+      font-size: rem(18px);
+      color: darken($secondary-color, 10%);
+    }
+
+    .card-body {
+      font-size: rem(14px);
+      color: darken($secondary-color, 20%);
+    }
+  }
+}
