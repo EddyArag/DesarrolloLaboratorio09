@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Sistema de Seguridad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #ddd;
+        }
+        .header h1 {
+            color: #007BFF;
+            margin: 0;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 5px solid #007BFF;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+        .card-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .card-content li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .card-content li:last-child {
+            border-bottom: none;
+        }
+        .status {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .risk {
+            font-weight: bold;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <h1>Dashboard de Seguridad de la Cadena de Suministro</h1>
+    </header>
+
+    <div class="dashboard-grid">
+        <div class="card">
+            <h2>Gestión de Proveedores de Aplicaciones</h2>
+            <div class="card-content">
+                <ul>
+                    <li>**App Name:** App Plugin (Tercero) <br> **Estado:** <span class="risk">Alto Riesgo - Revisión de Código</span></li>
+                    <li>**App Name:** Marketing Suite <br> **Estado:** <span class="status">Revisado - Aprobado</span></li>
+                    <li>**App Name:** Analytics Pro <br> **Estado:** <span class="status">Revisado - Aprobado</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Monitoreo de Brechas Públicas</h2>
+            <div class="card-content">
+                <ul>
+                    <li>**Alerta:** Credenciales de administrador de la tienda expuestas en un servicio de terceros.</li>
+                    <li>**Vulnerabilidad:** Plugin desactualizado que expuso tokens de sesión.</li>
+                    <li>**Acción:** Notificación a usuarios, revocación de tokens y actualización de políticas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Capacitación en Seguridad</h2>
+            <div class="card-content">
+                <ul>
+                    <li>**Tema:** Riesgos de Aplicaciones de Terceros</li>
+                    <li>**Estado:** **Pendiente** para el 80% del equipo de desarrollo</li>
+                    <li>**Objetivo:** Aumentar la conciencia sobre el acceso de las aplicaciones a los datos del cliente.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Políticas de Cifrado de Datos</h2>
+            <div class="card-content">
+                <ul>
+                    <li>**Datos en Tránsito:** Tráfico cifrado con TLS/SSL (Transport Layer Security).</li>
+                    <li>**Datos en Reposo:** Cifrado de la base de datos de clientes con **AES-256**.</li>
+                    <li>**Autenticación de Credenciales:** Uso de **funciones hash saladas** para contraseñas.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
