@@ -3,65 +3,45 @@
   font-family: "Arial", sans-serif;
   padding: 10px 20px;
 }
-
 .navbar .navbar-brand {
   color: white;
   font-size: 24px;
 }
-
 .navbar .navbar-brand:hover {
   color: #004d99;
 }
-
 .navbar .nav-link {
   color: white;
   padding: 10px 15px;
   font-size: 18px;
 }
-
 .navbar .nav-link:hover {
   background-color: #004d99;
   color: white;
 }
-
 .navbar .dropdown-menu {
   background-color: #333;
   border-radius: 5px;
-  -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
   visibility: hidden;
 }
-
 .navbar .dropdown-menu.show {
   opacity: 1;
   visibility: visible;
 }
-
 .navbar .dropdown-menu .dropdown-item {
   color: white;
   padding: 10px 15px;
 }
-
 .navbar .dropdown-menu .dropdown-item:hover {
   background-color: #004d99;
 }
-
 .navbar .navbar-toggler {
   border: none;
 }
-
 .navbar .navbar-toggler .navbar-toggler-icon {
   background-color: white;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @keyframes fadeIn {
@@ -72,9 +52,6 @@
     opacity: 1;
   }
 }
-
 .fadeInAnimation {
-  -webkit-animation: fadeIn 1s ease-in-out;
-          animation: fadeIn 1s ease-in-out;
-}
-/*# sourceMappingURL=boots_sass.css.map */
+  animation: fadeIn 1s ease-in-out;
+}/*# sourceMappingURL=boots_sass.css.map */
