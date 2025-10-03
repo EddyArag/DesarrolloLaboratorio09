@@ -1,0 +1,161 @@
+@use 'sass:color';
+
+// ----- Variables -----
+$primary-color: #0d6efd;
+$bg-color: #111;
+$text-color: #fff;
+$grey-button: #515863;
+
+$wine-color: #722f37;
+$red-color: #dc2626;
+$light-bg: #f8f9fa;
+$white-color: #ffffff;
+
+// CSS custom properties for runtime compatibility
+:root {
+  --wine-color: #{$wine-color};
+  --red-color: #{$red-color};
+  --light-bg: #{$light-bg};
+  --white-color: #{$white-color};
+}
+
+// ----- Keyframes -----
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+// ----- Mixins -----
+@mixin btn-theme($bg, $border, $color: white, $weight: 500) {
+  background-color: $bg;
+  border-color: $border;
+  color: $color;
+  font-weight: $weight;
+}
+
+// ----- Navbar -----
+.custom-navbar {
+  background-color: $bg-color;
+
+  .navbar-brand,
+  .nav-link {
+    color: $text-color;
+    &:hover { color: $primary-color; }
+  }
+
+  // Dropdown: apariencia y animación combinadas
+  .dropdown-menu {
+    background-color: color.adjust($bg-color, $lightness: -5%);
+    display: none;
+
+    a.dropdown-item {
+      color: $text-color;
+      &:hover {
+        background-color: $primary-color;
+        color: $bg-color;
+      }
+    }
+
+    &.show-animated {
+      display: block;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    &:not(.show-animated) {
+      animation: fadeOut 0.3s ease forwards;
+    }
+  }
+
+  // Botones y toggler de la navbar
+  .btn,
+  .navbar-toggler {
+    background-color: $grey-button;
+    border-color: color.adjust($grey-button, $lightness: -12%);
+    color: $primary-color;
+
+    &:hover {
+      background-color: color.adjust($grey-button, $lightness: -8%);
+      color: $bg-color;
+    }
+  }
+}
+
+// ----- Sidebar & Layout -----
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: $white-color;
+  border-right: 2px solid $wine-color;
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
+  .nav-link {
+    padding: 12px 20px;
+    margin: 5px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(114, 47, 55, 0.1);
+      color: $wine-color !important;
+    }
+  }
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 30px;
+  min-height: 100vh;
+  background-color: $light-bg;
+}
+
+// ----- Botones personalizados -----
+.btn-wine { @include btn-theme($wine-color, $wine-color);
+  &:hover {
+    background-color: color.adjust($wine-color, $lightness: -12%);
+    border-color: color.adjust($wine-color, $lightness: -12%);
+  }
+}
+
+.btn-red { @include btn-theme($red-color, $red-color); }
+
+.btn-outline-red {
+  border-color: $red-color;
+  color: $red-color;
+  &:hover { background-color: $red-color; color: white; }
+}
+
+// ----- Cards / text -----
+.border-wine { border-color: $wine-color !important; border-width: 2px !important; }
+.text-wine { color: $wine-color; font-weight: 600; }
+
+// ----- Form styling -----
+.form-control {
+  &.border-wine {
+    border-color: $wine-color;
+    border-width: 2px;
+    &:focus {
+      border-color: $red-color;
+      box-shadow: 0 0 0 0.2rem rgba(114, 47, 55, 0.25);
+    }
+  }
+}
+
+// ----- Card hover -----
+.card { border-radius: 10px; transition: transform 0.2s ease;
+  &:hover { transform: translateY(-2px); }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .sidebar { width: 200px; }
+  .main-content { margin-left: 200px; padding: 15px; }
+}
