@@ -2,12 +2,10 @@ body {
   font-family: "Arial", sans-serif;
   font-size: 1rem;
 }
-
 body h1 {
   font-size: 24px;
   color: #3498db;
 }
-
 body .button {
   background-color: #3498db;
   color: white;
@@ -16,26 +14,20 @@ body .button {
   border-radius: 8px;
   cursor: pointer;
 }
-
 body .button:hover {
-  background-color: #5dade2;
+  background-color: rgb(92.6, 172.6, 226.2);
 }
-
 body .card {
   background-color: #2ecc71;
   padding: 20px;
   border-radius: 8px;
-  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 body .card .card-header {
   font-size: 1.125rem;
-  color: #25a25a;
+  color: rgb(36.616, 162.384, 89.948);
 }
-
 body .card .card-body {
   font-size: 0.875rem;
-  color: #1b7943;
-}
-/*# sourceMappingURL=sass.css.map */
+  color: rgb(27.232, 120.768, 66.896);
+}/*# sourceMappingURL=sass.css.map */
