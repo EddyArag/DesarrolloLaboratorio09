@@ -1,0 +1,539 @@
+// style.scss - Sistema de Diseño Modular Consolidado para Tienda Online (CORREGIDO)
+
+// Importar módulos de Sass para funciones de color y matemáticas
+@use "sass:color";
+@use "sass:math";
+
+// ==========================================================================
+// 1. VARIABLES
+// ==========================================================================
+
+// Colores
+$primary-color: #007bff; // Azul de Bootstrap
+$secondary-color: #6c757d; // Gris de Bootstrap
+$success-color: #28a745; // Verde de Bootstrap
+$danger-color: #dc3545; // Rojo de Bootstrap
+$warning-color: #ffc107; // Amarillo de Bootstrap
+$info-color: #17a2b8; // Cian de Bootstrap
+
+$text-color: #343a40; // Gris oscuro para texto
+$light-text-color: #f8f9fa; // Blanco roto para texto claro
+$background-light: #f8f9fa; // Gris claro para fondos
+$background-dark: #343a40; // Oscuro de Bootstrap
+
+$accent-color: #e74c3c; // Rojo coral (Asegurarse de que esté definida aquí)
+
+// Fuentes
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-serif: 'Merriweather', serif;
+$font-family-monospace: 'Fira Code', monospace;
+
+// Tamaños de fuente
+$font-size-base: 16px;
+$font-size-sm: math.div($font-size-base, 1.14); // 14px
+$font-size-md: math.div($font-size-base, 0.88); // 18px
+$font-size-lg: math.div($font-size-base, 0.66); // 24px
+$font-size-xl: math.div($font-size-base, 0.5); // 32px
+
+// Espaciados (basados en una escala modular)
+$spacing-unit: 1rem; // 16px
+$spacing-xs: math.div($spacing-unit, 4); // 4px
+$spacing-sm: math.div($spacing-unit, 2); // 8px
+$spacing-md: $spacing-unit; // 16px
+$spacing-lg: math.div($spacing-unit, 0.66); // 24px
+$spacing-xl: math.div($spacing-unit, 0.5); // 32px
+
+// Bordes
+$border-radius-sm: 0.25rem; // 4px
+$border-radius-md: 0.5rem; // 8px
+$border-radius-lg: 1rem; // 16px
+
+// Sombras
+$shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); // Bootstrap default
+$shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); // Bootstrap default
+$shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175); // Bootstrap default
+
+// Transiciones
+$transition-speed-fast: 0.15s;
+$transition-speed-normal: 0.3s;
+$transition-speed-slow: 0.5s;
+$transition-ease: ease-in-out;
+
+
+// ==========================================================================
+// 2. FUNCIONES
+// ==========================================================================
+
+// Función para oscurecer un color
+@function darken-color($color, $amount) {
+    @return color.adjust($color, $lightness: -$amount); // Usar color.adjust
+}
+
+// Función para aclarar un color
+@function lighten-color($color, $amount) {
+    @return color.adjust($color, $lightness: $amount); // Usar color.adjust
+}
+
+// Función para obtener el contraste de color (blanco o negro)
+@function get-contrast-color($color) {
+    $threshold: 0.5; // Umbral para determinar si el color es claro u oscuro
+    // Usar color.red, color.green, color.blue y math.div
+    $luminance: math.div((color.red($color) * 0.299 + color.green($color) * 0.587 + color.blue($color) * 0.114), 255);
+
+    @if $luminance > $threshold {
+        @return #000; // Color oscuro para texto
+    } @else {
+        @return #fff; // Color claro para texto
+    }
+}
+
+// Función para convertir px a rem
+@function px-to-rem($px-value) {
+    @return math.div($px-value, $font-size-base) * 1rem; // Usar math.div
+}
+
+
+// ==========================================================================
+// 3. MIXINS
+// ==========================================================================
+
+// Mixin para sombras (usando las variables de sombra de Bootstrap)
+@mixin apply-shadow($level: md) {
+    @if $level == sm {
+        box-shadow: $shadow-sm;
+    } @else if $level == md {
+        box-shadow: $shadow-md;
+    } @else if $level == lg {
+        box-shadow: $shadow-lg;
+    } @else {
+        box-shadow: none;
+    }
+}
+
+// Mixin para bordes redondeados
+@mixin border-radius($radius: $border-radius-md) {
+    border-radius: $radius;
+}
+
+// Mixin para transiciones
+@mixin transition($property: all, $speed: $transition-speed-normal, $ease: $transition-ease) {
+    transition: $property $speed $ease;
+}
+
+// Mixin para centrar elementos con flexbox
+@mixin flex-center($direction: row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+// Mixin para responsive typography
+@mixin responsive-font($min-size, $max-size, $min-viewport: 320px, $max-viewport: 1200px) {
+    font-size: $min-size; // Fallback
+    font-size: calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-viewport}) / (#{$max-viewport} - #{$min-viewport})));
+
+    @media (min-width: #{$max-viewport}) {
+        font-size: $max-size;
+    }
+}
+
+
+// ==========================================================================
+// 4. ESTILOS BASE
+// ==========================================================================
+
+// Reset básico
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%; // Base para REM
+}
+
+body {
+    font-family: $font-family-sans-serif;
+    font-size: px-to-rem($font-size-base);
+    line-height: 1.6;
+    color: $text-color;
+    background-color: $background-light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-serif;
+    margin-bottom: $spacing-sm;
+    line-height: 1.2;
+    color: darken-color($text-color, 10%);
+}
+
+h1 { @include responsive-font($font-size-lg, $font-size-xl * 1.5); }
+h2 { @include responsive-font($font-size-md, $font-size-xl); }
+h3 { @include responsive-font($font-size-base, $font-size-lg); }
+
+p {
+    margin-bottom: $spacing-md;
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+    @include transition(color);
+
+    &:hover {
+        color: darken-color($primary-color, 15%);
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+
+// ==========================================================================
+// 5. ESTILOS ESPECÍFICOS DE LA TIENDA ONLINE
+// ==========================================================================
+
+// Navbar
+.navbar {
+    .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        .logo-img {
+            height: 40px; // Ajusta el tamaño del logo
+            margin-right: $spacing-xs;
+        }
+    }
+    .nav-link {
+        font-weight: 500;
+        color: $text-color;
+        &:hover {
+            color: $primary-color;
+        }
+        &.active {
+            color: $primary-color;
+            font-weight: 700;
+        }
+    }
+    .dropdown-menu {
+        @include apply-shadow(sm);
+        border: none;
+        .dropdown-item {
+            &:hover {
+                background-color: lighten-color($primary-color, 40%); // Usar la función corregida
+                color: $primary-color;
+            }
+        }
+    }
+    .btn-outline-dark {
+        border-color: $secondary-color;
+        color: $secondary-color;
+        &:hover {
+            background-color: $secondary-color;
+            color: get-contrast-color($secondary-color);
+        }
+    }
+}
+
+// Carrusel Hero
+.hero-carousel {
+    .carousel-item {
+        height: 500px; // Altura fija para el carrusel
+        background-color: $background-dark; // Fallback color
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            opacity: 0.7; // Oscurecer un poco la imagen para el texto
+        }
+    }
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.4); // Fondo semi-transparente para el texto
+        padding: $spacing-md;
+        @include border-radius($border-radius-sm);
+        h5 {
+            color: $light-text-color;
+            font-size: $font-size-xl;
+        }
+        p {
+            color: $light-text-color;
+            font-size: $font-size-lg;
+        }
+        .btn {
+            @include apply-shadow(sm);
+        }
+    }
+}
+
+// Títulos de Sección
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: $spacing-xl !important; // Sobrescribir margin-bottom de Bootstrap
+
+    &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: $primary-color;
+        margin: $spacing-sm auto 0;
+        @include border-radius(2px);
+    }
+}
+
+// Tarjetas de Producto (en index.html)
+.product-card {
+    @include apply-shadow(sm);
+    @include border-radius($border-radius-md);
+    border: none;
+    @include transition(transform, $transition-speed-normal);
+
+    &:hover {
+        transform: translateY(-5px);
+        @include apply-shadow(md);
+    }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: contain; // Para que la imagen se ajuste sin recortarse
+        padding: $spacing-sm;
+        background-color: white;
+        @include border-radius($border-radius-md $border-radius-md 0 0);
+    }
+
+    .card-body {
+        text-align: left;
+        h5.card-title {
+            font-size: px-to-rem($font-size-md);
+            color: $primary-color;
+            margin-bottom: $spacing-xs;
+        }
+        p.card-text {
+            font-size: px-to-rem($font-size-sm);
+            color: $secondary-color;
+            min-height: 40px; // Para mantener la altura consistente
+        }
+        .price {
+            font-size: px-to-rem($font-size-lg);
+            font-weight: bold;
+            color: $accent-color; // Esta variable está definida globalmente
+        }
+        .btn-outline-primary {
+            border-color: $primary-color;
+            color: $primary-color;
+            &:hover {
+                background-color: $primary-color;
+                color: get-contrast-color($primary-color);
+            }
+        }
+    }
+}
+
+// Sección de Llamado a la Acción (CTA)
+.cta-section {
+    background-color: $primary-color;
+    background-image: url('imagenes/im2.png'); // Usar im2.png como fondo
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($primary-color, 0.7); // Overlay con el color primario
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+    h2 {
+        color: $light-text-color !important; // Sobrescribir color de h2 base
+    }
+    .form-control {
+        background-color: rgba(8, 59, 36, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: $text-color;
+        &:focus {
+            border-color: $warning-color;
+            box-shadow: 0 0 0 0.25rem rgba($warning-color, 0.25);
+        }
+    }
+    .btn-warning {
+        background-color: $warning-color;
+        border-color: $warning-color;
+        color: get-contrast-color($warning-color);
+        &:hover {
+            background-color: darken-color($warning-color, 10%);
+            border-color: darken-color($warning-color, 10%);
+        }
+    }
+}
+
+// Footer
+footer {
+    .social-icons a {
+        font-size: 1.5rem;
+        @include transition(color);
+        &:hover {
+            color: $primary-color !important; // Usar color primario en hover
+        }
+    }
+}
+
+// ==========================================================================
+// 6. ESTILOS DE PÁGINA DE PRODUCTO (product.html)
+// ==========================================================================
+
+.product-detail-section {
+    .product-detail-image {
+        @include border-radius($border-radius-md);
+        @include apply-shadow(sm);
+        object-fit: contain;
+        background-color: white;
+        padding: $spacing-md;
+    }
+    .thumbnail-gallery {
+        img {
+            @include border-radius($border-radius-sm);
+            border: 2px solid transparent;
+            cursor: pointer;
+            @include transition(all, $transition-speed-fast);
+            &:hover, &.active {
+                border-color: $primary-color;
+                @include apply-shadow(sm);
+            }
+        }
+    }
+    .product-info-detail {
+        text-align: left;
+        .product-title {
+            font-size: px-to-rem($font-size-xl * 1.2);
+            color: $text-color;
+            margin-bottom: $spacing-sm;
+        }
+        .product-price {
+            color: $accent-color;
+            font-weight: bold;
+            margin-bottom: $spacing-md;
+        }
+        .product-description {
+            color: $secondary-color;
+            margin-bottom: $spacing-lg;
+        }
+        .form-label {
+            font-weight: 600;
+            color: $text-color;
+        }
+        .form-select, .form-control {
+            @include border-radius($border-radius-sm);
+            border-color: lighten-color($secondary-color, 20%); // Usar la función corregida
+            &:focus {
+                border-color: $primary-color;
+                box-shadow: 0 0 0 0.25rem rgba($primary-color, 0.25);
+            }
+        }
+        .color-options {
+            display: flex;
+            gap: $spacing-sm;
+            .color-box {
+                width: 30px;
+                height: 30px;
+                @include border-radius(50%);
+                border: 2px solid transparent;
+                cursor: pointer;
+                @include transition(all, $transition-speed-fast);
+                &:hover, &.active {
+                    border-color: $primary-color;
+                    @include apply-shadow(sm);
+                }
+            }
+        }
+        .btn-primary {
+            background-color: $primary-color;
+            border-color: $primary-color;
+            color: get-contrast-color($primary-color);
+            &:hover {
+                background-color: darken-color($primary-color, 10%);
+                border-color: darken-color($primary-color, 10%);
+            }
+        }
+        .btn-outline-secondary {
+            border-color: $secondary-color;
+            color: $secondary-color;
+            &:hover {
+                background-color: $secondary-color;
+                color: get-contrast-color($secondary-color);
+            }
+        }
+    }
+}
+
+// ==========================================================================
+// 7. ESTILOS DE PÁGINA DE CARRITO (cart.html)
+// ==========================================================================
+
+.cart-item {
+    @include apply-shadow(sm);
+    @include border-radius($border-radius-md);
+    .img-fluid {
+        height: 120px;
+        object-fit: contain;
+        padding: $spacing-xs;
+        background-color: rgb(145, 79, 79);
+        @include border-radius($border-radius-md 0 0 $border-radius-md);
+    }
+    .card-title {
+        font-size: px-to-rem($font-size-md);
+        color: $primary-color;
+    }
+    .fw-bold {
+        font-size: px-to-rem($font-size-lg);
+        color: $accent-color; // Esta variable está definida globalmente
+    }
+    .btn-danger {
+        background-color: $danger-color;
+        border-color: $danger-color;
+        color: get-contrast-color($danger-color);
+        &:hover {
+            background-color: darken-color($danger-color, 10%);
+            border-color: darken-color($danger-color, 10%);
+        }
+    }
+    .input-group .form-control {
+        border-color: lighten-color($secondary-color, 20%); // Usar la función corregida
+        &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 0 0 0.25rem rgba($primary-color, 0.25);
+        }
+    }
+}
+
+.summary-card {
+    @include apply-shadow(md);
+    @include border-radius($border-radius-md);
+    .list-group-item {
+        font-size: px-to-rem($font-size-md);
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    .btn-success {
+        background-color: $success-color;
+        border-color: $success-color;
+        color: get-contrast-color($success-color);
+        &:hover {
+            background-color: darken-color($success-color, 10%);
+            border-color: darken-color($success-color, 10%);
+        }
+    }
+}

@@ -1,0 +1,123 @@
+
+// Variables
+$wine-color: #722f37;
+$red-color: #dc2626;
+$light-bg: #f8f9fa;
+$white-color: #ffffff;
+
+:root {
+  --wine-color: #{$wine-color};
+  --red-color: #{$red-color};
+  --light-bg: #{$light-bg};
+  --white-color: #{$white-color};
+}
+
+// Mixins
+@mixin btn-theme($bg, $border, $color: white, $weight: 500) {
+  background-color: $bg;
+  border-color: $border;
+  color: $color;
+  font-weight: $weight;
+}
+
+// Sidebar
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: $white-color;
+  border-right: 2px solid $wine-color;
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
+  .nav-link {
+    padding: 12px 20px;
+    margin: 5px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(114, 47, 55, 0.1);
+      color: $wine-color !important;
+    }
+  }
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 30px;
+  min-height: 100vh;
+  background-color: $light-bg;
+}
+
+// Botones personalizados
+.btn-wine {
+  @include btn-theme($wine-color, $wine-color);
+
+  &:hover {
+  background-color: color.adjust($wine-color, $lightness: -12%);
+  border-color: color.adjust($wine-color, $lightness: -12%);
+  }
+}
+
+.btn-red {
+  @include btn-theme($red-color, $red-color);
+}
+
+.btn-outline-red {
+  border-color: $red-color;
+  color: $red-color;
+
+  &:hover {
+    background-color: $red-color;
+    color: white;
+  }
+}
+
+// Cards cybersec style
+.border-wine {
+  border-color: $wine-color !important;
+  border-width: 2px !important;
+}
+
+.text-wine {
+  color: $wine-color;
+  font-weight: 600;
+}
+
+// Form styling
+.form-control {
+  &.border-wine {
+    border-color: $wine-color;
+    border-width: 2px;
+
+    &:focus {
+      border-color: $red-color;
+      box-shadow: 0 0 0 0.2rem rgba(114, 47, 55, 0.25);
+    }
+  }
+}
+
+// Professional card styling
+.card {
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+    padding: 15px;
+  }
+}

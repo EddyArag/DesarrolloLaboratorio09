@@ -1,0 +1,66 @@
+@use 'sass:color';
+$primary-color: #0d6efd;
+$bg-color: #111;
+$text-color: #fff;
+$grey-button: #515863;
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+// Navbar
+.custom-navbar {
+  background-color: $bg-color;
+  .navbar-brand, .nav-link {
+    color: $text-color;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: color.adjust($bg-color, $lightness: -5%);
+    a.dropdown-item {
+      color: $text-color;
+      &:hover {
+        background-color: $primary-color;
+        color: $bg-color;
+      }
+    }
+  }
+
+  .btn, .navbar-toggler {
+    background-color: $grey-button;
+    border-color: color.adjust($grey-button, $lightness: -12%);
+    color: $primary-color;
+
+    &:hover {
+        background-color: color.adjust($grey-button,$lightness: -8%);
+        color: $bg-color; 
+    }
+  }
+
+
+
+  .dropdown-menu {
+    display: none;
+    &.show-animated {
+        display: block;
+        animation: fadeIn 0.3s ease forwards;
+    }
+
+    &:not(.show-animated) {
+        animation: fadeOut 0.3s ease forwards;
+    }
+    }
+
+
+}
+

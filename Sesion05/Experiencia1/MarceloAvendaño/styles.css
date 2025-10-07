@@ -1,0 +1,112 @@
+/* Colores personalizados - CyberSec Theme */
+:root {
+    --wine-color: #722f37;
+    --red-color: #dc2626;
+    --light-bg: #f8f9fa;
+    --white-color: #ffffff;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--white-color);
+    border-right: 2px solid var(--wine-color);
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+    min-height: 100vh;
+    background-color: var(--light-bg);
+}
+
+/* Botones personalizados */
+.btn-wine {
+    background-color: var(--wine-color);
+    border-color: var(--wine-color);
+    color: white;
+    font-weight: 500;
+}
+
+.btn-wine:hover {
+    background-color: #5a252a;
+    border-color: #5a252a;
+}
+
+.btn-red {
+    background-color: var(--red-color);
+    border-color: var(--red-color);
+    color: white;
+    font-weight: 500;
+}
+
+.btn-outline-red {
+    border-color: var(--red-color);
+    color: var(--red-color);
+}
+
+.btn-outline-red:hover {
+    background-color: var(--red-color);
+    color: white;
+}
+
+/* Cards cybersec style */
+.border-wine {
+    border-color: var(--wine-color) !important;
+    border-width: 2px !important;
+}
+
+.text-wine {
+    color: var(--wine-color);
+    font-weight: 600;
+}
+
+/* Form styling */
+.form-control.border-wine {
+    border-color: var(--wine-color);
+    border-width: 2px;
+}
+
+.form-control.border-wine:focus {
+    border-color: var(--red-color);
+    box-shadow: 0 0 0 0.2rem rgba(114, 47, 55, 0.25);
+}
+
+/* Sidebar navigation */
+.sidebar .nav-link {
+    padding: 12px 20px;
+    margin: 5px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(114, 47, 55, 0.1);
+    color: var(--wine-color) !important;
+}
+
+/* Professional card styling */
+.card {
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main-content {
+        margin-left: 200px;
+        padding: 15px;
+    }
+}
