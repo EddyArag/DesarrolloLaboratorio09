@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 // 3.a.4. Importe el componente 'Table'
+
 import Table from './Table'; 
 
 class App extends Component {
     render() {
-        
         // 3.b.1. Define un arreglo de objetos ('characters')
         const characters = [
             {
