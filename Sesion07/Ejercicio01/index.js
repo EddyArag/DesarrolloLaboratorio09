@@ -43,6 +43,3 @@ root.render(
     <AppRouter />
   </React.StrictMode>
 );
-
-// NOTA: Si usas App.js, puedes mover el <BrowserRouter>...</BrowserRouter> allí 
-// y el index.js solo renderizar <App />.
