@@ -2,7 +2,6 @@ import reflex as rx
 from typing import List, Dict
 
 # --- Datos de ejemplo ---
-# (He creado estos datos para que el Kanban tenga tarjetas)
 DATOS_PENDIENTES = [
     {"titulo": "Tarea P-1: Definir requisitos", "estado": "Pendiente"},
     {"titulo": "Tarea P-2: Crear mockups", "estado": "Pendiente"},
@@ -22,7 +21,7 @@ DATOS_COMPLETADAS = [
 class State(rx.State):
     """Estado global del tablero Kanban."""
     
-    # a) Variable booleana inicializada en False [cite: 602, 614]
+    # a) Variable booleana inicializada en False
     mostrar_solo_pendientes: bool = False
 
     # Variables de estado para las tareas base
@@ -33,7 +32,7 @@ class State(rx.State):
     # b) Botón para cambiar el valor a True
     def mostrar_pendientes(self):
         """Activa el filtro de solo pendientes."""
-        self.mostrar_solo_pendientes = True # [cite: 605, 615, 622]
+        self.mostrar_solo_pendientes = True 
 
     # (He añadido este botón extra para poder reiniciar el filtro)
     def mostrar_todas(self):
@@ -55,7 +54,7 @@ class State(rx.State):
         Devuelve tareas "En Progreso" O solo las pendientes 
         si el filtro está activo.
         """
-        if self.mostrar_solo_pendientes: # [cite: 606, 625]
+        if self.mostrar_solo_pendientes: # 
             # Esta lógica devolverá una lista vacía
             return [t for t in self.tareas_en_progreso_base if t["estado"] == "Pendiente"] # [cite: 607, 627]
         return self.tareas_en_progreso_base #
@@ -66,7 +65,7 @@ class State(rx.State):
         Devuelve tareas "Completadas" O solo las pendientes 
         si el filtro está activo.
         """
-        if self.mostrar_solo_pendientes: # [cite: 606, 625]
+        if self.mostrar_solo_pendientes: 
             # Esta lógica también devolverá una lista vacía
             return [t for t in self.tareas_completadas_base if t["estado"] == "Pendiente"] # [cite: 607, 627]
         return self.tareas_completadas_base #
@@ -90,7 +89,7 @@ def columna_kanban(nombre: str, tareas_lista: List[Dict]): #
     return rx.box(
         rx.heading(nombre, size="5"), #
         rx.vstack(
-            # Usamos rx.foreach para iterar sobre la lista (que es un Computed Var)
+            # Usamos rx.foreach para iterar sobre la lista
             rx.foreach(
                 tareas_lista, 
                 tarjeta_tarea
@@ -114,7 +113,7 @@ def index():
         rx.vstack(
             rx.heading("Mi Tablero Kanban", size="7"),
             rx.hstack(
-                # b) Botón "Mostrar Pendientes" [cite: 605, 639]
+                # b) Botón "Mostrar Pendientes"
                 rx.button(
                     "Mostrar Solo Pendientes", 
                     on_click=State.mostrar_pendientes

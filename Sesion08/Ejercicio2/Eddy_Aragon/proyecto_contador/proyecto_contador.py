@@ -180,7 +180,7 @@ def index():
 # --- Configuración final de la App ---
 app = rx.App(
     theme=rx.theme(
-        appearance="light", # <-- ESTO FUERZA EL MODO CLARO (fondo gris/blanco)
+        appearance="light",
         accent_color="blue"
     )
 )
