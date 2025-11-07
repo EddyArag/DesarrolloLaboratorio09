@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda de Videojuegos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f0f0f0;
+        }
+        header {
+            background: #222;
+            padding: 15px;
+            color: white;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .card h3 {
+            margin: 10px 0 5px;
+        }
+        .card p {
+            margin: 0;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Catálogo</a>
+            <a href="#">Ofertas</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Tienda de Videojuegos</h1>
+        <p>Bienvenido a la mejor tienda de juegos online.</p>
+
+        <div class="productos">
+
+            <div class="card">
+                <img src="img/gtav.jpg" alt="GTA V" />
+                <h3>GTA V</h3>
+                <p>$19.99</p>
+            </div>
+
+            <div class="card">
+                <img src="img/minecraft.jpg" alt="Minecraft" />
+                <h3>Minecraft</h3>
+                <p>$26.99</p>
+            </div>
+
+            <div class="card">
+                <img src="img/fifa23.jpg" alt="FIFA 23" />
+                <h3>FIFA 23</h3>
+                <p>$29.99</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
